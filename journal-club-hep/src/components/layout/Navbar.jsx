@@ -17,11 +17,15 @@ export default function Navbar() {
 
   const items = [
     { label:  t("home"), href: `${home}/#top` },
-    { label: t("about"), href: `${home}/#about` },
-    { label: t("calendar"), href: `${home}/#calendar` },
-    { label: t("speakers"), href: `${home}/#speakers` },
-    { label: t("join"), href: `${home}/#join` },
-    { label: t("team"), href: `${home}/#team` },
+    { label: t("about"), href: `${home}/about-group` },
+
+    // New thinks.
+    { label: t("journalClub"), href: `${home}/journal-club` },
+    { label: t("research"), href: `${home}/research` },
+    { label: t("publications"), href: `${home}/publications` },
+    { label: t("activities"), href: `${home}/activities` },
+    { label: t("contact"), href: `${home}/contact` },
+    { label: t("people"), href: `${home}/people` },
   ];
 
   return (
@@ -45,7 +49,7 @@ export default function Navbar() {
           />
 
             <div className={styles.brandTextWrap}>
-              <span className={styles.brandTitle}>UCN HEP Journal Club</span>
+              <span className={styles.brandTitle}>UCN HEP GROUP</span>
               <span className={styles.brandSubtitle}>High Energy Physics</span>
             </div>
 

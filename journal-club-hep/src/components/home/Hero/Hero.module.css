@@ -1,0 +1,228 @@
+.hero {
+  position: relative;
+  min-height: 86vh;
+  display: flex;
+  align-items: center;
+  padding: 86px 0 70px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* =========================
+   FULL-SCREEN IMAGE LAYERS
+   ========================= */
+
+.layer {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  will-change: transform, clip-path, opacity;
+  transition:
+    transform 1.5s ease-in-out,
+    clip-path 1.5s ease-in-out,
+    opacity 1.2s ease-in-out;
+}
+
+/* Base visible from start */
+.layerPP {
+  z-index: 0;
+  background-image: url("/hero/HOME_PP.jpg");
+  transform: translateX(0);
+  clip-path: inset(0 0 0 0);
+}
+
+/* Starts outside the screen, but still full-screen */
+.layerCMB {
+  z-index: 1;
+  background-image: url("/hero/HOME_CMB.jpeg");
+  transform: translateX(-100%);
+  clip-path: inset(0 0 0 0);
+}
+
+.layerNN {
+  z-index: 2;
+  background-image: url("/hero/HOME_NN.png");
+  transform: translateX(100%);
+  clip-path: inset(0 0 0 0);
+}
+
+/* When entering, they occupy the WHOLE hero */
+.entered {
+  transform: translateX(0);
+}
+
+/* =========================
+   FINAL 3-COLUMN STATE
+   ========================= */
+
+.finalCMB {
+  transform: translateX(0);
+  clip-path: inset(0 66.666% 0 0);
+}
+
+.finalPP {
+  transform: translateX(0);
+  clip-path: inset(0 33.333% 0 33.333%);
+}
+
+.finalNN {
+  transform: translateX(0);
+  clip-path: inset(0 0 0 66.666%);
+}
+
+/* =========================
+   OVERLAY
+   ========================= */
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(10, 30, 55, 0.42),
+      rgba(10, 30, 55, 0.62)
+    );
+}
+
+/* =========================
+   CONTENT
+   ========================= */
+
+.inner {
+  position: relative;
+  z-index: 4;
+  max-width: 72ch;
+  text-align: center;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.96);
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55);
+}
+
+.title {
+  margin: 0;
+  font-size: 54px;
+  line-height: 1.06;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  text-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.55),
+    0 6px 28px rgba(0, 0, 0, 0.45);
+  -webkit-text-stroke: 0.6px rgba(8, 18, 35, 0.45);
+}
+
+.subtitle {
+  margin: 18px auto 0;
+  font-size: 18px;
+  line-height: 1.6;
+  opacity: 0.94;
+  max-width: 60ch;
+  animation: fadeUp 0.5s ease;
+    text-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.45),
+    0 4px 18px rgba(0, 0, 0, 0.35);
+}
+
+.actions {
+  margin-top: 26px;
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.btn,
+.btnGhost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  border: 2px solid rgba(200, 161, 74, 0.85);
+  transition:
+    filter 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.btn {
+  background: rgba(16, 51, 89, 0.85);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.btnGhost {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.btn:hover,
+.btnGhost:hover {
+  filter: brightness(1.08);
+}
+
+/* =========================
+   ANIMATION
+   ========================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 0.94;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 900px) {
+  .title {
+    font-size: 42px;
+  }
+
+  .subtitle {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero {
+    min-height: 90vh;
+    padding: 94px 0 56px;
+  }
+
+  .title {
+    font-size: 34px;
+    line-height: 1.12;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    max-width: 34ch;
+  }
+
+  .actions {
+    gap: 10px;
+  }
+
+  .btn,
+  .btnGhost {
+    height: 42px;
+    padding: 0 16px;
+  }
+}

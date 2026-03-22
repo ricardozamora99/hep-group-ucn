@@ -1,0 +1,249 @@
+HEP GROUP WEBSITE STRUCTURE (FINAL VERSION)
+
+---
+
+## NAVBAR (TOP-LEVEL)
+
+HOME
+ABOUT
+JOURNAL CLUB
+RESEARCH
+PUBLICATIONS
+ACTIVITIES
+PEOPLE
+CONTACT
+
+---
+
+## PAGES & SUBSTRUCTURE
+
+/home
+
+* Hero section (identity)
+* Research highlights
+* Upcoming & recent activities
+* News
+* Quick links (Research, People, Contact)
+
+/about
+
+* Overview (who we are)
+* Institution (UCN, location, context)
+* Mission & vision
+* Funding & Grants
+
+  * Funding agencies (ANID, FONDECYT, etc.)
+  * Project titles
+  * Duration
+  * Collaborators
+
+/journal-club
+
+* Hero (like the one you already built ✅)
+* Next session
+* Calendar
+* Past sessions
+* Join / participation info
+
+/research
+
+* Areas of research
+
+  * Particle Physics
+  * Cosmology
+  * Astroparticle Physics
+* Projects
+* Student Theses
+
+  * Title
+  * Author
+  * Year
+  * Supervisor
+  * PDF link (optional)
+
+/publications
+
+* Journal papers
+* Preprints (arXiv)
+* Reports / conference proceedings
+
+/activities
+
+* Workshops
+* Seminars
+* Conferences / outreach (optional)
+
+/people
+
+* Faculty / Researchers
+* PhD / MSc Students
+* Alumni (optional)
+
+/contact
+
+* Email
+* Location (UCN, Antofagasta)
+* Collaboration inquiries
+* (Optional) contact form
+
+---
+
+## NOTES
+
+* Journal Club is a standalone main section (important identity piece)
+* Thesis is integrated under RESEARCH (not a main tab)
+* Grants are under ABOUT → Funding & Grants
+* Activities now focus on workshops, seminars, outreach
+* Homepage highlights key content instead of duplicating pages
+* Keep navbar clean but allow Journal Club as a featured section
+
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+
+
+
+HOME LANDING STRUCTURE (FINAL CONTENT)
+
+---
+
+1. HERO
+
+---
+
+* Title:
+  UCN Particle Physics & Cosmology Group
+
+* Changing subtitles:
+  • Probing the Fundamental Building Blocks of Matter
+  • Exploring the Universe at the Largest Scales
+  • Advancing Data-Driven Methods in High Energy Physics
+
+* Buttons:
+  • Explore Research
+  • Meet the Team
+
+* Backgrounds:
+  • LHC / detector
+  • Milky Way / deep space
+  • Computational / data visualization
+
+---
+
+2. RESEARCH AREAS
+
+---
+
+* Particle Physics
+  Unveiling the fundamental structure of matter and interactions.
+
+* Cosmology
+  Studying the origin, evolution, and large-scale structure of the universe.
+
+* Astroparticle Physics
+  Connecting particle physics with astrophysical observations.
+
+---
+
+3. ABOUT PREVIEW (+ FUNDING)
+
+---
+
+* Text:
+  We are a research group based at Universidad Católica del Norte, dedicated to advancing knowledge in particle physics, cosmology, and related fields through theoretical and computational approaches.
+
+* Funding note:
+  Supported by national and international funding agencies.
+
+* Funding (minimal display):
+  • ANID
+  • FONDECYT
+  • Universidad Católica del Norte
+
+* Button:
+  Learn More
+
+---
+
+4. ACTIVITIES
+
+---
+
+* Journal Club
+  Weekly discussions on current topics in high energy physics.
+
+* Workshops
+  Specialized events focused on current research problems and methods.
+
+* Seminars
+  Talks by researchers and collaborators from different institutions.
+
+---
+
+5. PEOPLE PREVIEW
+
+---
+
+* Member 1 (Name – Role)
+
+* Member 2 (Name – Role)
+
+* Member 3 (Name – Role)
+
+* Button:
+  View All Members
+
+---
+
+6. PUBLICATIONS
+
+---
+
+* Paper Title 1
+  Journal / arXiv – Year
+
+* Paper Title 2
+  Journal / arXiv – Year
+
+* Paper Title 3
+  Journal / arXiv – Year
+
+---
+
+7. NEWS / HIGHLIGHTS
+
+---
+
+* Title + short description
+* Title + short description
+* Title + short description
+
+---
+
+8. FINAL CTA
+
+---
+
+* Text:
+  Join our research community or collaborate with us.
+
+* Buttons:
+  • Contact
+  • Collaborate
+
+---
+
+## NOTES (DESIGN INTENT)
+
+* Grants are NOT a full section → integrated subtly in About
+* Keep the homepage clean and narrative-driven
+* Avoid heavy card layouts → prefer clean sections
+* Hero carries identity, rest supports it
+* Journal Club remains highlighted inside Activities
+
+
+

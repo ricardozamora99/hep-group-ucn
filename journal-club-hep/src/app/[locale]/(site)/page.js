@@ -1,38 +1,23 @@
-import Hero from "@/components/sections/Hero/Hero";
-import About from "@/components/sections/About/About";
-import Calendar from "@/components/sections/Calendar/Calendar";
-import Speakers from "@/components/sections/Speakers/Speakers";
-import Join from "@/components/sections/Join/Join";
-import Team from "@/components/sections/Team/Team";
+import Hero from "@/components/home/Hero/Hero";
+import Research from "@/components/home/Research/Research";
+import AboutPreview from "@/components/home/AboutPreview/AboutPreview";
+import Activities from "@/components/home/Activities/Activities";
+import PeoplePreview from "@/components/home/PeoplePreview/PeoplePreview";
+import Publications from "@/components/home/Publications/Publications";
+import News from "@/components/home/News/News";
+import CTA from "@/components/home/CTA/CTA";
 
-export default function Page() {
+export default function HomePage() {
   return (
-    <main>
-      <section id="top">
-        <Hero />
-      </section>
-
-      <section id="about">
-        <About />
-      </section>
-
-      <section id="calendar">
-        <Calendar />
-      </section>
-
-      <section id="speakers">
-        <Speakers />
-      </section>
-
-
-      <section id="team">
-        <Team />
-      </section>
-
-      <section id="join">
-        <Join />
-      </section>
-    </main>
+    <>
+      <Hero />
+      <AboutPreview />
+      <Research />
+      <Activities />
+      <PeoplePreview />
+      <Publications />
+      <News />
+      <CTA />
+    </>
   );
 }
-

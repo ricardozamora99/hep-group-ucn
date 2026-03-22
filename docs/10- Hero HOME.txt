@@ -1,0 +1,201 @@
+HOME HERO CONCEPT — FINAL DESIGN (HEP GROUP)
+
+---
+
+## GENERAL IDEA
+
+The Hero is not a slideshow.
+It is a **progressive visual composition** that introduces the research areas of the group and ends in a unified identity.
+
+The animation builds meaning step-by-step:
+
+* From individual research domains
+* To a final integrated view of the group
+
+---
+
+## SEQUENCE OVERVIEW
+
+STEP 1 → Base (Particle Physics)
+STEP 2 → Left panel (Cosmology)
+STEP 3 → Right panel (Computational)
+STEP 4 → Final composition (3 vertical panels)
+
+---
+
+## STEP 1 — BASE STATE
+
+* Fullscreen background:
+  Particle Physics (LHC / detector)
+
+* Visible text:
+  Title:
+  UCN Particle Physics & Cosmology Group
+
+  Subtitle:
+  Probing the Fundamental Building Blocks of Matter
+
+* Layout:
+  Clean, centered or slightly left-aligned
+  No panels yet
+
+---
+
+## STEP 2 — LEFT PANEL (COSMOLOGY)
+
+* A panel slides in from the LEFT
+
+* Background:
+  Milky Way / deep space
+
+* The panel partially covers the base layer
+
+* Subtitle updates to:
+  Exploring the Universe at the Largest Scales
+
+* The title remains fixed
+
+---
+
+## STEP 3 — RIGHT PANEL (COMPUTATIONAL)
+
+* A panel slides in from the RIGHT
+
+* Background:
+  Computational / data / network visualization
+
+* Now the screen has layered composition:
+  left + base + right
+
+* Subtitle updates to:
+  Advancing Data-Driven Methods in High Energy Physics
+
+* Title remains fixed
+
+---
+
+## STEP 4 — FINAL STATE (KEY TRANSFORMATION)
+
+* The layout reorganizes into 3 vertical panels:
+
+  | Cosmology | Particle Physics | Computational |
+
+* Each panel occupies equal width
+
+* Full height (100vh)
+
+* Edge-to-edge (no gaps, no borders)
+
+* Backgrounds:
+  Left → Milky Way
+  Center → LHC
+  Right → Computational
+
+---
+
+## FINAL TEXT (CENTER)
+
+* Only one text element remains:
+
+  Particle Physics and Cosmology at UCN
+
+* No subtitle
+
+* No extra UI
+
+* Clean, strong identity
+
+---
+
+## ANIMATION BEHAVIOR
+
+* Transitions must be:
+  Slow, smooth, cinematic
+
+* Suggested timing:
+  Step 1 → 2 : ~2s delay + 1.5s transition
+  Step 2 → 3 : ~2s delay + 1.5s transition
+  Step 3 → 4 : ~2s delay + 1.5s transformation
+
+* Easing:
+  ease-in-out (no linear motion)
+
+---
+
+## VISUAL STYLE RULES
+
+* Panels are NOT cards
+
+* No borders, no shadows
+
+* They behave as full-screen slices
+
+* All layers must have:
+  Dark overlay (navy → black gradient)
+
+* Consistent tone across all backgrounds
+
+* Slight zoom/parallax allowed (very subtle)
+
+---
+
+## TEXT BEHAVIOR
+
+* Title:
+  Always fixed during steps 1–3
+
+* Subtitle:
+  Changes at each step
+
+* Final state:
+  Subtitle disappears
+  Only central identity text remains
+
+---
+
+## INTERACTION / LOOP
+
+Preferred behavior:
+
+* Animation runs once
+* Final 3-panel state stays visible
+
+(Optional future enhancement)
+
+* Reset loop after delay
+* Hover interactions on panels
+
+---
+
+## CONCEPTUAL MEANING
+
+The Hero represents:
+
+* Particle Physics → fundamental scale
+* Cosmology → largest scale
+* Computation → methodology
+
+Final state represents:
+
+→ Integration of all domains
+→ Identity of the HEP group at UCN
+
+---
+
+## DESIGN GOAL
+
+The Hero should feel like:
+
+“Entering a research environment that spans scales of the universe”
+
+NOT:
+
+“A typical website banner or slider”
+
+---
+
+## STATUS
+
+Concept locked ✔
+Ready for implementation ✔
+

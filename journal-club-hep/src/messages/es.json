@@ -1,21 +1,28 @@
 {
-  "Nav": {
-    "home": "INICIO",
-    "about": "ACERCA",
-    "calendar": "CALENDARIO",
-    "speakers": "PONENTES",
-    "join": "ÚNETE",
-    "team": "EQUIPO"
-  },
+"Nav": {
+  "home": "INICIO",
+  "about": "ACERCA",
+  "calendar": "CALENDARIO",
+  "speakers": "PONENTES",
+  "join": "ÚNETE",
+  "team": "EQUIPO",
+
+  "journalClub": "JOURNAL CLUB",
+  "research": "INVESTIGACIÓN",
+  "publications": "PUBLICACIONES",
+  "activities": "ACTIVIDADES",
+  "contact": "CONTACTO",
+  "people": "PERSONAS"
+},
   "Hero": {
-    "title": "Impulsando la Física de Altas Energías en la UCN",
-    "subtitle": "Charlas semanales, discusión y lectura de artículos para fomentar la colaboración en física de partículas.",
+    "title": "Impulsando la Física de Altas Energías y Cosmología en la UCN",
+    "subtitle": "Charlas semanales, discusión y lectura de artículos para fomentar la colaboración en física de partículas y cosmología.",
     "ctaJoin": "Únete",
     "ctaNext": "Próxima sesión"
   },
   "About": {
     "kicker": "ACERCA",
-    "title": "Un Journal Club de Física de Altas Energías en la UCN",
+    "title": "Un Journal Club de Física de Partículas y Cosmología en la UCN",
     "desc": "Un espacio comunitario en la Universidad Católica del Norte para leer, presentar y discutir artículos de investigación en física de partículas, cosmología y áreas afines. Buscamos construir un ambiente cercano para aprender, hacer preguntas y fortalecer la cultura de investigación mediante sesiones regulares.",
     "ctaJoin": "Unirse",
     "ctaCalendar": "Ver calendario",
@@ -138,5 +145,27 @@
     "academic": "Investigación o Intereses",
     "affiliationTBD": "---",
     "academicTBD": "---"
-  }
+  },
+  "AboutGroup": {
+  "kicker": "GRUPO DE INVESTIGACIÓN",
+  "title": "Grupo de Física de Partículas y Cosmología",
+  "desc": "Somos un grupo de investigación enfocado en preguntas fundamentales de la física de partículas, la cosmología y la estructura del Universo.",
+
+  "a1": {
+    "title": "Física de Neutrinos",
+    "text": "Estudio de masas, mezclas y su rol en física más allá del Modelo Estándar."
+  },
+  "a2": {
+    "title": "Materia Oscura",
+    "text": "Modelos teóricos y fenomenológicos de materia oscura y su detección."
+  },
+  "a3": {
+    "title": "Cosmología",
+    "text": "Física del Universo temprano, bariogénesis y conexiones con física de partículas."
+  },
+
+  "meta1": { "k": "Institución", "v": "Universidad Católica del Norte" },
+  "meta2": { "k": "Departamento", "v": "Departamento de Física" },
+  "meta3": { "k": "Ubicación", "v": "Antofagasta, Chile" }
+}
 }

@@ -1,0 +1,76 @@
+.
+├── app
+│   ├── favicon.ico
+│   ├── globals.css
+│   ├── layout.js
+│   ├── [locale]
+│   │   ├── layout.js
+│   │   └── (site)
+│   │       ├── about-group
+│   │       │   └── page.jsx
+│   │       ├── activities
+│   │       │   ├── page.js
+│   │       │   └── [slug]
+│   │       │       └── page.js
+│   │       ├── contact
+│   │       │   └── page.js
+│   │       ├── journal-club
+│   │       │   └── page.js
+│   │       ├── layout.js
+│   │       ├── page.js
+│   │       ├── people
+│   │       │   └── page.js
+│   │       ├── publications
+│   │       │   ├── page.js
+│   │       │   └── [slug]
+│   │       │       └── page.js
+│   │       └── research
+│   │           └── page.js
+│   └── page.module.css
+├── assets
+│   └── brand
+├── components
+│   ├── journal-club
+│   │   ├── About
+│   │   │   ├── About.jsx
+│   │   │   └── About.module.css
+│   │   ├── Calendar
+│   │   │   ├── Calendar.jsx
+│   │   │   └── Calendar.module.css
+│   │   ├── Hero
+│   │   │   ├── Hero.jsx
+│   │   │   └── Hero.module.css
+│   │   ├── Join
+│   │   │   ├── Join.jsx
+│   │   │   └── Join.module.css
+│   │   ├── Speakers
+│   │   │   ├── Speakers.jsx
+│   │   │   └── Speakers.module.css
+│   │   └── Team
+│   │       ├── Team.jsx
+│   │       └── Team.module.css
+│   ├── layout
+│   │   ├── Container.jsx
+│   │   ├── Container.module.css
+│   │   ├── Footer.jsx
+│   │   ├── Footer.module.css
+│   │   ├── LocaleToggel.jsx
+│   │   ├── Navbar.jsx
+│   │   └── Navbar.module.css
+│   └── ui
+├── content
+├── i18n
+│   ├── request.js
+│   └── routing.js
+├── lib
+│   ├── calendarIcs.js
+│   └── useInView.js
+├── messages
+│   ├── en.json
+│   └── es.json
+├── middleware.js
+├── project-structure.tx
+├── project-structure.txt
+└── styles
+
+30 directories, 44 files

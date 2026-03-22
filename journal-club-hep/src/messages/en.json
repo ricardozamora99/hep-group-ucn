@@ -1,21 +1,28 @@
 {
-  "Nav": {
-    "home": "HOME",
-    "about": "ABOUT",
-    "calendar": "CALENDAR",
-    "speakers": "SPEAKERS",
-    "join": "JOIN",
-    "team": "TEAM"
-  },
+"Nav": {
+  "home": "HOME",
+  "about": "ABOUT",
+  "calendar": "CALENDAR",
+  "speakers": "SPEAKERS",
+  "join": "JOIN",
+  "team": "TEAM",
+
+  "journalClub": "JOURNAL CLUB",
+  "research": "RESEARCH",
+  "publications": "PUBLICATIONS",
+  "activities": "ACTIVITIES",
+  "contact": "CONTACT",
+  "people": "PEOPLE"
+},
   "Hero": {
-    "title": "Advancing High Energy Physics at UCN",
-    "subtitle": "Weekly talks, discussions, and paper reading sessions fostering collaboration in particle physics.",
+    "title": "Advancing High Energy Physics & Cosmology at UCN",
+    "subtitle": "Weekly talks, discussions, and paper reading sessions fostering collaboration in particle physics and cosmology.",
     "ctaJoin": "Join",
     "ctaNext": "Next Session"
   },
   "About": {
     "kicker": "ABOUT",
-    "title": "A Journal Club for High Energy Physics at UCN",
+    "title": "A Journal Club for Particle Physics and Cosmology at UCN",
     "desc": "A community space at Universidad Católica del Norte to read, present, and discuss research papers in particle physics, cosmology, and related fields. We aim to build a friendly environment for learning, asking questions, and strengthening research culture through regular sessions.",
     "ctaJoin": "Join",
     "ctaCalendar": "View Calendar",
@@ -138,5 +145,27 @@
     "academic": "Research or Interests",
     "affiliationTBD": "---",
     "academicTBD": "---"
-  }
+  },
+  "AboutGroup": {
+  "kicker": "RESEARCH GROUP",
+  "title": "Particle Physics & Cosmology Group",
+  "desc": "We are a research group focused on fundamental questions in particle physics, cosmology, and the structure of the Universe.",
+
+  "a1": {
+    "title": "Neutrino Physics",
+    "text": "Study of neutrino masses, mixing, and their role in beyond Standard Model physics."
+  },
+  "a2": {
+    "title": "Dark Matter",
+    "text": "Theoretical and phenomenological models for dark matter and its detection."
+  },
+  "a3": {
+    "title": "Cosmology",
+    "text": "Early Universe physics, baryogenesis, and connections between particle physics and cosmology."
+  },
+
+  "meta1": { "k": "Institution", "v": "Universidad Católica del Norte" },
+  "meta2": { "k": "Department", "v": "Physics Department" },
+  "meta3": { "k": "Location", "v": "Antofagasta, Chile" }
+}
 }
