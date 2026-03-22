@@ -1,0 +1,236 @@
+.section{
+  padding: 92px 0 84px;
+  background: #f8f9fb;
+  border-top: 1px solid rgba(11,42,74,0.08);
+  border-bottom: 1px solid rgba(11,42,74,0.08);
+}
+
+.shell{
+  position: relative;
+}
+
+.header{
+  text-align: center;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.kicker{
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(11,42,74,0.70);
+}
+
+.title{
+  margin: 10px 0 10px;
+  font-size: 40px;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: #0b2a4a;
+}
+
+.underline{
+  width: 92px;
+  height: 2px;
+  margin: 0 auto 22px;
+  background: rgba(200,161,74,0.95);
+}
+
+.grid{
+  margin-top: 34px;
+  display: grid;
+  grid-template-columns: 1.45fr 0.95fr;
+  gap: 22px;
+  align-items: stretch;
+}
+
+.mainBlock{
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(11,42,74,0.12);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.05);
+}
+
+.mainBlock::before{
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 5px;
+  background: linear-gradient(
+    to bottom,
+    rgba(200,161,74,0.95),
+    rgba(11,42,74,0.85)
+  );
+}
+
+.mainInner{
+  padding: 26px 24px 24px 28px;
+}
+
+.eyebrow{
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(11,42,74,0.62);
+  margin-bottom: 16px;
+}
+
+.lead{
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.75;
+  color: rgba(11,42,74,0.90);
+  max-width: 36ch;
+}
+
+.body{
+  margin: 18px 0 0;
+  font-size: 15px;
+  line-height: 1.9;
+  color: rgba(11,42,74,0.74);
+  max-width: 72ch;
+}
+
+.fundingBand{
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(11,42,74,0.10);
+}
+
+.fundingLabel{
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(11,42,74,0.62);
+  margin-bottom: 10px;
+}
+
+.fundingList{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.fundingList span{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  border: 1px solid rgba(11,42,74,0.12);
+  background: rgba(11,42,74,0.03);
+  font-size: 13px;
+  font-weight: 800;
+  color: rgba(11,42,74,0.84);
+}
+
+.actions{
+  margin-top: 22px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btnGhost{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 0;
+  background: transparent;
+  color: rgba(11,42,74,0.92);
+  text-decoration: none;
+  font-weight: 900;
+  border: 1px solid rgba(200,161,74,0.75);
+  transition: background 180ms ease, transform 140ms ease;
+}
+
+.btnGhost:hover{
+  transform: translateY(-1px);
+  background: rgba(200,161,74,0.10);
+}
+
+.sidePanel{
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.sideCardPrimary,
+.sideCard,
+.sideCardAccent{
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(11,42,74,0.12);
+  background: #ffffff;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.04);
+  padding: 18px 18px;
+}
+
+.sideCardPrimary{
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(200,161,74,0.08),
+      rgba(255,255,255,1)
+    );
+}
+
+.sideLabel{
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(11,42,74,0.62);
+  margin-bottom: 8px;
+}
+
+.sideValue{
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 900;
+  color: rgba(11,42,74,0.90);
+}
+
+.sideCardAccent{
+  background: #0b2a4a;
+  border-color: rgba(255,255,255,0.10);
+  display: flex;
+  align-items: center;
+}
+
+.quote{
+  font-size: 15px;
+  line-height: 1.9;
+  color: rgba(255,255,255,0.86);
+}
+
+@media (max-width: 980px){
+  .grid{
+    grid-template-columns: 1fr;
+  }
+
+  .sidePanel{
+    grid-template-rows: auto;
+  }
+}
+
+@media (max-width: 900px){
+  .title{ font-size: 32px; }
+  .lead{ font-size: 18px; }
+}
+
+@media (max-width: 520px){
+  .section{ padding: 64px 0; }
+  .title{ font-size: 28px; }
+  .mainInner,
+  .sideCardPrimary,
+  .sideCard,
+  .sideCardAccent{
+    padding: 16px;
+  }
+}
