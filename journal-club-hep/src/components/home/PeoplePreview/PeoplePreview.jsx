@@ -1,41 +1,54 @@
 "use client";
 
 import Link from "next/link";
+import { useLocale } from "next-intl";
 import styles from "./PeoplePreview.module.css";
 import Container from "@/components/layout/Container";
 
 const people = [
   {
-    name: "Group Head",
+    name: "Group Leadership",
     role: "Principal Investigator",
-    note: "Leading research directions in particle physics and cosmology at UCN.",
+    note: "The scientific and academic direction of the group is anchored in sustained research leadership.",
   },
   {
-    name: "New Member 1",
-    role: "PhD / MSc Researcher",
-    note: "Working on theoretical and computational aspects of high energy physics.",
+    name: "Students",
+    role: "PhD / MSc Researchers",
+    note: "The group grows through the participation of students working on active theoretical and computational problems.",
   },
   {
-    name: "New Member 2",
-    role: "PhD / MSc Researcher",
-    note: "Contributing to current projects in cosmology, phenomenology, and data-driven methods.",
+    name: "Collaborators",
+    role: "Academic Network",
+    note: "Its broader identity is enriched by dialogue with researchers and institutions beyond UCN.",
   },
 ];
 
 export default function PeoplePreview() {
+  const locale = useLocale();
+
   return (
     <section id="people-preview" className={styles.section}>
       <Container>
-        <div className={styles.shell}>
-          <header className={styles.header}>
-            <div className={styles.kicker}>People</div>
-            <h2 className={styles.title}>Meet the Group</h2>
-            <div className={styles.underline} />
-            <p className={styles.lead}>
-              A research group is shaped by its people: its leadership, its students,
-              and the collaborations that sustain its academic life.
+        <div className={styles.top}>
+          <span className={styles.kicker}>People</span>
+          <h2 className={styles.title}>
+            A group is defined
+            <span>by the people who sustain it</span>
+          </h2>
+        </div>
+
+        <div className={styles.layout}>
+          <div className={styles.statement}>
+            <p>
+              Leadership, students, and collaborators give the group its real
+              form. Research is built through continuity, mentorship, dialogue,
+              and the collective effort of an academic community.
             </p>
-          </header>
+
+            <Link className={styles.btn} href={`/${locale}/people`}>
+              View Full Team
+            </Link>
+          </div>
 
           <div className={styles.grid}>
             {people.map((person, idx) => (
@@ -43,20 +56,12 @@ export default function PeoplePreview() {
                 key={person.name}
                 className={`${styles.card} ${idx === 0 ? styles.featured : ""}`}
               >
-                <div className={styles.cardIndex}>
-                  {idx === 0 ? "Head" : `0${idx}`}
-                </div>
-                <h3 className={styles.cardName}>{person.name}</h3>
-                <div className={styles.cardRole}>{person.role}</div>
-                <p className={styles.cardNote}>{person.note}</p>
+                <div className={styles.index}>{idx === 0 ? "01" : `0${idx + 1}`}</div>
+                <h3>{person.name}</h3>
+                <div className={styles.role}>{person.role}</div>
+                <p>{person.note}</p>
               </article>
             ))}
-          </div>
-
-          <div className={styles.actions}>
-            <Link className={styles.btn} href="/people">
-              View Full Team
-            </Link>
           </div>
         </div>
       </Container>

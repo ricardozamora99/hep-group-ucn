@@ -121,7 +121,7 @@
   opacity: 0.94;
   max-width: 60ch;
   animation: fadeUp 0.5s ease;
-    text-shadow:
+  text-shadow:
     0 2px 10px rgba(0, 0, 0, 0.45),
     0 4px 18px rgba(0, 0, 0, 0.35);
 }
@@ -143,32 +143,45 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 44px;
-  padding: 0 18px;
-  border-radius: 6px;
+  min-height: 46px;
+  padding: 0 20px;
+  border-radius: 0;
   text-decoration: none;
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  border: 2px solid rgba(200, 161, 74, 0.85);
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid rgba(200, 161, 74, 0.82);
   transition:
-    filter 0.25s ease,
-    background 0.25s ease,
-    border-color 0.25s ease;
+    transform 0.18s ease,
+    background 0.22s ease,
+    border-color 0.22s ease,
+    color 0.22s ease;
 }
 
 .btn {
-  background: rgba(16, 51, 89, 0.85);
-  color: rgba(255, 255, 255, 0.95);
+  background: rgba(11, 42, 74, 0.88);
+  color: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
 }
 
 .btnGhost {
-  background: rgba(255, 255, 255, 0.06);
-  color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(6px);
 }
 
 .btn:hover,
 .btnGhost:hover {
-  filter: brightness(1.08);
+  transform: translateY(-2px);
+}
+
+.btn:hover {
+  background: rgba(18, 58, 98, 0.96);
+}
+
+.btnGhost:hover {
+  background: rgba(200, 161, 74, 0.14);
+  border-color: rgba(200, 161, 74, 1);
 }
 
 /* =========================
@@ -222,7 +235,7 @@
 
   .btn,
   .btnGhost {
-    height: 42px;
+    min-height: 42px;
     padding: 0 16px;
   }
 }

@@ -1,87 +1,73 @@
 "use client";
 
 import Link from "next/link";
+import { useLocale } from "next-intl";
 import styles from "./Research.module.css";
 import Container from "@/components/layout/Container";
 
 const areas = [
   {
     title: "Particle Physics",
-    text: "Unveiling the fundamental structure of matter and interactions through theoretical models and phenomenological studies.",
+    text: "Theoretical and phenomenological work on the fundamental structure of matter and interactions.",
     tag: "Matter & Interactions",
-    featured: true,
   },
   {
     title: "Cosmology",
-    text: "Studying the origin, evolution, and large-scale structure of the universe, with emphasis on fundamental physics connections.",
+    text: "Questions about the universe, its evolution, and the role of fundamental physics across cosmic history.",
     tag: "Universe & Evolution",
-    featured: false,
   },
   {
-    title: "Astroparticle Physics",
-    text: "Connecting particle physics with astrophysical observations to explore the universe across multiple scales and messengers.",
-    tag: "Particles & Cosmos",
-    featured: false,
+    title: "Computational Physics",
+    text: "Numerical methods, data-driven tools, and reproducible workflows for modern theoretical research.",
+    tag: "Methods & Computation",
   },
 ];
 
 export default function Research() {
+  const locale = useLocale();
+
   return (
     <section id="research-preview" className={styles.section}>
       <Container>
-        <header className={styles.header}>
-          <div className={styles.kicker}>Research</div>
-          <h2 className={styles.title}>Research Areas</h2>
-          <div className={styles.underline} />
-          <p className={styles.lead}>
-            Our work spans key areas of high energy physics and cosmology,
-            combining theoretical insight, phenomenology, and computational methods.
-          </p>
-        </header>
+        <div className={styles.top}>
+          <div className={styles.heading}>
+            <span className={styles.kicker}>Research</span>
+            <h2 className={styles.title}>
+              Research directions,
+              <span>introduced as a preview</span>
+            </h2>
+          </div>
 
-        <div className={styles.layout}>
-          <article className={styles.featuredCard}>
-            <div className={styles.featuredTop}>
-              <span className={styles.tag}>{areas[0].tag}</span>
-            </div>
-
-            <div className={styles.featuredBody}>
-              <h3 className={styles.featuredTitle}>{areas[0].title}</h3>
-              <p className={styles.featuredText}>{areas[0].text}</p>
-            </div>
-
-            <div className={styles.featuredFoot}>
-              <span className={styles.footNote}>Core theoretical direction</span>
-            </div>
-          </article>
-
-          <div className={styles.sideColumn}>
-            {areas.slice(1).map((area) => (
-              <article key={area.title} className={styles.sideCard}>
-                <div className={styles.sideTop}>
-                  <span className={styles.tag}>{area.tag}</span>
-                </div>
-
-                <h3 className={styles.sideTitle}>{area.title}</h3>
-                <p className={styles.sideText}>{area.text}</p>
-              </article>
-            ))}
+          <div className={styles.sideIntro}>
+            <p>
+              The Home page offers a concise look at the group’s scientific
+              profile. The full research structure, themes, and future dedicated
+              sections belong to the Research page.
+            </p>
+            <Link className={styles.inlineLink} href={`/${locale}/research`}>
+              Explore the full research profile
+            </Link>
           </div>
         </div>
 
-        <div className={styles.bottomRow}>
-          <div className={styles.meta}>
-            <span className={styles.metaLabel}>Related Content</span>
-            <span className={styles.metaValue}>
-              Projects · Thesis · Publications
-            </span>
-          </div>
+        <div className={styles.grid}>
+          {areas.map((area, idx) => (
+            <article
+              key={area.title}
+              className={`${styles.card} ${idx === 0 ? styles.cardFeatured : ""}`}
+            >
+              <span className={styles.tag}>{area.tag}</span>
+              <h3>{area.title}</h3>
+              <p>{area.text}</p>
+            </article>
+          ))}
+        </div>
 
-          <div className={styles.actions}>
-            <Link className={styles.btnGhost} href="/research">
-              Explore Research
-            </Link>
-          </div>
+        <div className={styles.band}>
+          <span className={styles.bandLabel}>Research language</span>
+          <strong>
+            Theory · Phenomenology · Cosmology · Computation
+          </strong>
         </div>
       </Container>
     </section>

@@ -1,0 +1,113 @@
+.section {
+  position: relative;
+  padding: 115px 0;
+  overflow: hidden;
+  color: #fff;
+  background: #091425;
+}
+
+.bgImage {
+  position: absolute;
+  inset: 0;
+  background:
+    url("/hero/HOME_CMB.jpeg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.22;
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(9,20,37,0.92) 0%, rgba(15,32,56,0.86) 48%, rgba(201,164,78,0.18) 100%);
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+  max-width: 880px;
+}
+
+.kicker {
+  display: inline-block;
+  margin-bottom: 14px;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: #d8b86f;
+  font-weight: 700;
+}
+
+.inner h2 {
+  margin: 0;
+  font-size: clamp(2.3rem, 5vw, 4.3rem);
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+  font-weight: 800;
+}
+
+.inner h2 span {
+  display: block;
+  color: #f0d28f;
+}
+
+.inner p {
+  margin: 22px 0 0;
+  max-width: 700px;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.86);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.primary,
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 22px;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.primary {
+  background: #d6b15f;
+  color: #0d1d34;
+  font-weight: 700;
+}
+
+.secondary {
+  border: 1px solid rgba(255,255,255,0.26);
+  color: #fff;
+  background: rgba(255,255,255,0.05);
+}
+
+.primary:hover,
+.secondary:hover {
+  transform: translateY(-2px);
+}
+
+.secondary:hover {
+  border-color: #d6b15f;
+  color: #f0d28f;
+}
+
+@media (max-width: 640px) {
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primary,
+  .secondary {
+    width: 100%;
+  }
+}

@@ -1,0 +1,122 @@
+.section {
+  position: relative;
+  padding: 115px 0;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(210, 172, 82, 0.16), transparent 25%),
+    linear-gradient(135deg, #0a1423 0%, #0f2038 50%, #102846 100%);
+  color: #fff;
+  overflow: hidden;
+}
+
+.bgPattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.13) 1px, transparent 1.5px);
+  background-size: 26px 26px;
+  opacity: 0.18;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent 92%);
+}
+
+.top {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+  margin-bottom: 40px;
+}
+
+.kicker {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: #d8b86f;
+  font-weight: 700;
+}
+
+.top h2 {
+  margin: 0;
+  font-size: clamp(2.2rem, 4.5vw, 3.9rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.top h2 span {
+  display: block;
+  color: #f0d28f;
+}
+
+.top p {
+  margin: 22px 0 0;
+  max-width: 760px;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.84);
+}
+
+.network {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.card {
+  position: relative;
+  padding: 28px 24px 30px 28px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  margin-bottom: 16px;
+  border-radius: 50%;
+  background: #d6b15f;
+  box-shadow: 0 0 0 8px rgba(214, 177, 95, 0.12);
+}
+
+.card h3 {
+  margin: 0 0 10px;
+  font-size: 1.32rem;
+}
+
+.card p {
+  margin: 0;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.82);
+}
+
+.bottomPanel {
+  position: relative;
+  z-index: 2;
+  margin-top: 24px;
+  padding: 22px 24px;
+  background: linear-gradient(90deg, rgba(214,177,95,0.18), rgba(255,255,255,0.05));
+  border-left: 4px solid #d6b15f;
+}
+
+.bottomLabel {
+  display: inline-block;
+  margin-bottom: 8px;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #f1ddb0;
+  font-weight: 800;
+}
+
+.bottomPanel p {
+  margin: 0;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.88);
+}
+
+@media (max-width: 980px) {
+  .network {
+    grid-template-columns: 1fr;
+  }
+}

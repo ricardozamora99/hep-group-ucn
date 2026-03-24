@@ -10,73 +10,67 @@ export default function AboutPreview() {
 
   return (
     <section id="about-preview" className={styles.section}>
+      <div className={styles.bgGlow} />
       <Container>
         <div className={styles.shell}>
-          <header className={styles.header}>
-            <div className={styles.kicker}>About the Group</div>
-            <h2 className={styles.title}>Particle Physics and Cosmology at UCN</h2>
-            <div className={styles.underline} />
-          </header>
+          <div className={styles.topLine}>
+            <span className={styles.kicker}>About the Group</span>
+            <span className={styles.line} />
+          </div>
 
-          <div className={styles.grid}>
-            <article className={styles.mainBlock}>
-              <div className={styles.mainInner}>
-                <div className={styles.eyebrow}>Institutional Overview</div>
+          <div className={styles.layout}>
+            <div className={styles.left}>
+              <h2 className={styles.title}>
+                A first look
+                <span>at the group</span>
+              </h2>
 
-                <p className={styles.lead}>
-                  We are a research group based at Universidad Católica del Norte,
-                  dedicated to advancing knowledge in particle physics, cosmology,
-                  and related fields through theoretical and computational approaches.
+              <p className={styles.lead}>
+                The UCN Particle Physics & Cosmology Group is a research space
+                shaped by fundamental questions in particle physics, cosmology,
+                and related theoretical and computational approaches.
+              </p>
+
+              <p className={styles.body}>
+                On this page, you get a sketch of the group’s research life,
+                people, and current activity. The broader institutional profile,
+                mission, collaborations, academic environment, and support
+                structure are presented in the About section.
+              </p>
+
+              <div className={styles.actions}>
+                <Link className={styles.btnPrimary} href={`/${locale}/about-group`}>
+                  Enter About
+                </Link>
+                <div className={styles.note}>
+                  Institutional profile · collaborations · support · academic context
+                </div>
+              </div>
+            </div>
+
+            <aside className={styles.right}>
+              <div className={styles.mainCard}>
+                <span className={styles.cardLabel}>Overview</span>
+                <p>
+                  A group connecting theory, phenomenology, cosmology, and
+                  academic formation within a broader scientific network.
                 </p>
-
-                <p className={styles.body}>
-                  Our work brings together researchers and students interested in
-                  fundamental questions about matter, the universe, and the methods
-                  used to investigate them. The group combines theoretical insight,
-                  computational tools, and active academic exchange to develop a
-                  coherent research environment at UCN.
-                </p>
-
-                <div className={styles.fundingBand}>
-                  <div className={styles.fundingLabel}>Supported by</div>
-                  <div className={styles.fundingList}>
-                    <span>ANID</span>
-                    <span>FONDECYT N°1241855</span>
-                    <span>Universidad Católica del Norte</span>
-                  </div>
-                </div>
-
-                <div className={styles.actions}>
-                  <Link className={styles.btnGhost} href={`/${locale}/about-group`}>
-                    Learn More
-                  </Link>
-                </div>
-              </div>
-            </article>
-
-            <aside className={styles.sidePanel}>
-              <div className={styles.sideCardPrimary}>
-                <div className={styles.sideLabel}>Institution</div>
-                <div className={styles.sideValue}>
-                  Universidad Católica del Norte
-                </div>
               </div>
 
-              <div className={styles.sideCard}>
-                <div className={styles.sideLabel}>Location</div>
-                <div className={styles.sideValue}>Antofagasta, Chile</div>
-              </div>
-
-              <div className={styles.sideCard}>
-                <div className={styles.sideLabel}>Core Focus</div>
-                <div className={styles.sideValue}>
-                  Theory, Cosmology, Computation
+              <div className={styles.infoGrid}>
+                <div className={styles.infoCard}>
+                  <span>Institution</span>
+                  <strong>Universidad Católica del Norte</strong>
                 </div>
-              </div>
 
-              <div className={styles.sideCardAccent}>
-                <div className={styles.quote}>
-                  “A space for fundamental physics, collaboration, and scientific formation.”
+                <div className={styles.infoCard}>
+                  <span>Location</span>
+                  <strong>Antofagasta, Chile</strong>
+                </div>
+
+                <div className={styles.infoCardAccent}>
+                  <span>Support</span>
+                  <strong>ANID · FONDECYT · UCN</strong>
                 </div>
               </div>
             </aside>

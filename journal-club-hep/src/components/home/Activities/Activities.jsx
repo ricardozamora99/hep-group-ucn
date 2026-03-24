@@ -1,95 +1,67 @@
 "use client";
+
 import Link from "next/link";
+import { useLocale } from "next-intl";
 import styles from "./Activities.module.css";
 import Container from "@/components/layout/Container";
 
 const activities = [
   {
     title: "Journal Club",
-    text: "Weekly discussions on current topics in high energy physics.",
+    text: "A regular space for discussing current problems and ideas in high energy physics.",
     href: "/journal-club",
-    image: "/home/activities/logoucn.png",
-    featured: true,
-  },
-  {
-    title: "Workshops",
-    text: "Specialized events focused on current research problems and methods.",
-    href: "/activities",
-    image: "/home/activities/logoucn.png",
-    featured: false,
+    type: "Core activity",
   },
   {
     title: "Seminars",
-    text: "Talks by researchers and collaborators from different institutions.",
+    text: "Invited talks and exchanges with collaborators and researchers from other institutions.",
     href: "/activities",
-    image: "/home/activities/logoucn.png",
-    featured: false,
+    type: "Academic life",
+  },
+  {
+    title: "Workshops",
+    text: "Focused events around methods, themes, and current research directions.",
+    href: "/activities",
+    type: "Special format",
   },
 ];
 
 export default function Activities() {
+  const locale = useLocale();
+
   return (
     <section id="activities-preview" className={styles.section}>
       <Container>
-        <header className={styles.header}>
-          <div className={styles.kicker}>Activities</div>
-          <h2 className={styles.title}>Academic Life & Events</h2>
-          <div className={styles.underline} />
-          <p className={styles.lead}>
-            Beyond research, the group maintains an active academic environment
-            through discussion spaces, specialized workshops, and invited talks.
-          </p>
-        </header>
+        <div className={styles.top}>
+          <div className={styles.left}>
+            <span className={styles.kicker}>Academic Life</span>
+            <h2 className={styles.title}>
+              The group is not only research,
+              <span>it is also an academic environment</span>
+            </h2>
+          </div>
 
-        <div className={styles.grid}>
-          {activities.map((item) => (
-            <Link
-              key={item.title}
-              href={item.href}
-              className={`${styles.card} ${
-                item.featured ? styles.featured : ""
-              }`}
-            >
-              <div
-                className={styles.bg}
-                style={{ backgroundImage: `url(${item.image})` }}
-                aria-hidden="true"
-              />
-              <div className={styles.overlay} aria-hidden="true" />
-
-              <div className={styles.content}>
-                <div className={styles.cardTop}>
-                  <span className={styles.badge}>
-                    {item.featured ? "Featured" : "Activity"}
-                  </span>
-                </div>
-
-                <div className={styles.cardBody}>
-                  <h3 className={styles.cardTitle}>{item.title}</h3>
-                  <p className={styles.cardText}>{item.text}</p>
-                </div>
-
-                <div className={styles.cardFooter}>
-                  <span className={styles.cardLink}>Learn More</span>
-                </div>
-              </div>
-            </Link>
-          ))}
+          <div className={styles.right}>
+            <p>
+              Discussion spaces, seminars, workshops, and collective academic
+              activity are part of how the group thinks, grows, and stays alive.
+            </p>
+          </div>
         </div>
 
-        <div className={styles.bottomRow}>
-          <div className={styles.meta}>
-            <span className={styles.metaLabel}>Includes</span>
-            <span className={styles.metaValue}>
-              Journal Club · Workshops · Seminars
-            </span>
-          </div>
-
-          <div className={styles.actions}>
-            <Link className={styles.btnGhost} href="/activities">
-              View Activities
+        <div className={styles.grid}>
+          {activities.map((item, idx) => (
+            <Link
+              key={item.title}
+              href={`/${locale}${item.href}`}
+              className={`${styles.card} ${idx === 0 ? styles.featured : ""}`}
+            >
+              <span className={styles.type}>{item.type}</span>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+              <div className={styles.foot}>Learn more</div>
             </Link>
-          </div>
+          ))}
         </div>
       </Container>
     </section>

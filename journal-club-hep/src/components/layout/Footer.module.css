@@ -1,118 +1,142 @@
 .footer{
-  background: #ffffff;
-  border-top: 1px solid rgba(11,42,74,0.10);
-  padding: 34px 0 22px;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(200,161,74,0.10), transparent 24%),
+    linear-gradient(135deg, #091425 0%, #10213c 50%, #132847 100%);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 42px 0 24px;
+  color: #fff;
 }
 
 .inner{
+  position: relative;
+  z-index: 2;
   max-width: 1120px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
-/* Top row */
+/* =========================
+   TOP ROW
+   ========================= */
+
 .top{
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   gap: 18px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid rgba(11,42,74,0.10);
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+}
+
+.brand{
+  max-width: 540px;
 }
 
 .brandTitle{
   font-weight: 900;
-  letter-spacing: 0.02em;
-  color: rgba(11,42,74,0.92);
-  font-size: 16px;
+  letter-spacing: 0.01em;
+  color: rgba(255,255,255,0.96);
+  font-size: 18px;
+  line-height: 1.2;
 }
 
 .brandSub{
-  margin-top: 4px;
+  margin-top: 6px;
   font-size: 12px;
-  letter-spacing: 0.10em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(11,42,74,0.62);
+  color: rgba(240,210,143,0.82);
 }
 
 .nav{
   display: inline-flex;
   gap: 18px;
+  flex-wrap: wrap;
 }
 
 .navLink{
   text-decoration: none;
   font-size: 12px;
   font-weight: 900;
-  letter-spacing: 0.10em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(11,42,74,0.70);
-  border-bottom: 2px solid transparent;
+  color: rgba(255,255,255,0.70);
+  border-bottom: 1px solid transparent;
   padding-bottom: 6px;
+  transition: color 180ms ease, border-color 180ms ease;
 }
 
 .navLink:hover{
-  color: rgba(11,42,74,0.92);
+  color: rgba(255,255,255,0.96);
   border-bottom-color: rgba(200,161,74,0.95);
 }
 
-/* Info grid */
+/* =========================
+   INFO GRID
+   ========================= */
+
 .grid{
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
-  padding-top: 18px;
+  padding-top: 20px;
 }
 
 .block{
-  border: 1px solid rgba(11,42,74,0.10);
-  background: #ffffff;
-  border-radius: 0;
-  padding: 14px 14px;
+  min-height: 100%;
+  padding: 18px 18px 20px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.12);
 }
 
 .label{
   font-size: 11px;
   font-weight: 900;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(11,42,74,0.62);
-  margin-bottom: 8px;
+  color: rgba(240,210,143,0.82);
+  margin-bottom: 10px;
 }
 
 .text{
   margin: 0;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 800;
-  color: rgba(11,42,74,0.90);
+  line-height: 1.6;
+  color: rgba(255,255,255,0.94);
 }
 
 .link{
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 800;
-  color: rgba(11,42,74,0.90);
+  line-height: 1.6;
+  color: rgba(255,255,255,0.94);
   text-decoration: none;
 }
 
 .link:hover{
-  text-decoration: underline;
-  text-decoration-color: rgba(200,161,74,0.95);
+  color: rgba(240,210,143,0.96);
 }
 
 .meta{
   margin-top: 8px;
   font-size: 13px;
-  line-height: 1.6;
-  color: rgba(11,42,74,0.70);
+  line-height: 1.7;
+  color: rgba(255,255,255,0.70);
 }
 
 /* =========================
-   SOCIAL layout (like sketch)
+   SOCIAL BLOCK
    ========================= */
+
 .socialBlock{
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 14px;
+  gap: 16px;
   align-items: center;
 }
 
@@ -124,14 +148,13 @@
   display: inline-block;
   font-size: 16px;
   font-weight: 900;
-  color: rgba(11,42,74,0.92);
+  color: rgba(255,255,255,0.96);
   text-decoration: none;
   margin-top: 2px;
 }
 
 .socialLink:hover{
-  text-decoration: underline;
-  text-decoration-color: rgba(200,161,74,0.95);
+  color: rgba(240,210,143,0.96);
 }
 
 .socialRight{
@@ -143,125 +166,144 @@
   justify-content: end;
 }
 
-/* rectangular small boxes for icon + QR (optional, looks academic) */
-/* Force Next/Image wrapper to not grow */
+.iconCell,
+.qrCell{
+  display: grid;
+  place-items: center;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  transition: transform 160ms ease;
+}
+
+.iconCell:hover,
+.qrCell:hover{
+  transform: translateY(-2px);
+}
+
+.iconCell{
+  width: 44px;
+  height: 44px;
+  overflow: hidden;
+}
+
+.qrCell{
+  width: 72px;
+  height: 72px;
+  overflow: hidden;
+}
+
+/* Force Next/Image wrapper to fit */
 .qrCell :global(span),
 .iconCell :global(span){
   width: 100% !important;
   height: 100% !important;
   display: block !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  background: transparent !important;
 }
 
-/* Force the actual <img> to fit the cell */
 .qrCell :global(img),
 .iconCell :global(img){
   width: 100% !important;
   height: 100% !important;
   object-fit: contain !important;
-}
-
-.iconCell{
-  width: 46px;
-  height: 46px;
-  overflow: hidden;          /* also safe */
-  display: grid;
-  place-items: center;
-}
-
-.qrCell{
-  width: 70px;
-  height: 70px;
-  overflow: hidden;          /* IMPORTANT: prevents any “escape” */
-  display: grid;
-  place-items: center;
-}
-.iconImg,
-.qrImg{
-  display: block;
-   border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
-  background: transparent;
-}
-
-/* wrappers around the instagram icon + qr */
-.iconWrap,
-.qrWrap,
-.mediaBox {
   border: none !important;
   box-shadow: none !important;
   outline: none !important;
+  background: transparent !important;
+}
+
+.iconImg,
+.qrImg{
+  display: block;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
   background: transparent;
 }
 
-/* Bottom row */
+/* =========================
+   BOTTOM ROW
+   ========================= */
+
 .bottom{
-  margin-top: 18px;
-  padding-top: 14px;
-  border-top: 1px solid rgba(11,42,74,0.10);
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.10);
   display: flex;
   justify-content: space-between;
   gap: 16px;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .copy{
   font-size: 13px;
-  color: rgba(11,42,74,0.70);
+  color: rgba(255,255,255,0.72);
   font-weight: 800;
 }
 
 .disclaimer{
   font-size: 13px;
-  color: rgba(11,42,74,0.62);
+  color: rgba(255,255,255,0.60);
+  line-height: 1.6;
 }
 
 /* =========================
-   Subtle credits
+   CREDITS
    ========================= */
+
 .credits{
   display: inline-flex;
   align-items: center;
   gap: 8px;
   font-size: 12px;
-  color: rgba(11,42,74,0.55);
+  color: rgba(255,255,255,0.52);
   font-weight: 700;
   white-space: nowrap;
 }
 
 .creditsLabel{
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(11,42,74,0.50);
+  color: rgba(255,255,255,0.45);
 }
 
 .creditsSep{
-  color: rgba(11,42,74,0.35);
+  color: rgba(255,255,255,0.28);
 }
 
 .creditsLink{
   text-decoration: none;
-  color: rgba(11,42,74,0.62);
+  color: rgba(255,255,255,0.66);
   border-bottom: 1px solid transparent;
   padding-bottom: 2px;
+  transition: color 180ms ease, border-color 180ms ease;
 }
 
 .creditsLink:hover{
-  color: rgba(11,42,74,0.85);
-  border-bottom-color: rgba(200,161,74,0.85);
+  color: rgba(240,210,143,0.92);
+  border-bottom-color: rgba(200,161,74,0.80);
 }
 
+/* =========================
+   RESPONSIVE
+   ========================= */
 
-
-/* responsive */
 @media (max-width: 900px){
   .grid{
     grid-template-columns: 1fr;
   }
+
   .socialBlock{
     grid-template-columns: 1fr;
     align-items: start;
   }
+
   .socialRight{
     justify-content: start;
   }
@@ -272,15 +314,49 @@
     flex-direction: column;
     align-items: flex-start;
   }
+
   .nav{
     flex-wrap: wrap;
     gap: 14px;
   }
-}
 
-/* bottom row: keep items aligned nicely */
-@media (max-width: 820px){
+  .bottom{
+    align-items: flex-start;
+  }
+
   .credits{
     white-space: normal;
+  }
+}
+
+@media (max-width: 520px){
+  .footer{
+    padding: 32px 0 22px;
+  }
+
+  .inner{
+    padding: 0 16px;
+  }
+
+  .block{
+    padding: 16px;
+  }
+
+  .brandTitle{
+    font-size: 16px;
+  }
+
+  .socialRight{
+    gap: 10px;
+  }
+
+  .iconCell{
+    width: 44px;
+    height: 44px;
+  }
+
+  .qrCell{
+    width: 66px;
+    height: 66px;
   }
 }

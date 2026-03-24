@@ -1,6 +1,6 @@
 .section{
-  padding: 92px 0 84px;
-  background: #ffffff;
+  padding: 108px 0 96px;
+  background: #fff;
   border-top: 1px solid rgba(11,42,74,0.08);
   border-bottom: 1px solid rgba(11,42,74,0.08);
 }
@@ -8,7 +8,7 @@
 .header{
   text-align: center;
   max-width: 980px;
-  margin: 0 auto 22px;
+  margin: 0 auto 24px;
 }
 
 .kicker{
@@ -16,14 +16,14 @@
   font-weight: 900;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(11,42,74,0.70);
+  color: #8a6d28;
 }
 
 .title{
   margin: 10px 0 10px;
-  font-size: 40px;
-  line-height: 1.12;
-  letter-spacing: -0.02em;
+  font-size: clamp(2.2rem, 4.5vw, 4rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
   color: #0b2a4a;
 }
 
@@ -34,12 +34,10 @@
   background: rgba(200,161,74,0.95);
 }
 
-/* Calendar frame */
 .frameWrap{
-  border: 1px solid rgba(11,42,74,0.14);
+  border: 1px solid rgba(11,42,74,0.12);
   background: #fff;
-  border-radius: 0;
-  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+  box-shadow: 0 12px 28px rgba(11,42,74,0.06);
   overflow: hidden;
 }
 
@@ -51,7 +49,6 @@
   background: #fff;
 }
 
-/* Below info */
 .infoGrid{
   margin-top: 34px;
   display: grid;
@@ -61,20 +58,19 @@
 }
 
 .infoBox{
-  border: 1px solid rgba(11,42,74,0.12);
-  border-radius: 0;
-  background: #fff;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.04);
-  padding: 18px 18px;
+  border: 1px solid rgba(11,42,74,0.10);
+  background: #faf8f2;
+  box-shadow: 0 10px 24px rgba(11,42,74,0.05);
+  padding: 20px 18px;
 }
 
 .infoTitle{
   margin: 0 0 14px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 900;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(11,42,74,0.85);
+  color: rgba(11,42,74,0.84);
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(11,42,74,0.10);
 }
@@ -88,11 +84,11 @@
 }
 
 .k{
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 900;
-  letter-spacing: 0.10em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(11,42,74,0.62);
+  color: rgba(11,42,74,0.58);
 }
 
 .v{
@@ -101,25 +97,20 @@
   color: rgba(11,42,74,0.90);
 }
 
-/* Description area */
 .descBox{
-  border: 1px solid rgba(11,42,74,0.10);
-  background: rgba(11,42,74,0.02);
-  border-radius: 0;
-  padding: 14px 14px;
+  border: 1px solid rgba(11,42,74,0.08);
+  background: rgba(255,255,255,0.78);
+  padding: 14px;
   font-size: 14px;
   line-height: 1.8;
-  color: rgba(11,42,74,0.78);
+  color: rgba(11,42,74,0.76);
   white-space: pre-wrap;
   min-height: 140px;
 }
 
-/* =========================
-   NEW: Old sessions carousel
-   ========================= */
 .oldWrap{
-  margin-top: 34px;
-  padding-top: 18px;
+  margin-top: 36px;
+  padding-top: 20px;
   border-top: 1px solid rgba(11,42,74,0.10);
 }
 
@@ -131,53 +122,47 @@
 
 .oldTitle{
   margin: 0;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 900;
-  letter-spacing: 0.10em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: rgba(11,42,74,0.88);
 }
 
 .oldSub{
   margin: 8px auto 0;
-  max-width: 80ch;
+  max-width: 76ch;
   font-size: 14px;
-  line-height: 1.7;
-  color: rgba(11,42,74,0.72);
+  line-height: 1.75;
+  color: rgba(11,42,74,0.70);
 }
 
-/* carousel shell */
 .carousel{
   position: relative;
   margin-top: 14px;
 }
 
-/* arrows */
 .arrowLeft,
 .arrowRight{
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 44px;
-  height: 44px;
-  border-radius: 0;
-
-  border: 1px solid rgba(11,42,74,0.18);
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(11,42,74,0.16);
   background: #ffffff;
   color: rgba(11,42,74,0.85);
-
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 900;
   line-height: 1;
-
   cursor: pointer;
   box-shadow: 0 10px 18px rgba(0,0,0,0.06);
   transition: transform 140ms ease, background 180ms ease;
   z-index: 2;
 }
 
-.arrowLeft{ left: -10px; }
-.arrowRight{ right: -10px; }
+.arrowLeft{ left: -8px; }
+.arrowRight{ right: -8px; }
 
 .arrowLeft:hover,
 .arrowRight:hover{
@@ -185,7 +170,6 @@
   transform: translateY(-50%) scale(1.02);
 }
 
-/* horizontal scroller */
 .scroller{
   display: flex;
   gap: 18px;
@@ -199,19 +183,16 @@
   display: none;
 }
 
-/* slides: 3 visible on desktop */
 .slide{
   flex: 0 0 calc((100% - 36px) / 3);
   scroll-snap-align: start;
-  border: 1px solid rgba(11,42,74,0.12);
+  border: 1px solid rgba(11,42,74,0.10);
   background: #fff;
-  border-radius: 0;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.04);
+  box-shadow: 0 8px 18px rgba(11,42,74,0.04);
   overflow: hidden;
 }
 
 .imgBox{
-  object-fit: contain;
   position: relative;
   width: 100%;
   aspect-ratio: 4 / 4;
@@ -222,23 +203,41 @@
   object-fit: cover;
 }
 
-/* responsive */
 @media (max-width: 900px){
-  .infoGrid{ grid-template-columns: 1fr; }
-  .slide{ flex: 0 0 72%; }
+  .infoGrid{
+    grid-template-columns: 1fr;
+  }
+
+  .slide{
+    flex: 0 0 72%;
+  }
+
   .arrowLeft{ left: 0; }
   .arrowRight{ right: 0; }
 }
 
 @media (max-width: 520px){
-  .section{ padding: 64px 0; }
-  .title{ font-size: 28px; }
-  .iframe{ height: 640px; }
-  .kv{ grid-template-columns: 1fr; }
-  .slide{ flex: 0 0 84%; }
+  .section{
+    padding: 72px 0;
+  }
+
+  .title{
+    font-size: 28px;
+  }
+
+  .iframe{
+    height: 640px;
+  }
+
+  .kv{
+    grid-template-columns: 1fr;
+  }
+
+  .slide{
+    flex: 0 0 84%;
+  }
 }
 
-/* optional: constrain width like the sketch */
 @media (min-width: 1100px){
   .frameWrap{
     max-width: 1040px;
