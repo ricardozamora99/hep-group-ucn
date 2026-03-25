@@ -18,14 +18,12 @@ export default function Navbar() {
   const items = [
     { label:  t("home"), href: `${home}/#top` },
     { label: t("about"), href: `${home}/about-group` },
-
-    // New thinks.
-    { label: t("journalClub"), href: `${home}/journal-club` },
     { label: t("research"), href: `${home}/research` },
     { label: t("publications"), href: `${home}/publications` },
     { label: t("activities"), href: `${home}/activities` },
-    { label: t("contact"), href: `${home}/contact` },
+    { label: t("journalClub"), href: `${home}/journal-club` },
     { label: t("people"), href: `${home}/people` },
+    { label: t("contact"), href: `${home}/contact` },
   ];
 
   return (

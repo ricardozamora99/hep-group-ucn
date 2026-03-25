@@ -11,15 +11,17 @@
     linear-gradient(135deg, #07111f 0%, #0d1d34 42%, #132847 100%);
   color: #fff;
 }
+
 .bgBase {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to bottom, rgba(7, 17, 31, 0.2), rgba(7, 17, 31, 0.45)),
-    url("/hero/HOME_PP.jpg");
+    linear-gradient(to bottom, rgba(7, 17, 31, 0.24), rgba(7, 17, 31, 0.54)),
+    url("/hero/PEOPLE.jpg");
+
+  background-position: 90% 10%;;
   background-size: cover;
-  background-position: center;
-  opacity: 0.16;
+  opacity: 0.18;
   transform: scale(1.05);
 }
 
@@ -41,7 +43,7 @@
     linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
   background-size: 34px 34px;
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent 90%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.484), transparent 90%);
 }
 
 .inner {
@@ -83,7 +85,7 @@
 
 .title {
   margin: 0;
-  font-size: clamp(4rem, 5vw, 4.2rem);
+  font-size: clamp(3.2rem, 5vw, 4.2rem);
   line-height: 0.96;
   letter-spacing: -0.04em;
   font-weight: 800;
@@ -115,10 +117,9 @@
 .panel {
   position: relative;
   z-index: 2;
-  margin-left: 0;
   left: 350px;
   top: -140px;
-  width: min(70%, 430px);
+  width: min(72%, 430px);
   background: rgba(255,255,255,0.08);
   border: 1px solid rgba(255,255,255,0.12);
   backdrop-filter: blur(16px);
@@ -136,7 +137,7 @@
 }
 
 .panelBody {
-  padding: 10px 22px 26px;
+  padding: 20px 22px 26px;
 }
 
 .panelBody p {
@@ -230,6 +231,8 @@
   }
 
   .panel {
+    left: 0;
+    top: 0;
     width: 100%;
     max-width: 520px;
   }

@@ -1,0 +1,48 @@
+.section {
+  padding: 108px 0 96px;
+  background: #f7f3eb;
+  border-top: 1px solid rgba(11, 42, 74, 0.08);
+  border-bottom: 1px solid rgba(11, 42, 74, 0.08);
+}
+
+.head {
+  max-width: 860px;
+  margin-bottom: 32px;
+}
+
+.kicker {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #8a6d28;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(2.2rem, 4.5vw, 4rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  color: #0b2a4a;
+}
+
+.title span {
+  display: block;
+  color: #b58c34;
+}
+
+.lead {
+  margin: 20px 0 0;
+  max-width: 62ch;
+  font-size: 15px;
+  line-height: 1.9;
+  color: rgba(11, 42, 74, 0.74);
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 72px 0;
+  }
+}

@@ -1,8 +1,17 @@
+import PeopleHero from "@/components/people/Hero/PeopleHero";
+import CurrentMembers from "@/components/people/CurrentMembers/CurrentMembers";
+import AlumniSection from "@/components/people/Alumni/AlumniSection";
+import CollaboratorsSection from "@/components/people/Collaborators/CollaboratorsSection";
+import PeopleCTA from "@/components/people/PeopleCTA/PeopleCTA";
+
 export default function PeoplePage() {
   return (
-    <main style={{ padding: "4rem", textAlign: "center" }}>
-      <h1>UCN Particle Physics & Cosmology Group - PEOPLE</h1>
-      <p>Website under construction</p>
-    </main>
+    <>
+      <PeopleHero />
+      <CurrentMembers />
+      <AlumniSection />
+      <CollaboratorsSection />
+      <PeopleCTA />
+    </>
   );
 }

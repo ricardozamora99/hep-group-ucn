@@ -1,0 +1,78 @@
+.carousel {
+  position: relative;
+}
+
+.arrowLeft,
+.arrowRight {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(11,42,74,0.16);
+  background: #ffffff;
+  color: rgba(11,42,74,0.85);
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 10px 18px rgba(0,0,0,0.06);
+  transition: transform 140ms ease, background 180ms ease;
+  z-index: 3;
+}
+
+.arrowLeft {
+  left: -8px;
+}
+
+.arrowRight {
+  right: -8px;
+}
+
+.arrowLeft:hover,
+.arrowRight:hover {
+  background: rgba(11,42,74,0.03);
+  transform: translateY(-50%) scale(1.02);
+}
+
+.scroller {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  padding: 10px 6px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+}
+
+.frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border: 1px solid rgba(11,42,74,0.10);
+  background: #faf8f2;
+  box-shadow: 0 8px 18px rgba(11,42,74,0.04);
+}
+
+.image {
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .arrowLeft {
+    left: 0;
+  }
+
+  .arrowRight {
+    right: 0;
+  }
+}

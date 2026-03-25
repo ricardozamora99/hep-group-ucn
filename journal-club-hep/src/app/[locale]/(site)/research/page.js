@@ -1,8 +1,19 @@
+import Research from "@/components/research/ResearchHero/ResearchHero";
+import ResearchAreas from "@/components/research/ResearchAreas/ResearchAreas";
+import KeyQuestions from "@/components/research/KeyQuestions/KeyQuestions";
+import MethodsApproach from "@/components/research/MethodsApproach/MethodsApproach";
+import ResearchLinks from "@/components/research/ResearchLinks/ResearchLinks";
+import ResearchCTA from "@/components/research/ResearchCTA/ResearchCTA";
+
 export default function ResearchPage() {
   return (
-    <main style={{ padding: "4rem", textAlign: "center" }}>
-      <h1>UCN Particle Physics & Cosmology Group - Research</h1>
-      <p>Website under construction</p>
+    <main>
+      <Research />
+      <ResearchAreas />
+      <KeyQuestions />
+      <MethodsApproach />
+      <ResearchLinks />
+      <ResearchCTA />
     </main>
   );
 }

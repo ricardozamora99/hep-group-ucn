@@ -13,8 +13,8 @@ const activities = [
     type: "Core activity",
   },
   {
-    title: "Seminars",
-    text: "Invited talks and exchanges with collaborators and researchers from other institutions.",
+    title: "Talks",
+    text: "Invited speakers and exchanges with collaborators and researchers from other institutions.",
     href: "/activities",
     type: "Academic life",
   },

@@ -1,0 +1,159 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.carousel {
+  position: relative;
+}
+
+.frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 8.4;
+  min-height: 520px;
+  overflow: hidden;
+  border: 1px solid rgba(11, 42, 74, 0.1);
+  background: #f8f6f0;
+  box-shadow: 0 10px 24px rgba(11, 42, 74, 0.05);
+}
+
+.image {
+  object-fit: cover;
+}
+
+.arrowLeft,
+.arrowRight {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 54px;
+  height: 54px;
+  border: 1px solid rgba(11, 42, 74, 0.16);
+  background: rgba(255, 255, 255, 0.96);
+  color: rgba(11, 42, 74, 0.88);
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 140ms ease, background 180ms ease;
+  z-index: 3;
+}
+
+.arrowLeft {
+  left: 18px;
+}
+
+.arrowRight {
+  right: 18px;
+}
+
+.arrowLeft:hover,
+.arrowRight:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-50%) scale(1.03);
+}
+
+.captionBox {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px 22px 22px;
+  border: 1px solid rgba(11, 42, 74, 0.1);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 10px 24px rgba(11, 42, 74, 0.05);
+}
+
+.captionTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.captionLabel {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #8a6d28;
+}
+
+.counter {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(11, 42, 74, 0.56);
+}
+
+.caption {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.82;
+  color: rgba(11, 42, 74, 0.76);
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.dot {
+  width: 11px;
+  height: 11px;
+  border: none;
+  padding: 0;
+  background: rgba(11, 42, 74, 0.18);
+  cursor: pointer;
+  transition: transform 140ms ease, background 180ms ease;
+}
+
+.dot:hover {
+  transform: scale(1.08);
+}
+
+.active {
+  background: #b58c34;
+}
+
+@media (max-width: 980px) {
+  .frame {
+    min-height: 380px;
+  }
+}
+
+@media (max-width: 640px) {
+  .frame {
+    min-height: 240px;
+    aspect-ratio: 16 / 10;
+  }
+
+  .arrowLeft,
+  .arrowRight {
+    width: 46px;
+    height: 46px;
+    font-size: 26px;
+  }
+
+  .arrowLeft {
+    left: 10px;
+  }
+
+  .arrowRight {
+    right: 10px;
+  }
+
+  .captionBox {
+    padding: 16px 16px 18px;
+  }
+
+  .captionTop {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

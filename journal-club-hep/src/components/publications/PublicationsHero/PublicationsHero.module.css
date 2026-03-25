@@ -11,6 +11,7 @@
     linear-gradient(135deg, #07111f 0%, #0d1d34 42%, #132847 100%);
   color: #fff;
 }
+
 .bgBase {
   position: absolute;
   inset: 0;
@@ -83,7 +84,7 @@
 
 .title {
   margin: 0;
-  font-size: clamp(4rem, 5vw, 4.2rem);
+  font-size: clamp(3.2rem, 5vw, 4.2rem);
   line-height: 0.96;
   letter-spacing: -0.04em;
   font-weight: 800;
@@ -118,7 +119,7 @@
   margin-left: 0;
   left: 350px;
   top: -140px;
-  width: min(70%, 430px);
+  width: min(72%, 430px);
   background: rgba(255,255,255,0.08);
   border: 1px solid rgba(255,255,255,0.12);
   backdrop-filter: blur(16px);
@@ -230,6 +231,8 @@
   }
 
   .panel {
+    left: 0;
+    top: 0;
     width: 100%;
     max-width: 520px;
   }
