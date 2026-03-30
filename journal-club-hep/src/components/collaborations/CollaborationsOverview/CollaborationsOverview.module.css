@@ -1,0 +1,162 @@
+.section {
+  padding: 108px 0 96px;
+  background: #ffffff;
+  border-top: 1px solid rgba(11,42,74,0.08);
+  border-bottom: 1px solid rgba(11,42,74,0.08);
+}
+
+.top {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 30px;
+  align-items: end;
+  margin-bottom: 38px;
+}
+
+.topKicker,
+.kicker,
+.metaLabel {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #8a6d28;
+}
+
+.topTitle {
+  margin: 0;
+  font-size: clamp(2.2rem, 4.5vw, 4rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  color: #0b2a4a;
+}
+
+.topTitle span {
+  display: block;
+  color: #b58c34;
+}
+
+.topIntro {
+  margin: 0;
+  max-width: 48ch;
+  font-size: 15px;
+  line-height: 1.9;
+  color: rgba(11,42,74,0.72);
+}
+
+.stack {
+  display: grid;
+  gap: 30px;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  align-items: stretch;
+  border: 1px solid rgba(11,42,74,0.10);
+  background: rgba(255,255,255,0.88);
+  box-shadow: 0 10px 24px rgba(11,42,74,0.05);
+  overflow: hidden;
+}
+
+.cardReverse {
+  grid-template-columns: 1.05fr 0.95fr;
+}
+
+.cardReverse .imageWrap {
+  order: 2;
+}
+
+.cardReverse .content {
+  order: 1;
+}
+
+.imageWrap {
+  position: relative;
+  min-height: 320px;
+  background: #f5f1e7;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.content {
+  padding: 28px 28px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.name {
+  margin: 0 0 10px;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  color: #0b2a4a;
+}
+
+.subtitle {
+  margin: 0 0 14px;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: #8a6d28;
+  font-weight: 700;
+}
+
+.description {
+  margin: 0 0 18px;
+  max-width: 62ch;
+  font-size: 15px;
+  line-height: 1.85;
+  color: rgba(11,42,74,0.74);
+}
+
+.meta {
+  padding-top: 14px;
+  border-top: 1px solid rgba(11,42,74,0.08);
+}
+
+.metaLabel {
+  margin-bottom: 8px;
+}
+
+.metaText {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.75;
+  color: #0b2a4a;
+}
+
+@media (max-width: 980px) {
+  .top,
+  .card,
+  .cardReverse {
+    grid-template-columns: 1fr;
+  }
+
+  .cardReverse .imageWrap,
+  .cardReverse .content {
+    order: initial;
+  }
+
+  .imageWrap {
+    min-height: 260px;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 72px 0;
+  }
+
+  .content {
+    padding: 22px 18px 24px;
+  }
+
+  .imageWrap {
+    min-height: 220px;
+  }
+}

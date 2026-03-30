@@ -5,7 +5,6 @@ import Activities from "@/components/home/Activities/Activities";
 import PeoplePreview from "@/components/home/PeoplePreview/PeoplePreview";
 import Publications from "@/components/home/Publications/Publications";
 import News from "@/components/home/News/News";
-import CTA from "@/components/home/CTA/CTA";
 
 export default function HomePage() {
   return (
@@ -17,7 +16,6 @@ export default function HomePage() {
       <PeoplePreview />
       <Publications />
       <News />
-      <CTA />
     </>
   );
 }

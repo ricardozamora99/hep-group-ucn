@@ -19,6 +19,7 @@ export default function Navbar() {
     { label:  t("home"), href: `${home}/#top` },
     { label: t("about"), href: `${home}/about-group` },
     { label: t("research"), href: `${home}/research` },
+    { label: "collaborations", href: `${home}/collaborations` },
     { label: t("publications"), href: `${home}/publications` },
     { label: t("activities"), href: `${home}/activities` },
     { label: t("journalClub"), href: `${home}/journal-club` },

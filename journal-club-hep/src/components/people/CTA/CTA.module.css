@@ -1,21 +1,34 @@
-.section {
+.section{
+  position: relative;
   padding: 108px 0 112px;
-  background: #ffffff;
-  border-top: 1px solid rgba(11,42,74,0.08);
+  overflow: hidden;
+  background: #091425;
+  border-top: 1px solid rgba(255,255,255,0.08);
 }
 
-.box {
+.bg{
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(200,161,74,0.18), transparent 28%),
+    radial-gradient(circle at 80% 18%, rgba(255,255,255,0.08), transparent 20%),
+    linear-gradient(135deg, #091425 0%, #10213c 48%, #132847 100%);
+}
+
+.box{
+  position: relative;
+  z-index: 2;
   max-width: 920px;
   margin: 0 auto;
   padding: 42px 30px 44px;
   text-align: center;
-  background: linear-gradient(135deg, #091425 0%, #10213c 48%, #132847 100%);
-  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
   box-shadow: 0 20px 48px rgba(0,0,0,0.18);
-  color: #fff;
 }
 
-.kicker {
+.kicker{
   display: inline-block;
   margin-bottom: 14px;
   font-size: 12px;
@@ -25,20 +38,21 @@
   color: #d8b86f;
 }
 
-.title {
+.title{
   margin: 0 auto;
-  max-width: 14ch;
+  max-width: 12ch;
   font-size: clamp(2.4rem, 4.9vw, 4.2rem);
   line-height: 0.96;
   letter-spacing: -0.04em;
+  color: #fff;
 }
 
-.title span {
+.title span{
   display: block;
   color: #f0d28f;
 }
 
-.text {
+.text{
   margin: 22px auto 0;
   max-width: 62ch;
   font-size: 15px;
@@ -46,7 +60,7 @@
   color: rgba(255,255,255,0.82);
 }
 
-.actions {
+.actions{
   margin-top: 28px;
   display: flex;
   justify-content: center;
@@ -55,7 +69,7 @@
 }
 
 .btnPrimary,
-.btnGhost {
+.btnGhost{
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -66,42 +80,42 @@
   transition: transform 150ms ease, background 180ms ease, color 180ms ease;
 }
 
-.btnPrimary {
+.btnPrimary{
   background: #d6b15f;
   color: #0b2a4a;
 }
 
-.btnGhost {
+.btnGhost{
   color: #fff;
   border: 1px solid rgba(255,255,255,0.16);
   background: rgba(255,255,255,0.04);
 }
 
 .btnPrimary:hover,
-.btnGhost:hover {
+.btnGhost:hover{
   transform: translateY(-2px);
 }
 
-.btnGhost:hover {
+.btnGhost:hover{
   color: #f0d28f;
   border-color: #d6b15f;
 }
 
-@media (max-width: 520px) {
-  .section {
+@media (max-width: 520px){
+  .section{
     padding: 72px 0 80px;
   }
 
-  .box {
+  .box{
     padding: 28px 18px 30px;
   }
 
-  .actions {
+  .actions{
     flex-direction: column;
   }
 
   .btnPrimary,
-  .btnGhost {
+  .btnGhost{
     width: 100%;
   }
 }
