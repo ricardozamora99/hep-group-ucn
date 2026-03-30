@@ -1,8 +1,8 @@
 .section {
   padding: 108px 0 96px;
   background: #f7f3eb;
-  border-top: 1px solid rgba(11,42,74,0.08);
-  border-bottom: 1px solid rgba(11,42,74,0.08);
+  border-top: 1px solid rgba(11, 42, 74, 0.08);
+  border-bottom: 1px solid rgba(11, 42, 74, 0.08);
 }
 
 .top {
@@ -10,10 +10,12 @@
   grid-template-columns: 1.15fr 0.85fr;
   gap: 28px;
   align-items: end;
-  margin-bottom: 28px;
+  margin-bottom: 42px;
 }
 
-.kicker {
+.kicker,
+.groupKicker,
+.nowLabel {
   display: inline-block;
   margin-bottom: 12px;
   font-size: 12px;
@@ -41,17 +43,202 @@
   max-width: 48ch;
   font-size: 15px;
   line-height: 1.9;
-  color: rgba(11,42,74,0.72);
+  color: rgba(11, 42, 74, 0.72);
+}
+
+.group {
+  margin-top: 40px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(11, 42, 74, 0.1);
+}
+
+.group:first-of-type {
+  margin-top: 0;
+}
+
+.groupHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.groupTitle {
+  margin: 0;
+  font-size: clamp(1.45rem, 2.4vw, 2.05rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: #0b2a4a;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.arrow {
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(11, 42, 74, 0.14);
+  background: #ffffff;
+  color: #0b2a4a;
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    background 0.22s ease;
+}
+
+.arrow:hover {
+  transform: translateY(-1px);
+  border-color: rgba(181, 140, 52, 0.5);
+  background: #fbf8f1;
+}
+
+.viewport {
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  transition: transform 0.45s ease;
+  will-change: transform;
+}
+
+.slide {
+  min-width: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.card {
+  border: 1px solid rgba(11, 42, 74, 0.1);
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 10px 24px rgba(11, 42, 74, 0.05);
+  overflow: hidden;
+}
+
+.imageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3.35;
+  min-height: 220px;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.cardBody {
+  padding: 18px 18px 20px;
+}
+
+.years {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #8a6d28;
+}
+
+.name {
+  margin: 0 0 10px;
+  font-size: 1.18rem;
+  line-height: 1.08;
+  color: #0b2a4a;
+}
+
+.description {
+  margin: 0 0 14px;
+  font-size: 14px;
+  line-height: 1.8;
+  color: rgba(11, 42, 74, 0.72);
+}
+
+.nowBlock {
+  padding-top: 12px;
+  border-top: 1px solid rgba(11, 42, 74, 0.08);
+}
+
+.nowLabel {
+  margin-bottom: 8px;
+}
+
+.nowText {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.75;
+  color: #0b2a4a;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border: none;
+  padding: 0;
+  border-radius: 999px;
+  background: rgba(11, 42, 74, 0.18);
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.dot:hover {
+  transform: scale(1.08);
+}
+
+.dotActive {
+  background: #b58c34;
+}
+
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 980px) {
   .top {
     grid-template-columns: 1fr;
   }
+
+  .groupHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 @media (max-width: 640px) {
   .section {
     padding: 72px 0;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cardBody {
+    padding: 16px 16px 18px;
+  }
+
+  .imageWrap {
+    min-height: 240px;
   }
 }

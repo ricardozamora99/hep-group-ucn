@@ -117,7 +117,7 @@
 .panel {
   position: relative;
   z-index: 2;
-  left: 350px;
+  left: 250px;
   top: -140px;
   width: min(72%, 430px);
   background: rgba(255,255,255,0.08);
@@ -174,9 +174,9 @@
 
 .floatingCard {
   position: absolute;
-  left: 430px;
-  bottom: -50px;
-  width: 250px;
+  left: 310px;
+  bottom: -10px;
+  width: 300px;
   padding: 18px 18px 20px;
   background: #d6b15f;
   color: #0d1d34;

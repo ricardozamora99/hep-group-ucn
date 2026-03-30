@@ -117,7 +117,7 @@
   position: relative;
   z-index: 2;
   margin-left: 0;
-  left: 350px;
+  left: 200px;
   top: -140px;
   width: min(72%, 430px);
   background: rgba(255,255,255,0.08);
@@ -174,8 +174,8 @@
 
 .floatingCard {
   position: absolute;
-  left: 430px;
-  bottom: -50px;
+  left: 284px;
+  bottom: -10px;
   width: 250px;
   padding: 18px 18px 20px;
   background: #d6b15f;
