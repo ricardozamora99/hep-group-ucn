@@ -11,13 +11,13 @@ export const phdStudents = [
     name: "Ricardo Zamora",
     role: "PhD Student",
     focus: "Neutrino physics, leptogenesis, and beyond-the-Standard-Model phenomenology.",
-    image: "/brand/logoucn.png",
+    image: "/people/current/ricardo.png",
   },
   {
-    name: "PhD Student Name",
+    name: "Kimy Agudelo",
     role: "PhD Student",
-    focus: "Short description of current research focus.",
-    image: "/brand/logoucn.png",
+    focus: "---.",
+    image: "/people/current/kimy.png",
   },
 ];
 
@@ -47,6 +47,15 @@ export const bachelorsStudents = [
     name: "Bachelor's Student Name 2",
     role: "Bachelor’s Student",
     focus: "Undergraduate research interests or project involvement.",
+    image: "/brand/logoucn.png",
+  },
+];
+
+export const postdocs = [
+  {
+    name: "Postdoc Name",
+    role: "Postdoctoral Researcher",
+    focus: "Short research description here.",
     image: "/brand/logoucn.png",
   },
 ];

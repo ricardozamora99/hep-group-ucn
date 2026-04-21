@@ -5,6 +5,7 @@ import styles from "./CurrentMembers.module.css";
 import Container from "@/components/layout/Container";
 import {
   head,
+  postdocs,
   phdStudents,
   mastersStudents,
   bachelorsStudents,
@@ -33,6 +34,8 @@ function MemberCard({ member }) {
 }
 
 function MemberGroup({ title, members }) {
+  if (!members || members.length === 0) return null;
+
   return (
     <div className={styles.group}>
       <div className={styles.groupHeader}>
@@ -64,7 +67,8 @@ export default function CurrentMembers() {
 
           <p className={styles.intro}>
             A snapshot of the current structure of the group, from its head to
-            students across different stages of academic formation.
+            researchers and students across different stages of academic
+            formation.
           </p>
         </div>
 
@@ -86,6 +90,7 @@ export default function CurrentMembers() {
           </div>
         </article>
 
+        <MemberGroup title="Postdoctoral Researchers" members={postdocs} />
         <MemberGroup title="PhD Students" members={phdStudents} />
         <MemberGroup title="Master’s Students" members={mastersStudents} />
         <MemberGroup title="Bachelor’s Students" members={bachelorsStudents} />
