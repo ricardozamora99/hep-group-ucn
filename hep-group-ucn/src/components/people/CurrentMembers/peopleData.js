@@ -3,14 +3,14 @@ export const head = {
   role: "Head",
   focus:
     "Particle physics, cosmology, and theoretical phenomenology across the group’s main research lines.",
-  image: "/brand/logoucn.png",
+  image: "/people/current/cesar.png",
 };
 
 export const phdStudents = [
   {
     name: "Ricardo Zamora",
     role: "PhD Student",
-    focus: "Neutrino physics, leptogenesis, and beyond-the-Standard-Model phenomenology.",
+    focus: "Neutrino physics, leptogenesis, and BSM phenomenology.",
     image: "/people/current/ricardo.png",
   },
   {
