@@ -69,7 +69,7 @@ export default function AboutPreview() {
                 </div>
 
                 <div className={styles.infoCardAccent}>
-                  <span>Support</span>
+                  <span>Grants</span>
                   <strong>ANID · FONDECYT · UCN</strong>
                 </div>
               </div>
