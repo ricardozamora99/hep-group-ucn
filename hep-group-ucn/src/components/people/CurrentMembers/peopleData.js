@@ -8,34 +8,40 @@ export const head = {
 
 export const phdStudents = [
   {
-    name: "Ricardo Zamora",
+    name: "Ricardo Zamora -  🇨🇴",
     role: "PhD Student",
     focus: "Neutrino physics, leptogenesis, and BSM phenomenology.",
     image: "/people/current/ricardo.png",
   },
   {
-    name: "Kimy Agudelo",
+    name: "Kimy Agudelo - 🇨🇴",
     role: "PhD Student",
     focus: "Short description of research or thesis topic.",
     image: "/people/current/kimy.png",
   },
   {
-    name: "Tatiana Araya",
+    name: "Tatiana Araya - 🇨🇱",
     role: "PhD Student",
     focus: "Short description of research or thesis topic.",
     image: "/people/current/tatiana.png",
   },
   {
-    name: "Andres Layana",
+    name: "Andres Layana - 🇨🇱",
     role: "PhD Student",
     focus: "Short description of research or thesis topic.",
     image: "/people/current/andres.png",
+  },
+  {
+    name: "Sana Akram - 🇵🇰",
+    role: "PhD Student",
+    focus: "Short description of research or thesis topic.",
+    image: "/brand/logoucn.png",
   },
 ];
 
 export const mastersStudents = [
   {
-    name: "Rodrigo Salinas",
+    name: "Rodrigo Salinas - 🇨🇱",
     role: "Master’s Student",
     focus: "Short description of research or thesis topic.",
     image: "/brand/logoucn.png",
@@ -44,19 +50,19 @@ export const mastersStudents = [
 
 export const bachelorsStudents = [
   {
-    name: "Kathy",
+    name: "Kathy - 🇨🇱",
     role: "Bachelor’s Student",
     focus: "Undergraduate research interests or project involvement.",
     image: "/people/current/kathy.png",
   },
   {
-    name: "Benjamin",
+    name: "Benjamin -  🇨🇱",
     role: "Bachelor’s Student",
     focus: "Undergraduate research interests or project involvement.",
     image: "/people/current/benjamin.png",
   },
   {
-    name: "Ethan",
+    name: "Ethan -  🇨🇱",
     role: "Bachelor’s Student",
     focus: "Undergraduate research interests or project involvement.",
     image: "/people/current/ethan.png",
@@ -65,7 +71,7 @@ export const bachelorsStudents = [
 
 export const postdocs = [
   {
-    name: "Supriya Pan",
+    name: "Supriya Pan -  🇮🇳",
     role: "Postdoctoral Researcher",
     focus: "Short research description here.",
     image: "/people/current/supriya.png",
