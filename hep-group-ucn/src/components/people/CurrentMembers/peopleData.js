@@ -16,20 +16,26 @@ export const phdStudents = [
   {
     name: "Kimy Agudelo",
     role: "PhD Student",
-    focus: "---.",
+    focus: "Short description of research or thesis topic.",
     image: "/people/current/kimy.png",
+  },
+  {
+    name: "Tatiana Araya",
+    role: "PhD Student",
+    focus: "Short description of research or thesis topic.",
+    image: "/people/current/tatiana.png",
+  },
+  {
+    name: "Andres Layana",
+    role: "PhD Student",
+    focus: "Short description of research or thesis topic.",
+    image: "/people/current/andres.png",
   },
 ];
 
 export const mastersStudents = [
   {
-    name: "Master's Student Name",
-    role: "Master’s Student",
-    focus: "Short description of research or thesis topic.",
-    image: "/brand/logoucn.png",
-  },
-  {
-    name: "Master's Student Name 2",
+    name: "Rodrigo Salinas",
     role: "Master’s Student",
     focus: "Short description of research or thesis topic.",
     image: "/brand/logoucn.png",
@@ -38,24 +44,30 @@ export const mastersStudents = [
 
 export const bachelorsStudents = [
   {
-    name: "Bachelor's Student Name",
+    name: "Kathy",
     role: "Bachelor’s Student",
     focus: "Undergraduate research interests or project involvement.",
-    image: "/brand/logoucn.png",
+    image: "/people/current/kathy.png",
   },
   {
-    name: "Bachelor's Student Name 2",
+    name: "Benjamin",
     role: "Bachelor’s Student",
     focus: "Undergraduate research interests or project involvement.",
-    image: "/brand/logoucn.png",
+    image: "/people/current/benjamin.png",
+  },
+  {
+    name: "Ethan",
+    role: "Bachelor’s Student",
+    focus: "Undergraduate research interests or project involvement.",
+    image: "/people/current/ethan.png",
   },
 ];
 
 export const postdocs = [
   {
-    name: "Postdoc Name",
+    name: "Supriya Pan",
     role: "Postdoctoral Researcher",
     focus: "Short research description here.",
-    image: "/brand/logoucn.png",
+    image: "/people/current/supriya.png",
   },
 ];

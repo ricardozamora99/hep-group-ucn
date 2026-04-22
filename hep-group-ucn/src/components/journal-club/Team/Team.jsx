@@ -9,28 +9,31 @@ import Image from "next/image";
 export default function Team() {
   const t = useTranslations("Team");
   const locale = useLocale();
-  const PHOTO = "/speakers/ricardo.png";
 
   const currentMembers = [
     {
-      name: "Ricardo Zamora",
-      role: t("phd"),
-      affiliation: t("affiliationTBD"),
+      name: "Supriya Pan",
+      role: "Postdoctoral Researcher",
+      affiliation: "India",
+      image: "/people/current/supriya.png",
     },
     {
-      name: "Ricardo Zamora",
-      role: t("msc"),
-      affiliation: t("affiliationTBD"),
+      name: "Kimy Agudelo",
+      role: "PhD Student",
+      affiliation: "Colombia",
+      image: "/people/current/kimy.png",
     },
     {
-      name: "Ricardo Zamora",
-      role: t("msc"),
-      affiliation: t("affiliationTBD"),
+      name: "Tatiana Araya",
+      role: "PhD Student",
+      affiliation: "Chile",
+      image: "/people/current/tatiana.png",
     },
     {
-      name: "Ricardo Zamora",
-      role: t("bsc"),
-      affiliation: t("affiliationTBD"),
+      name: "Ethan",
+      role: "Bachelor’s Student",
+      affiliation: "Chile",
+      image: "/people/current/ethan.png",
     },
   ];
 
@@ -50,7 +53,7 @@ export default function Team() {
               <div className={styles.photoWrap}>
                 <div className={styles.photoBox}>
                   <Image
-                    src={PHOTO}
+                    src={m.image}
                     alt={`${m.name} portrait`}
                     fill
                     sizes="(max-width: 900px) 40vw, 120px"

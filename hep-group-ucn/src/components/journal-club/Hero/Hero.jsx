@@ -19,7 +19,7 @@ export default function Hero() {
 
           <div className={styles.actions}>
             <a className={styles.btn} href="#join">{t("ctaJoin")}</a>
-            <a className={styles.btnGhost} href="#calendar">{t("ctaNext")}</a>
+            <a className={styles.btnGhost} href="#speakers">{t("ctaNext")}</a>
           </div>
         </div>
       </Container>
