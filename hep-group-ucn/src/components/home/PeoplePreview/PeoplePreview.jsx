@@ -1,4 +1,5 @@
 "use client";
+import LocalizedText from "@/components/i18n/LocalizedText";
 
 import Link from "next/link";
 import { useLocale } from "next-intl";
@@ -30,24 +31,16 @@ export default function PeoplePreview() {
     <section id="people-preview" className={styles.section}>
       <Container>
         <div className={styles.top}>
-          <span className={styles.kicker}>People</span>
-          <h2 className={styles.title}>
-            A group is defined
-            <span>by the people who sustain it</span>
+          <span className={styles.kicker}><LocalizedText id="p_7db20897053b">People</LocalizedText></span>
+          <h2 className={styles.title}><LocalizedText id="p_b101c9b03038">A group is defined</LocalizedText><span><LocalizedText id="p_8406c14c796f">by the people who sustain it</LocalizedText></span>
           </h2>
         </div>
 
         <div className={styles.layout}>
           <div className={styles.statement}>
-            <p>
-              Leadership, students, and collaborators give the group its real
-              form. Research is built through continuity, mentorship, dialogue,
-              and the collective effort of an academic community.
-            </p>
+            <p><LocalizedText id="p_509916d34ccc">Leadership, students, and collaborators give the group its real form. Research is built through continuity, mentorship, dialogue, and the collective effort of an academic community.</LocalizedText></p>
 
-            <Link className={styles.btn} href={`/${locale}/people`}>
-              View Full Team
-            </Link>
+            <Link className={styles.btn} href={`/${locale}/people`}><LocalizedText id="p_0695ccef37d0">View Full Team</LocalizedText></Link>
           </div>
 
           <div className={styles.grid}>
@@ -57,7 +50,7 @@ export default function PeoplePreview() {
                 className={`${styles.card} ${idx === 0 ? styles.featured : ""}`}
               >
                 <div className={styles.index}>{idx === 0 ? "01" : `0${idx + 1}`}</div>
-                <h3>{person.name}</h3>
+                <h3><LocalizedText text={person.name} /></h3>
                 <div className={styles.role}>{person.role}</div>
                 <p>{person.note}</p>
               </article>

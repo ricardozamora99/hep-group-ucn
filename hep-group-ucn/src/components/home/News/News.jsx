@@ -1,4 +1,5 @@
 "use client";
+import LocalizedText from "@/components/i18n/LocalizedText";
 
 import styles from "./News.module.css";
 import Container from "@/components/layout/Container";
@@ -23,25 +24,23 @@ export default function News() {
     <section id="news-preview" className={styles.section}>
       <Container>
         <div className={styles.top}>
-          <span className={styles.kicker}>News</span>
-          <h2 className={styles.title}>
-            Highlights,
-            <span>signals from the group’s present activity</span>
+          <span className={styles.kicker}><LocalizedText id="p_69752f2313b2">News</LocalizedText></span>
+          <h2 className={styles.title}><LocalizedText id="p_0ced615d83a6">Highlights,</LocalizedText><span><LocalizedText id="p_c52f8746e95e">signals from the group’s present activity</LocalizedText></span>
           </h2>
         </div>
 
         <div className={styles.grid}>
           <article className={styles.mainCard}>
-            <span className={styles.mainLabel}>Latest highlight</span>
-            <h3>{news[0].title}</h3>
-            <p>{news[0].text}</p>
+            <span className={styles.mainLabel}><LocalizedText id="p_a46c5669cab1">Latest highlight</LocalizedText></span>
+            <h3><LocalizedText text={news[0].title} /></h3>
+            <p><LocalizedText text={news[0].text} /></p>
           </article>
 
           <div className={styles.sideCol}>
             {news.slice(1).map((item) => (
               <article key={item.title} className={styles.sideCard}>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
+                <h3><LocalizedText text={item.title} /></h3>
+                <p><LocalizedText text={item.text} /></p>
               </article>
             ))}
           </div>

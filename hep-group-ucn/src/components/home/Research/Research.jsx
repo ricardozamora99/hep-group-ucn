@@ -1,4 +1,5 @@
 "use client";
+import LocalizedText from "@/components/i18n/LocalizedText";
 
 import Link from "next/link";
 import { useLocale } from "next-intl";
@@ -31,22 +32,14 @@ export default function Research() {
       <Container>
         <div className={styles.top}>
           <div className={styles.heading}>
-            <span className={styles.kicker}>Research</span>
-            <h2 className={styles.title}>
-              Research directions,
-              <span>introduced as a preview</span>
+            <span className={styles.kicker}><LocalizedText id="p_979d6300fd98">Research</LocalizedText></span>
+            <h2 className={styles.title}><LocalizedText id="p_4099810a96e1">Research directions,</LocalizedText><span><LocalizedText id="p_0342dda99883">introduced as a preview</LocalizedText></span>
             </h2>
           </div>
 
           <div className={styles.sideIntro}>
-            <p>
-              The Home page offers a concise look at the group’s scientific
-              profile. The full research structure, themes, and future dedicated
-              sections belong to the Research page.
-            </p>
-            <Link className={styles.inlineLink} href={`/${locale}/research`}>
-              Explore the full research profile
-            </Link>
+            <p><LocalizedText id="p_0dea3822d62d">The Home page offers a concise look at the group’s scientific profile. The full research structure, themes, and future dedicated sections belong to the Research page.</LocalizedText></p>
+            <Link className={styles.inlineLink} href={`/${locale}/research`}><LocalizedText id="p_51babbad9a1e">Explore the full research profile</LocalizedText></Link>
           </div>
         </div>
 
@@ -57,17 +50,15 @@ export default function Research() {
               className={`${styles.card} ${idx === 0 ? styles.cardFeatured : ""}`}
             >
               <span className={styles.tag}>{area.tag}</span>
-              <h3>{area.title}</h3>
-              <p>{area.text}</p>
+              <h3><LocalizedText text={area.title} /></h3>
+              <p><LocalizedText text={area.text} /></p>
             </article>
           ))}
         </div>
 
         <div className={styles.band}>
-          <span className={styles.bandLabel}>Research language</span>
-          <strong>
-            Theory · Phenomenology · Cosmology · Computation
-          </strong>
+          <span className={styles.bandLabel}><LocalizedText id="p_9a1ac1f18acf">Research language</LocalizedText></span>
+          <strong><LocalizedText id="p_f2c8ecb58aef">Theory · Phenomenology · Cosmology · Computation</LocalizedText></strong>
         </div>
       </Container>
     </section>

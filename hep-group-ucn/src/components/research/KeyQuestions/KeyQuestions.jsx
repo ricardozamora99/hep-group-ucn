@@ -1,4 +1,5 @@
 "use client";
+import LocalizedText from "@/components/i18n/LocalizedText";
 
 import styles from "./KeyQuestions.module.css";
 import Container from "@/components/layout/Container";
@@ -15,10 +16,8 @@ export default function KeyQuestions() {
     <section className={styles.section}>
       <Container>
         <header className={styles.header}>
-          <span className={styles.kicker}>Key Questions</span>
-          <h2 className={styles.title}>
-            The problems that drive
-            <span>the research program</span>
+          <span className={styles.kicker}><LocalizedText id="p_44e32aa95388">Key Questions</LocalizedText></span>
+          <h2 className={styles.title}><LocalizedText id="p_36092c0b3e11">The problems that drive</LocalizedText><span><LocalizedText id="p_1e838a6dfbfb">the research program</LocalizedText></span>
           </h2>
         </header>
 
@@ -26,7 +25,7 @@ export default function KeyQuestions() {
           {questions.map((q, i) => (
             <article key={i} className={styles.card}>
               <span className={styles.index}>0{i + 1}</span>
-              <p>{q}</p>
+              <p><LocalizedText text={q} /></p>
             </article>
           ))}
         </div>

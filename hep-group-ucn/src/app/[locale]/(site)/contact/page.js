@@ -5,12 +5,13 @@ import ContactCTA from "@/components/contact/ContactCTA/ContactCTA";
 import { client } from "@/sanity/lib/client";
 import { CONTACT_QUERY } from "@/sanity/lib/queries";
 
-export default async function ContactPage() {
+export default async function ContactPage({ params }) {
+  const { locale } = await params;
   let people = [];
   let sanityError = false;
 
   try {
-    people = await client.fetch(CONTACT_QUERY);
+    people = await client.fetch(CONTACT_QUERY, { locale });
   } catch (error) {
     console.error("Error loading Contact data from Sanity:", error);
     sanityError = true;

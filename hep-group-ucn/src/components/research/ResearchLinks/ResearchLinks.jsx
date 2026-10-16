@@ -1,4 +1,5 @@
 "use client";
+import LocalizedText from "@/components/i18n/LocalizedText";
 
 import { useMemo, useRef } from "react";
 import Link from "next/link";
@@ -161,13 +162,10 @@ export default function ResearchLinks() {
     <section className={styles.section}>
       <Container>
         <header className={styles.header}>
-          <div className={styles.kicker}>Selected Research Output</div>
-          <h2 className={styles.title}>Papers, links, and current scientific output</h2>
+          <div className={styles.kicker}><LocalizedText id="p_eefafad84921">Selected Research Output</LocalizedText></div>
+          <h2 className={styles.title}><LocalizedText id="p_fca2181336b8">Papers, links, and current scientific output</LocalizedText></h2>
           <div className={styles.underline} />
-          <p className={styles.lead}>
-            A curated view of representative papers across cosmology, particle physics,
-            Higgs physics, dark matter, neutrinos, and related phenomenology.
-          </p>
+          <p className={styles.lead}><LocalizedText id="p_cbe0c1329ec7">A curated view of representative papers across cosmology, particle physics, Higgs physics, dark matter, neutrinos, and related phenomenology.</LocalizedText></p>
         </header>
 
         <div className={styles.carousel}>
@@ -229,9 +227,7 @@ export default function ResearchLinks() {
         </div>
 
         <div className={styles.actions}>
-          <Link className={styles.btnGhost} href={`/${locale}/publications`}>
-            View All Publications
-          </Link>
+          <Link className={styles.btnGhost} href={`/${locale}/publications`}><LocalizedText id="p_82b0e24397cf">View All Publications</LocalizedText></Link>
         </div>
       </Container>
     </section>

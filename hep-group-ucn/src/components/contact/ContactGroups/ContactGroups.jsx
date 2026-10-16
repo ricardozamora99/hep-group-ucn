@@ -1,3 +1,4 @@
+import LocalizedText from "@/components/i18n/LocalizedText";
 import Container from "@/components/layout/Container";
 import styles from "./ContactGroups.module.css";
 
@@ -21,7 +22,7 @@ function ContactSection({
         </span>
 
         <h2 className={styles.groupTitle}>
-          {title}
+          <LocalizedText text={title} />
         </h2>
       </div>
 
@@ -48,9 +49,7 @@ function ContactSection({
                   {person.email}
                 </a>
               ) : (
-                <span className={styles.noEmail}>
-                  Email not available
-                </span>
+                <span className={styles.noEmail}><LocalizedText id="p_47267c3ef2d1">Email not available</LocalizedText></span>
               )}
             </article>
           ))}
@@ -95,10 +94,7 @@ export default function ContactGroups({
       <Container>
         <div className={styles.wrap}>
           {sanityError ? (
-            <p className={styles.errorState}>
-              Group contact information could not be loaded
-              at this moment.
-            </p>
+            <p className={styles.errorState}><LocalizedText id="p_e8574bb27d28">Group contact information could not be loaded at this moment.</LocalizedText></p>
           ) : (
             <>
               {faculty.length > 0 && (

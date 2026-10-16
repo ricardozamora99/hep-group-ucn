@@ -1,4 +1,5 @@
 "use client";
+import LocalizedText from "@/components/i18n/LocalizedText";
 
 import Link from "next/link";
 import { useLocale } from "next-intl";
@@ -34,18 +35,13 @@ export default function Activities() {
       <Container>
         <div className={styles.top}>
           <div className={styles.left}>
-            <span className={styles.kicker}>Academic Life</span>
-            <h2 className={styles.title}>
-              The group is not only research,
-              <span>it is also an academic environment</span>
+            <span className={styles.kicker}><LocalizedText id="p_ecf4cf5e71f7">Academic Life</LocalizedText></span>
+            <h2 className={styles.title}><LocalizedText id="p_07b9cd3c1d0a">The group is not only research,</LocalizedText><span><LocalizedText id="p_df72e27efabf">it is also an academic environment</LocalizedText></span>
             </h2>
           </div>
 
           <div className={styles.right}>
-            <p>
-              Discussion spaces, seminars, workshops, and collective academic
-              activity are part of how the group thinks, grows, and stays alive.
-            </p>
+            <p><LocalizedText id="p_ef8f23337d65">Discussion spaces, seminars, workshops, and collective academic activity are part of how the group thinks, grows, and stays alive.</LocalizedText></p>
           </div>
         </div>
 
@@ -56,10 +52,10 @@ export default function Activities() {
               href={`/${locale}${item.href}`}
               className={`${styles.card} ${idx === 0 ? styles.featured : ""}`}
             >
-              <span className={styles.type}>{item.type}</span>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-              <div className={styles.foot}>Learn more</div>
+              <span className={styles.type}><LocalizedText text={item.type} /></span>
+              <h3><LocalizedText text={item.title} /></h3>
+              <p><LocalizedText text={item.text} /></p>
+              <div className={styles.foot}><LocalizedText id="p_1445799c033a">Learn more</LocalizedText></div>
             </Link>
           ))}
         </div>

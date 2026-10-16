@@ -1,4 +1,5 @@
 "use client";
+import LocalizedText from "@/components/i18n/LocalizedText";
 
 import styles from "./SupportGrants.module.css";
 import Container from "@/components/layout/Container";
@@ -15,19 +16,14 @@ export default function SupportGrants() {
       <Container>
         <div className={styles.layout}>
           <div className={styles.left}>
-            <span className={styles.kicker}>Support & grants</span>
-            <h2>Scientific growth also requires structure</h2>
-            <p>
-              Research develops within institutional frameworks that make
-              continuity possible. Funding, university support, and project
-              structures play a central role in sustaining long-term scientific
-              work, training, and collaboration.
-            </p>
+            <span className={styles.kicker}><LocalizedText id="p_52e3108d92dd">Support & grants</LocalizedText></span>
+            <h2><LocalizedText id="p_63902e0d04df">Scientific growth also requires structure</LocalizedText></h2>
+            <p><LocalizedText id="p_ee462a03ed00">Research develops within institutional frameworks that make continuity possible. Funding, university support, and project structures play a central role in sustaining long-term scientific work, training, and collaboration.</LocalizedText></p>
 
             <div className={styles.items}>
               {supportItems.map((item) => (
                 <div key={item} className={styles.item}>
-                  {item}
+                  <LocalizedText text={item} />
                 </div>
               ))}
             </div>
@@ -35,16 +31,12 @@ export default function SupportGrants() {
 
           <div className={styles.right}>
             <div className={styles.cardMain}>
-              <span className={styles.label}>Institutional note</span>
-              <h3>Support gives continuity to ideas, people, and projects.</h3>
+              <span className={styles.label}><LocalizedText id="p_7204d34b61ee">Institutional note</LocalizedText></span>
+              <h3><LocalizedText id="p_459ff4d2b6e7">Support gives continuity to ideas, people, and projects.</LocalizedText></h3>
             </div>
 
             <div className={styles.cardSub}>
-              <p>
-                This section can later host specific grants, project titles,
-                funding programs, institutional partners, or logos when you want
-                to make it more concrete.
-              </p>
+              <p><LocalizedText id="p_d7a009f890f8">This section can later host specific grants, project titles, funding programs, institutional partners, or logos when you want to make it more concrete.</LocalizedText></p>
             </div>
           </div>
         </div>

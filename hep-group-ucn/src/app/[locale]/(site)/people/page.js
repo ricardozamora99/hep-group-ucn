@@ -25,12 +25,13 @@ function preparePerson(person) {
   };
 }
 
-export default async function PeoplePage() {
+export default async function PeoplePage({ params }) {
+  const { locale } = await params;
   let people = [];
   let sanityError = false;
 
   try {
-    const sanityPeople = await client.fetch(PEOPLE_QUERY);
+    const sanityPeople = await client.fetch(PEOPLE_QUERY, { locale });
 
     people = sanityPeople.map(preparePerson);
   } catch (error) {

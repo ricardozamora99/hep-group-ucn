@@ -1,4 +1,5 @@
 "use client";
+import LocalizedText from "@/components/i18n/LocalizedText";
 
 import {
   useEffect,
@@ -55,9 +56,7 @@ function FormerMemberCard({ member }) {
 
         {member.currentlyAt && (
           <div className={styles.nowBlock}>
-            <span className={styles.nowLabel}>
-              Currently at
-            </span>
+            <span className={styles.nowLabel}><LocalizedText id="p_5ff337e81c02">Currently at</LocalizedText></span>
 
             <p className={styles.nowText}>
               {member.currentlyAt}
@@ -133,7 +132,7 @@ function FormerMembersCarousel({
           </span>
 
           <h3 className={styles.groupTitle}>
-            {title}
+            <LocalizedText text={title} />
           </h3>
         </div>
 
@@ -255,33 +254,17 @@ export default function AlumniSection({
       <Container>
         <div className={styles.top}>
           <div className={styles.heading}>
-            <span className={styles.kicker}>
-              Academic Trajectory
-            </span>
+            <span className={styles.kicker}><LocalizedText id="p_86de42cfa087">Academic Trajectory</LocalizedText></span>
 
-            <h2 className={styles.title}>
-              Former Members
-              <span>
-                and current destinations
-              </span>
+            <h2 className={styles.title}><LocalizedText id="p_8b6e25b284f7">Former Members</LocalizedText><span><LocalizedText id="p_04e159026d3a">and current destinations</LocalizedText></span>
             </h2>
           </div>
 
-          <p className={styles.intro}>
-            The group’s trajectory can also be seen
-            through its former members: students and
-            researchers who continued into graduate
-            programs, postdoctoral positions,
-            laboratories, and institutions in Chile and
-            abroad.
-          </p>
+          <p className={styles.intro}><LocalizedText id="p_2dce604880a7">The group’s trajectory can also be seen through its former members: students and researchers who continued into graduate programs, postdoctoral positions, laboratories, and institutions in Chile and abroad.</LocalizedText></p>
         </div>
 
         {sanityError ? (
-          <p className={styles.errorState}>
-            Former members could not be loaded at this
-            moment.
-          </p>
+          <p className={styles.errorState}><LocalizedText id="p_9be6b5c63f32">Former members could not be loaded at this moment.</LocalizedText></p>
         ) : (
           <>
             <FormerMembersCarousel

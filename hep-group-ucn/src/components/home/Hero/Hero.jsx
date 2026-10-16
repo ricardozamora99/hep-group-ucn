@@ -1,18 +1,14 @@
 "use client";
-
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { useLocale, useTranslations } from "next-intl";
 import styles from "./Hero.module.css";
 import Container from "@/components/layout/Container";
 
-const subtitles = [
-  "Probing the Fundamental Building Blocks of Matter",
-  "Exploring the Universe at the Largest Scales",
-  "Advancing Data-Driven Methods in High Energy Physics",
-  "Connecting fundamental physics across scales, from particles to the universe."
-];
-
 export default function Hero() {
   const [step, setStep] = useState(0);
+  const locale = useLocale();
+  const t = useTranslations("HomeHero");
 
   useEffect(() => {
     const t1 = setTimeout(() => setStep(1), 1800);
@@ -65,22 +61,20 @@ export default function Hero() {
       <Container>
         <div className={styles.inner}>
           <h1 className={styles.title}>
-            {step === 3
-              ? "Particle Physics and Cosmology at UCN"
-              : "UCN Particle Physics & Cosmology Group"}
+            {step === 3 ? t("finalTitle") : t("title")}
           </h1>
 
-            <p key={step} className={styles.subtitle}>
-            {subtitles[step]}
-            </p>
+          <p key={step} className={styles.subtitle}>
+            {t(`subtitles.${step}`)}
+          </p>
 
           <div className={styles.actions}>
-            <a className={styles.btn} href="/research">
-              Explore Research
-            </a>
-            <a className={styles.btnGhost} href="/people">
-              Meet the Team
-            </a>
+            <Link className={styles.btn} href={`/${locale}/research`}>
+              {t("exploreResearch")}
+            </Link>
+            <Link className={styles.btnGhost} href={`/${locale}/people`}>
+              {t("meetTeam")}
+            </Link>
           </div>
         </div>
       </Container>

@@ -1,4 +1,5 @@
 "use client";
+import LocalizedText from "@/components/i18n/LocalizedText";
 
 import styles from "./ResearchAreas.module.css";
 import Container from "@/components/layout/Container";
@@ -29,31 +30,26 @@ export default function ResearchAreas() {
       <Container>
         <div className={styles.top}>
           <div className={styles.heading}>
-            <span className={styles.kicker}>Research Areas</span>
-            <h2 className={styles.title}>
-              The main scientific pillars
-              <span>of the group’s work</span>
+            <span className={styles.kicker}><LocalizedText id="p_650a80281010">Research Areas</LocalizedText></span>
+            <h2 className={styles.title}><LocalizedText id="p_0f06f90f9ccc">The main scientific pillars</LocalizedText><span><LocalizedText id="p_d36c818b06e0">of the group’s work</LocalizedText></span>
             </h2>
           </div>
 
-          <p className={styles.intro}>
-            The research program is broad, but organized around a coherent set
-            of theoretical, phenomenological, and cosmological questions.
-          </p>
+          <p className={styles.intro}><LocalizedText id="p_5ba24f68f661">The research program is broad, but organized around a coherent set of theoretical, phenomenological, and cosmological questions.</LocalizedText></p>
         </div>
 
         <div className={styles.grid}>
           <article className={styles.featuredCard}>
-            <span className={styles.badge}>Featured Area</span>
-            <h3>{areas[0].title}</h3>
-            <p>{areas[0].text}</p>
+            <span className={styles.badge}><LocalizedText id="p_9d83bd8e0108">Featured Area</LocalizedText></span>
+            <h3><LocalizedText text={areas[0].title} /></h3>
+            <p><LocalizedText text={areas[0].text} /></p>
           </article>
 
           <div className={styles.sideColumn}>
             {areas.slice(1).map((area) => (
               <article key={area.title} className={styles.card}>
-                <h3>{area.title}</h3>
-                <p>{area.text}</p>
+                <h3><LocalizedText text={area.title} /></h3>
+                <p><LocalizedText text={area.text} /></p>
               </article>
             ))}
           </div>

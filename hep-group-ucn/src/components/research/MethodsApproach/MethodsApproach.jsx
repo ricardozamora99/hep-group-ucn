@@ -1,4 +1,5 @@
 "use client";
+import LocalizedText from "@/components/i18n/LocalizedText";
 
 import styles from "./MethodsApproach.module.css";
 import Container from "@/components/layout/Container";
@@ -24,24 +25,17 @@ export default function MethodsApproach() {
       <Container>
         <div className={styles.layout}>
           <div className={styles.left}>
-            <span className={styles.kicker}>Methods & Approach</span>
-            <h2 className={styles.title}>
-              How the group develops
-              <span>its research practice</span>
+            <span className={styles.kicker}><LocalizedText id="p_f00ca33ef6a8">Methods & Approach</LocalizedText></span>
+            <h2 className={styles.title}><LocalizedText id="p_1e08add17b6e">How the group develops</LocalizedText><span><LocalizedText id="p_b18cc0cfd2a8">its research practice</LocalizedText></span>
             </h2>
-            <p className={styles.lead}>
-              Research is carried out through a combination of formal theory,
-              phenomenological interpretation, and computational analysis,
-              allowing the group to move between conceptual questions and
-              concrete quantitative exploration.
-            </p>
+            <p className={styles.lead}><LocalizedText id="p_63d1bb89cd8c">Research is carried out through a combination of formal theory, phenomenological interpretation, and computational analysis, allowing the group to move between conceptual questions and concrete quantitative exploration.</LocalizedText></p>
           </div>
 
           <div className={styles.right}>
             {methods.map((m) => (
               <article key={m.title} className={styles.card}>
-                <h3>{m.title}</h3>
-                <p>{m.text}</p>
+                <h3><LocalizedText text={m.title} /></h3>
+                <p><LocalizedText text={m.text} /></p>
               </article>
             ))}
           </div>

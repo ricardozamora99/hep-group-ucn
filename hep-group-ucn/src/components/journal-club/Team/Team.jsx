@@ -1,4 +1,5 @@
 "use client";
+import LocalizedText from "@/components/i18n/LocalizedText";
 
 import Link from "next/link";
 import {
@@ -118,7 +119,7 @@ export default function Team({
                     <div
                       className={styles.cardRole}
                     >
-                      {role}
+                      <LocalizedText text={role} />
                     </div>
 
                     {country && (
@@ -141,9 +142,7 @@ export default function Team({
           <Link
             className={styles.btnGhost}
             href={`/${locale}/people`}
-          >
-            See the Whole Group
-          </Link>
+          ><LocalizedText id="p_61662b03d955">See the Whole Group</LocalizedText></Link>
         </div>
       </Container>
     </section>

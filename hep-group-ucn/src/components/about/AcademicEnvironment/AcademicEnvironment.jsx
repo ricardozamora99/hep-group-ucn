@@ -1,4 +1,5 @@
 "use client";
+import LocalizedText from "@/components/i18n/LocalizedText";
 
 import styles from "./AcademicEnvironment.module.css";
 import Container from "@/components/layout/Container";
@@ -16,24 +17,16 @@ export default function AcademicEnvironment() {
       <Container>
         <div className={styles.layout}>
           <div className={styles.left}>
-            <span className={styles.kicker}>Academic environment</span>
-            <h2>
-              Research is also built
-              <span>through community</span>
+            <span className={styles.kicker}><LocalizedText id="p_3d2627a9f42b">Academic environment</LocalizedText></span>
+            <h2><LocalizedText id="p_31941fdc33f3">Research is also built</LocalizedText><span><LocalizedText id="p_1b0ff94174b9">through community</LocalizedText></span>
             </h2>
-            <p>
-              The group understands scientific development not only as the
-              production of results, but also as the cultivation of a living
-              academic environment. Training, conversation, mentorship, and
-              regular intellectual exchange are part of the structure through
-              which ideas mature and new researchers emerge.
-            </p>
+            <p><LocalizedText id="p_87594981e462">The group understands scientific development not only as the production of results, but also as the cultivation of a living academic environment. Training, conversation, mentorship, and regular intellectual exchange are part of the structure through which ideas mature and new researchers emerge.</LocalizedText></p>
 
             <div className={styles.rule} />
 
             <ul className={styles.list}>
               {items.map((item) => (
-                <li key={item}>{item}</li>
+                <li key={item}><LocalizedText text={item} /></li>
               ))}
             </ul>
           </div>
@@ -41,23 +34,20 @@ export default function AcademicEnvironment() {
           <div className={styles.right}>
             <div className={styles.frame}>
               <div className={styles.frameInner}>
-                <span className={styles.smallLabel}>Atmosphere</span>
-                <h3>Discussion, formation, and continuity</h3>
-                <p>
-                  A group grows when research questions are sustained by a
-                  shared intellectual culture.
-                </p>
+                <span className={styles.smallLabel}><LocalizedText id="p_402b3d52f2b5">Atmosphere</LocalizedText></span>
+                <h3><LocalizedText id="p_bd7226b43997">Discussion, formation, and continuity</LocalizedText></h3>
+                <p><LocalizedText id="p_0f2365f5e6ff">A group grows when research questions are sustained by a shared intellectual culture.</LocalizedText></p>
               </div>
             </div>
 
             <div className={styles.stack}>
               <div className={styles.miniCard}>
-                <span>Training</span>
-                <strong>Students and early researchers</strong>
+                <span><LocalizedText id="p_36a798e3f392">Training</LocalizedText></span>
+                <strong><LocalizedText id="p_870460afe885">Students and early researchers</LocalizedText></strong>
               </div>
               <div className={styles.miniCard}>
-                <span>Activity</span>
-                <strong>Seminars, meetings, and scientific dialogue</strong>
+                <span><LocalizedText id="p_38da1505ca83">Activity</LocalizedText></span>
+                <strong><LocalizedText id="p_a37176c4f35b">Seminars, meetings, and scientific dialogue</LocalizedText></strong>
               </div>
             </div>
           </div>

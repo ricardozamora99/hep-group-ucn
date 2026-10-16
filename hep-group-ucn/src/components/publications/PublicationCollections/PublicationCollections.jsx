@@ -1,4 +1,5 @@
 "use client";
+import LocalizedText from "@/components/i18n/LocalizedText";
 
 import Image from "next/image";
 import styles from "./PublicationCollections.module.css";
@@ -22,7 +23,7 @@ export default function PublicationCollections({
     <section className={styles.section}>
       <div className={styles.inner}>
         <header className={styles.header}>
-          <h3 className={styles.title}>Publication Grid</h3>
+          <h3 className={styles.title}><LocalizedText id="p_c0248c052590">Publication Grid</LocalizedText></h3>
           <p className={styles.subtitle}>
             Showing {visiblePapers.length} of {papers.length} filtered publications.
           </p>
@@ -75,9 +76,7 @@ export default function PublicationCollections({
                   className={styles.pageBtn}
                   onClick={() => goToPage(currentPage - 1)}
                   disabled={currentPage === 1}
-                >
-                  Prev
-                </button>
+                ><LocalizedText id="p_73912999faf4">Prev</LocalizedText></button>
 
                 <div className={styles.pageNumbers}>
                   {Array.from({ length: totalPages }).map((_, i) => {
@@ -102,16 +101,12 @@ export default function PublicationCollections({
                   className={styles.pageBtn}
                   onClick={() => goToPage(currentPage + 1)}
                   disabled={currentPage === totalPages}
-                >
-                  Next
-                </button>
+                ><LocalizedText id="p_1ff57a29d7c9">Next</LocalizedText></button>
               </div>
             )}
           </>
         ) : (
-          <div className={styles.empty}>
-            No publications match the current search or filter.
-          </div>
+          <div className={styles.empty}><LocalizedText id="p_df04efc9c704">No publications match the current search or filter.</LocalizedText></div>
         )}
       </div>
     </section>

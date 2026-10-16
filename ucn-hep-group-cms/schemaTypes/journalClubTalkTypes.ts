@@ -16,10 +16,24 @@ export const journalClubTalkType = defineType({
     }),
 
     defineField({
+      name: 'mainTopicEs',
+      title: 'Main topic (Spanish)',
+      type: 'string',
+      description: 'Spanish version shown on the /es website. English is used as a fallback.',
+    }),
+
+    defineField({
       name: 'title',
       title: 'Talk title',
       type: 'string',
       validation: (Rule) => Rule.required(),
+    }),
+
+    defineField({
+      name: 'titleEs',
+      title: 'Talk title (Spanish)',
+      type: 'string',
+      description: 'Spanish version shown on the /es website. English is used as a fallback.',
     }),
 
     defineField({
@@ -37,6 +51,13 @@ export const journalClubTalkType = defineType({
       type: 'string',
       description:
         'University, laboratory, institute, or research group.',
+    }),
+
+    defineField({
+      name: 'affiliationEs',
+      title: 'Affiliation (Spanish)',
+      type: 'string',
+      description: 'Translate only when the institution has an established Spanish name.',
     }),
 
     defineField({
@@ -63,12 +84,27 @@ export const journalClubTalkType = defineType({
     }),
 
     defineField({
+      name: 'locationEs',
+      title: 'Location (Spanish)',
+      type: 'string',
+      description: 'Spanish version shown on the /es website. English is used as a fallback.',
+    }),
+
+    defineField({
       name: 'abstract',
       title: 'Abstract',
       type: 'text',
       rows: 8,
       description:
         'Abstract or description of the Journal Club talk.',
+    }),
+
+    defineField({
+      name: 'abstractEs',
+      title: 'Abstract (Spanish)',
+      type: 'text',
+      rows: 8,
+      description: 'Spanish version shown on the /es website. English is used as a fallback.',
     }),
 
     defineField({

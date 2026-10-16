@@ -47,7 +47,8 @@ function preparePerson(person) {
   };
 }
 
-export default async function JournalClubPage() {
+export default async function JournalClubPage({ params }) {
+  const { locale } = await params;
   let talks = [];
   let sanityError = false;
   let journalClubTeam = [];
@@ -55,7 +56,8 @@ export default async function JournalClubPage() {
 
   try {
     const sanityTalks = await client.fetch(
-      JOURNAL_CLUB_QUERY
+      JOURNAL_CLUB_QUERY,
+      { locale }
     );
 
     talks = sanityTalks.map(prepareTalk);
@@ -69,7 +71,7 @@ export default async function JournalClubPage() {
   }
 
   try {
-  const sanityPeople = await client.fetch(PEOPLE_QUERY);
+  const sanityPeople = await client.fetch(PEOPLE_QUERY, { locale });
 
   journalClubTeam = sanityPeople
     .map(preparePerson)

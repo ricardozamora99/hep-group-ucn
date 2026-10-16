@@ -1,4 +1,5 @@
 "use client";
+import LocalizedText from "@/components/i18n/LocalizedText";
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
@@ -78,7 +79,7 @@ export default function LargeMomentsCarousel({ images }) {
 
       <div className={styles.captionBox}>
         <div className={styles.captionTop}>
-          <span className={styles.captionLabel}>Beyond Academia</span>
+          <span className={styles.captionLabel}><LocalizedText id="p_070cb8329b4b">Beyond Academia</LocalizedText></span>
           <span className={styles.counter}>
             {current + 1} / {images.length}
           </span>

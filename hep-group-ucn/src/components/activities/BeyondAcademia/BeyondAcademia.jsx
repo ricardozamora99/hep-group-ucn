@@ -1,4 +1,5 @@
 "use client";
+import LocalizedText from "@/components/i18n/LocalizedText";
 
 import styles from "./BeyondAcademia.module.css";
 import Container from "@/components/layout/Container";
@@ -42,15 +43,10 @@ export default function BeyondAcademia() {
     <section className={styles.section}>
       <Container>
         <div className={styles.head}>
-          <span className={styles.kicker}>Community</span>
-          <h2 className={styles.title}>
-            Shared moments
-            <span>beyond academia</span>
+          <span className={styles.kicker}><LocalizedText id="p_bb501d7877eb">Community</LocalizedText></span>
+          <h2 className={styles.title}><LocalizedText id="p_b903b1ff1ded">Shared moments</LocalizedText><span><LocalizedText id="p_dfa0fe0f38d0">beyond academia</LocalizedText></span>
           </h2>
-          <p className={styles.lead}>
-            Group life also includes informal gatherings, visiting researchers,
-            and shared experiences in Antofagasta beyond the seminar room.
-          </p>
+          <p className={styles.lead}><LocalizedText id="p_e53dc86b752e">Group life also includes informal gatherings, visiting researchers, and shared experiences in Antofagasta beyond the seminar room.</LocalizedText></p>
         </div>
 
         <LargeMomentsCarousel images={moments} />

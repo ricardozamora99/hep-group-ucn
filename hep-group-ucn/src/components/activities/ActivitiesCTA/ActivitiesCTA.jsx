@@ -1,4 +1,5 @@
 "use client";
+import LocalizedText from "@/components/i18n/LocalizedText";
 
 import Link from "next/link";
 import { useLocale } from "next-intl";
@@ -12,23 +13,14 @@ export default function ActivitiesCTA() {
     <section className={styles.section}>
       <Container>
         <div className={styles.box}>
-          <span className={styles.kicker}>Next Step</span>
-          <h2 className={styles.title}>
-            Explore the group’s contact
-            <span>and future activities</span>
+          <span className={styles.kicker}><LocalizedText id="p_226366c3301a">Next Step</LocalizedText></span>
+          <h2 className={styles.title}><LocalizedText id="p_42f8a67652e1">Explore the group’s contact</LocalizedText><span><LocalizedText id="p_36cc43f34acf">and future activities</LocalizedText></span>
           </h2>
-          <p className={styles.text}>
-            Get in touch to learn more about workshops, academic exchange, and
-            the broader activity of the group.
-          </p>
+          <p className={styles.text}><LocalizedText id="p_060073496211">Get in touch to learn more about workshops, academic exchange, and the broader activity of the group.</LocalizedText></p>
 
           <div className={styles.actions}>
-            <Link className={styles.btnPrimary} href={`/${locale}/contact`}>
-              Contact the Group
-            </Link>
-            <Link className={styles.btnGhost} href={`/${locale}/journal-club`}>
-              Journal Club
-            </Link>
+            <Link className={styles.btnPrimary} href={`/${locale}/contact`}><LocalizedText id="p_a1cdac30a12d">Contact the Group</LocalizedText></Link>
+            <Link className={styles.btnGhost} href={`/${locale}/journal-club`}><LocalizedText id="p_9bd1891b5019">Journal Club</LocalizedText></Link>
           </div>
         </div>
       </Container>

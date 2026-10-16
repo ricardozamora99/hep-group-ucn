@@ -1,4 +1,5 @@
 "use client";
+import LocalizedText from "@/components/i18n/LocalizedText";
 
 import styles from "./Speakers.module.css";
 import Container from "@/components/layout/Container";
@@ -286,9 +287,7 @@ export default function Speakers({
             target="_blank"
             rel="noreferrer"
             className={styles.calendarLink}
-          >
-            Open Journal Club Calendar
-          </a>
+          ><LocalizedText id="p_95ed4c98fdfd">Open Journal Club Calendar</LocalizedText></a>
         </div>
 
         {/* ============================================= */}
@@ -393,9 +392,7 @@ export default function Speakers({
                   className={
                     styles.infoTitle
                   }
-                >
-                  Next Session
-                </h3>
+                ><LocalizedText id="p_5707d8b599c7">Next Session</LocalizedText></h3>
 
                 <div
                   className={styles.infoKv}
@@ -404,9 +401,7 @@ export default function Speakers({
                     className={
                       styles.infoK
                     }
-                  >
-                    Activity:
-                  </div>
+                  ><LocalizedText id="p_79562792e55c">Activity:</LocalizedText></div>
 
                   <div
                     className={
@@ -420,9 +415,7 @@ export default function Speakers({
                     className={
                       styles.infoK
                     }
-                  >
-                    Title:
-                  </div>
+                  ><LocalizedText id="p_ecd11fd9f6ba">Title:</LocalizedText></div>
 
                   <div
                     className={
@@ -436,9 +429,7 @@ export default function Speakers({
                     className={
                       styles.infoK
                     }
-                  >
-                    Speaker:
-                  </div>
+                  ><LocalizedText id="p_639971aaeb76">Speaker:</LocalizedText></div>
 
                   <div
                     className={
@@ -457,9 +448,7 @@ export default function Speakers({
                   className={
                     styles.infoTitle
                   }
-                >
-                  Description
-                </h3>
+                ><LocalizedText id="p_526e0087cc3f">Description</LocalizedText></h3>
 
                 <div
                   className={styles.descBox}
@@ -491,18 +480,11 @@ export default function Speakers({
           {sanityError ? (
             <p
               className={styles.errorState}
-            >
-              The Journal Club archive
-              could not be loaded at this
-              moment.
-            </p>
+            ><LocalizedText id="p_29e49d42a04e">The Journal Club archive could not be loaded at this moment.</LocalizedText></p>
           ) : talksByYear.length === 0 ? (
             <p
               className={styles.emptyState}
-            >
-              No past Journal Club talks
-              are currently available.
-            </p>
+            ><LocalizedText id="p_17aa428bade1">No past Journal Club talks are currently available.</LocalizedText></p>
           ) : (
             <div
               className={
@@ -750,9 +732,7 @@ export default function Speakers({
                       className={
                         styles.modalMetaLabel
                       }
-                    >
-                      Date
-                    </span>
+                    ><LocalizedText id="p_99c40ab40592">Date</LocalizedText></span>
 
                     <span
                       className={
@@ -776,9 +756,7 @@ export default function Speakers({
                         className={
                           styles.modalMetaLabel
                         }
-                      >
-                        Time
-                      </span>
+                      ><LocalizedText id="p_33b93476cf59">Time</LocalizedText></span>
 
                       <span
                         className={
@@ -802,9 +780,7 @@ export default function Speakers({
                         className={
                           styles.modalMetaLabel
                         }
-                      >
-                        Location
-                      </span>
+                      ><LocalizedText id="p_15b61974b270">Location</LocalizedText></span>
 
                       <span
                         className={
@@ -829,9 +805,7 @@ export default function Speakers({
                       className={
                         styles.modalAbstractTitle
                       }
-                    >
-                      Abstract
-                    </h3>
+                    ><LocalizedText id="p_d21b4a64a2d8">Abstract</LocalizedText></h3>
 
                     <p
                       className={

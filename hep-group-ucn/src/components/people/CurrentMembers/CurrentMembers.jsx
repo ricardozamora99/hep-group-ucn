@@ -1,4 +1,5 @@
 "use client";
+import LocalizedText from "@/components/i18n/LocalizedText";
 
 import Image from "next/image";
 import styles from "./CurrentMembers.module.css";
@@ -57,7 +58,7 @@ function MemberCard({ member }) {
 
       <div className={styles.memberBody}>
         <span className={styles.memberRole}>
-          {roleLabel}
+          <LocalizedText text={roleLabel} />
         </span>
 
         <h3 className={styles.memberName}>
@@ -80,12 +81,10 @@ function MemberGroup({
   return (
     <div className={styles.group}>
       <div className={styles.groupHeader}>
-        <span className={styles.groupKicker}>
-          Current Members
-        </span>
+        <span className={styles.groupKicker}><LocalizedText id="p_cfc156aea9e5">Current Members</LocalizedText></span>
 
         <h3 className={styles.groupTitle}>
-          {title}
+          <LocalizedText text={title} />
         </h3>
       </div>
 
@@ -150,29 +149,17 @@ export default function CurrentMembers({
       <Container>
         <div className={styles.top}>
           <div className={styles.heading}>
-            <span className={styles.kicker}>
-              Current Members
-            </span>
+            <span className={styles.kicker}><LocalizedText id="p_cfc156aea9e5">Current Members</LocalizedText></span>
 
-            <h2 className={styles.title}>
-              The group as it stands
-              <span>today</span>
+            <h2 className={styles.title}><LocalizedText id="p_581f864bfe7a">The group as it stands</LocalizedText><span><LocalizedText id="p_e0f4f767ac88">today</LocalizedText></span>
             </h2>
           </div>
 
-          <p className={styles.intro}>
-            A snapshot of the current structure of the
-            group, from its head to researchers and
-            students across different stages of academic
-            formation.
-          </p>
+          <p className={styles.intro}><LocalizedText id="p_7e2a563a4507">A snapshot of the current structure of the group, from its head to researchers and students across different stages of academic formation.</LocalizedText></p>
         </div>
 
         {sanityError ? (
-          <p className={styles.errorState}>
-            The current members could not be loaded at
-            this moment.
-          </p>
+          <p className={styles.errorState}><LocalizedText id="p_3d0653bcb76b">The current members could not be loaded at this moment.</LocalizedText></p>
         ) : (
           <>
             {head ? (
@@ -191,9 +178,7 @@ export default function CurrentMembers({
                 </div>
 
                 <div className={styles.headContent}>
-                  <span className={styles.headKicker}>
-                    Head
-                  </span>
+                  <span className={styles.headKicker}><LocalizedText id="p_9bb0aacc6d51">Head</LocalizedText></span>
 
                   <h3 className={styles.headName}>
                     {getDisplayName(head)}
@@ -205,9 +190,7 @@ export default function CurrentMembers({
                 </div>
               </article>
             ) : (
-              <p className={styles.emptyState}>
-                No group head is currently listed.
-              </p>
+              <p className={styles.emptyState}><LocalizedText id="p_54da47991e1e">No group head is currently listed.</LocalizedText></p>
             )}
 
             {faculty.length > 0 && (

@@ -59,6 +59,14 @@ export const personType = defineType({
     }),
 
     defineField({
+      name: 'descriptionEs',
+      title: 'Research interests / description (Spanish)',
+      type: 'text',
+      rows: 3,
+      description: 'Spanish version shown on the /es website. English is used as a fallback.',
+    }),
+
+    defineField({
       name: 'email',
       title: 'Email',
       type: 'string',
@@ -108,6 +116,14 @@ export const personType = defineType({
       type: 'string',
       description:
         'Current institution and/or position, for example: University of Valencia — Postdoctoral Researcher.',
+      hidden: ({document}) => document?.membershipStatus !== 'former',
+    }),
+
+    defineField({
+      name: 'currentlyAtEs',
+      title: 'Currently at (Spanish)',
+      type: 'string',
+      description: 'Spanish version shown on the /es website. English is used as a fallback.',
       hidden: ({document}) => document?.membershipStatus !== 'former',
     }),
 

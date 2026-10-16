@@ -1,4 +1,5 @@
 "use client";
+import LocalizedText from "@/components/i18n/LocalizedText";
 
 import Link from "next/link";
 import { useLocale } from "next-intl";
@@ -30,36 +31,32 @@ export default function Publications() {
     <section id="publications-preview" className={styles.section}>
       <Container>
         <div className={styles.header}>
-          <span className={styles.kicker}>Publications</span>
-          <h2 className={styles.title}>
-            Recent output,
-            <span>selected as a reading point</span>
+          <span className={styles.kicker}><LocalizedText id="p_82b2eb07aaea">Publications</LocalizedText></span>
+          <h2 className={styles.title}><LocalizedText id="p_e0847e2ad54c">Recent output,</LocalizedText><span><LocalizedText id="p_e6319c97449d">selected as a reading point</LocalizedText></span>
           </h2>
         </div>
 
         <div className={styles.layout}>
           <article className={styles.featuredCard}>
-            <span className={styles.featuredTag}>Featured publication</span>
-            <h3>{items[0].title}</h3>
+            <span className={styles.featuredTag}><LocalizedText id="p_9c1f9d4e89e5">Featured publication</LocalizedText></span>
+            <h3><LocalizedText text={items[0].title} /></h3>
             <div className={styles.meta}>{items[0].meta}</div>
-            <p>{items[0].text}</p>
+            <p><LocalizedText text={items[0].text} /></p>
           </article>
 
           <div className={styles.sideList}>
             {items.slice(1).map((item) => (
               <article key={item.title} className={styles.sideCard}>
-                <h3>{item.title}</h3>
+                <h3><LocalizedText text={item.title} /></h3>
                 <div className={styles.meta}>{item.meta}</div>
-                <p>{item.text}</p>
+                <p><LocalizedText text={item.text} /></p>
               </article>
             ))}
           </div>
         </div>
 
         <div className={styles.actions}>
-          <Link className={styles.btnGhost} href={`/${locale}/publications`}>
-            View All Publications
-          </Link>
+          <Link className={styles.btnGhost} href={`/${locale}/publications`}><LocalizedText id="p_82b0e24397cf">View All Publications</LocalizedText></Link>
         </div>
       </Container>
     </section>

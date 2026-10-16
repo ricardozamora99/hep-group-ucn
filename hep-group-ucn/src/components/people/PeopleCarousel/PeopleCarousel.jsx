@@ -1,4 +1,5 @@
 "use client";
+import LocalizedText from "@/components/i18n/LocalizedText";
 
 import { useRef } from "react";
 import Image from "next/image";
@@ -62,7 +63,7 @@ export default function PeopleCarousel({ items, type = "alumni" }) {
 
             <div className={styles.body}>
               <span className={styles.kicker}>
-                {type === "alumni" ? item.level : item.institution}
+                <LocalizedText text={type === "alumni" ? item.level : item.institution} />
               </span>
 
               <h3 className={styles.name}>{item.name}</h3>
@@ -70,12 +71,12 @@ export default function PeopleCarousel({ items, type = "alumni" }) {
               {type === "alumni" ? (
                 <>
                   <p className={styles.meta}>{item.years}</p>
-                  <p className={styles.text}>{item.current}</p>
+                  <p className={styles.text}><LocalizedText text={item.current} /></p>
                 </>
               ) : (
                 <>
-                  <p className={styles.meta}>Frequent collaborator</p>
-                  <p className={styles.text}>{item.focus}</p>
+                  <p className={styles.meta}><LocalizedText id="p_6dcb495535a0">Frequent collaborator</LocalizedText></p>
+                  <p className={styles.text}><LocalizedText text={item.focus} /></p>
                 </>
               )}
             </div>

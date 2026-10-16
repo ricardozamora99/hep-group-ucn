@@ -1,4 +1,5 @@
 "use client";
+import LocalizedText from "@/components/i18n/LocalizedText";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -43,8 +44,8 @@ export default function Navbar() {
             />
 
             <div className={styles.brandTextWrap}>
-              <span className={styles.brandTitle}>UCN HEP GROUP</span>
-              <span className={styles.brandSubtitle}>High Energy Physics</span>
+              <span className={styles.brandTitle}><LocalizedText id="p_8202216194c3">UCN HEP GROUP</LocalizedText></span>
+              <span className={styles.brandSubtitle}><LocalizedText id="p_0b2bebaca087">High Energy Physics</LocalizedText></span>
             </div>
 
             <Image

@@ -1,4 +1,5 @@
 "use client";
+import LocalizedText from "@/components/i18n/LocalizedText";
 
 import Image from "next/image";
 import styles from "./FeaturedPublication.module.css";
@@ -12,7 +13,7 @@ export default function FeaturedPublication({ paper }) {
       <Container>
         <div className={styles.card}>
           <div className={styles.left}>
-            <span className={styles.badge}>Featured Publication</span>
+            <span className={styles.badge}><LocalizedText id="p_2adbf615cd4b">Featured Publication</LocalizedText></span>
             <h2 className={styles.title}>{paper.title}</h2>
             <p className={styles.authors}>{paper.authors}</p>
             <p className={styles.info}>{paper.info}</p>
