@@ -241,6 +241,14 @@
   align-items: center;
 }
 
+.support{
+  flex-basis: 100%;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: rgba(240,210,143,0.76);
+}
+
 .copy{
   font-size: 13px;
   color: rgba(255,255,255,0.72);

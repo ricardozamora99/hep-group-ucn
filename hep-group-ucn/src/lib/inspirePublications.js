@@ -50,6 +50,9 @@ function normalizeTopic(categories = []) {
 
 function normalizePaper(hit) {
   const metadata = hit.metadata || {};
+  const categories = (metadata.inspire_categories || [])
+    .map((category) => category.term)
+    .filter(Boolean);
   const collaborations = (metadata.collaborations || [])
     .map((collaboration) => collaboration.value)
     .filter(Boolean);
@@ -87,6 +90,7 @@ function normalizePaper(hit) {
     citationCount: metadata.citation_count || 0,
     collaborations,
     isCollaboration: collaborations.length > 0,
+    isExperiment: categories.includes("Experiment-HEP"),
   };
 }
 

@@ -9,7 +9,6 @@ function alphabeticalSort(a, b) {
 }
 
 function ContactSection({
-  kicker,
   title,
   people,
   emptyMessage,
@@ -17,10 +16,6 @@ function ContactSection({
   return (
     <section className={styles.group}>
       <div className={styles.groupHeader}>
-        <span className={styles.kicker}>
-          {kicker}
-        </span>
-
         <h2 className={styles.groupTitle}>
           <LocalizedText text={title} />
         </h2>
@@ -99,7 +94,6 @@ export default function ContactGroups({
             <>
               {faculty.length > 0 && (
                 <ContactSection
-                  kicker="Group Contacts"
                   title="Faculty Members"
                   people={faculty}
                   emptyMessage=""
@@ -107,28 +101,24 @@ export default function ContactGroups({
               )}
 
               <ContactSection
-                kicker="Group Contacts"
                 title="Postdoctoral Researchers"
                 people={postdocs}
                 emptyMessage="No current postdoctoral researchers."
               />
 
               <ContactSection
-                kicker="Group Contacts"
                 title="PhD Students"
                 people={phdStudents}
                 emptyMessage="No current PhD students."
               />
 
               <ContactSection
-                kicker="Group Contacts"
                 title="Master’s Students"
                 people={mastersStudents}
                 emptyMessage="No current Master’s students."
               />
 
               <ContactSection
-                kicker="Group Contacts"
                 title="Bachelor’s Students"
                 people={bachelorsStudents}
                 emptyMessage="No current Bachelor’s students."

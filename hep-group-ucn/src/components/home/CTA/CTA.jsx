@@ -21,7 +21,6 @@ export default function CTA() {
 
           <div className={styles.actions}>
             <Link className={styles.btnPrimary} href={`/${locale}/contact`}><LocalizedText id="p_2b5c3d26721a">Contact</LocalizedText></Link>
-            <Link className={styles.btnGhost} href={`/${locale}/contact`}><LocalizedText id="p_39ae26876607">Collaborate</LocalizedText></Link>
           </div>
         </div>
       </Container>

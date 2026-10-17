@@ -5,27 +5,17 @@ import Link from "next/link";
 import { useLocale } from "next-intl";
 import styles from "./Publications.module.css";
 import Container from "@/components/layout/Container";
+import LatexText from "@/components/math/LatexText";
 
-const items = [
-  {
-    title: "Featured Publication Title",
-    meta: "Journal / arXiv — 2026",
-    text: "A highlighted recent contribution from the group, representing an active research direction and a visible scientific result.",
-  },
-  {
-    title: "Publication Title 2",
-    meta: "Journal / arXiv — 2025",
-    text: "Short contextual summary of the result and its relevance.",
-  },
-  {
-    title: "Publication Title 3",
-    meta: "Journal / arXiv — 2025",
-    text: "Short contextual summary of the result and its relevance.",
-  },
-];
+function publicationMeta(paper) {
+  return [paper.journal || paper.source, paper.year].filter(Boolean).join(" — ");
+}
 
-export default function Publications() {
+export default function Publications({ papers }) {
   const locale = useLocale();
+  const [featured, ...secondary] = papers;
+
+  if (!featured) return null;
 
   return (
     <section id="publications-preview" className={styles.section}>
@@ -37,26 +27,36 @@ export default function Publications() {
         </div>
 
         <div className={styles.layout}>
-          <article className={styles.featuredCard}>
-            <span className={styles.featuredTag}><LocalizedText id="p_9c1f9d4e89e5">Featured publication</LocalizedText></span>
-            <h3><LocalizedText text={items[0].title} /></h3>
-            <div className={styles.meta}>{items[0].meta}</div>
-            <p><LocalizedText text={items[0].text} /></p>
-          </article>
+          <div className={styles.featuredColumn}>
+            <article className={styles.featuredCard}>
+              <span className={styles.featuredTag}><LocalizedText id="p_9c1f9d4e89e5">Featured publication</LocalizedText></span>
+              <h3>
+                <a href={featured.url} target="_blank" rel="noreferrer">
+                  <LatexText>{featured.title}</LatexText>
+                </a>
+              </h3>
+              <div className={styles.meta}>{publicationMeta(featured)}</div>
+              {featured.info && <p><LatexText>{featured.info}</LatexText></p>}
+            </article>
+
+            <div className={styles.actions}>
+              <Link className={styles.btnGhost} href={`/${locale}/publications`}><LocalizedText id="p_82b0e24397cf">View All Publications</LocalizedText></Link>
+            </div>
+          </div>
 
           <div className={styles.sideList}>
-            {items.slice(1).map((item) => (
-              <article key={item.title} className={styles.sideCard}>
-                <h3><LocalizedText text={item.title} /></h3>
-                <div className={styles.meta}>{item.meta}</div>
-                <p><LocalizedText text={item.text} /></p>
+            {secondary.map((paper) => (
+              <article key={paper.id} className={styles.sideCard}>
+                <h3>
+                  <a href={paper.url} target="_blank" rel="noreferrer">
+                    <LatexText>{paper.title}</LatexText>
+                  </a>
+                </h3>
+                <div className={styles.meta}>{publicationMeta(paper)}</div>
+                {paper.info && <p><LatexText>{paper.info}</LatexText></p>}
               </article>
             ))}
           </div>
-        </div>
-
-        <div className={styles.actions}>
-          <Link className={styles.btnGhost} href={`/${locale}/publications`}><LocalizedText id="p_82b0e24397cf">View All Publications</LocalizedText></Link>
         </div>
       </Container>
     </section>

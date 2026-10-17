@@ -2,7 +2,6 @@
 
 import { useMemo, useState } from "react";
 import { useLocale } from "next-intl";
-import PublicationsHero from "@/components/publications/PublicationsHero/PublicationsHero";
 import PublicationsToolbar from "@/components/publications/PublicationsToolbar/PublicationsToolbar";
 import FeaturedPublication from "@/components/publications/FeaturedPublication/FeaturedPublication";
 import PublicationCollections from "@/components/publications/PublicationCollections/PublicationCollections";
@@ -47,7 +46,6 @@ export default function PublicationsCatalog({ papers, loadError }) {
 
   return (
     <>
-      <PublicationsHero />
       <PublicationsToolbar
         search={search}
         setSearch={updateSearch}

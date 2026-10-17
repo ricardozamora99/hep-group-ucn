@@ -21,8 +21,6 @@ export default function About() {
           <div className={styles.kicker}>{t("kicker")}</div>
           <h2 className={styles.title}>{t("title")}</h2>
           <div className={styles.underline} />
-          <p className={styles.lead}>{t("desc")}</p>
-
           <div className={styles.actions}>
             {/* Keep only Calendar to avoid "Join" duplication with Hero */}
             <Link className={styles.btnGhost} href={`${home}/#calendar`}>

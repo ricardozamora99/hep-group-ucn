@@ -1,4 +1,3 @@
-import Research from "@/components/research/ResearchHero/ResearchHero";
 import ResearchAreas from "@/components/research/ResearchAreas/ResearchAreas";
 import KeyQuestions from "@/components/research/KeyQuestions/KeyQuestions";
 import MethodsApproach from "@/components/research/MethodsApproach/MethodsApproach";
@@ -23,7 +22,7 @@ export default async function ResearchPage() {
       people.map((person) => person.inspireAuthorId)
     );
     selectedPapers = papers
-      .filter((paper) => !paper.isCollaboration)
+      .filter((paper) => !paper.isCollaboration && !paper.isExperiment)
       .slice(0, 12);
   } catch (error) {
     console.error("Unable to load selected research output from INSPIRE", error);
@@ -31,7 +30,6 @@ export default async function ResearchPage() {
 
   return (
     <main>
-      <Research />
       <ResearchAreas />
       <KeyQuestions />
       <MethodsApproach />

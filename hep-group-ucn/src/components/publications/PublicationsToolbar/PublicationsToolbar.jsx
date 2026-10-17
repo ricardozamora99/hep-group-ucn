@@ -15,6 +15,33 @@ export default function PublicationsToolbar({
 
   return (
     <section className={styles.section}>
+      <div className={styles.pageIntro}>
+        <div>
+          <span className={styles.kicker}>
+            <LocalizedText id="p_82b2eb07aaea">Publications</LocalizedText>
+          </span>
+          <h1 className={styles.title}>
+            <LocalizedText id="p_publications_explore">Explore the group’s</LocalizedText>
+            <span>
+              <LocalizedText id="p_publications_output">scientific output</LocalizedText>
+            </span>
+          </h1>
+        </div>
+
+        <div className={styles.introCopy}>
+          <p>
+            <LocalizedText id="p_ada3be0340dd">
+              This catalogue brings together the group’s publication record and the scientific themes represented in it.
+            </LocalizedText>
+          </p>
+          <span className={styles.guide}>
+            <LocalizedText id="p_publications_guide">
+              Search by title or author, or browse the collection by topic.
+            </LocalizedText>
+          </span>
+        </div>
+      </div>
+
       <div className={styles.inner}>
         <div className={styles.searchBox}>
           <label className={styles.label} htmlFor="pub-search"><LocalizedText id="p_49c266baaaa7">Search</LocalizedText></label>

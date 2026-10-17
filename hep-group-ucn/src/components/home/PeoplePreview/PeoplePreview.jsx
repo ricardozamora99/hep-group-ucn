@@ -38,7 +38,7 @@ export default function PeoplePreview() {
 
         <div className={styles.layout}>
           <div className={styles.statement}>
-            <p><LocalizedText id="p_509916d34ccc">Leadership, students, and collaborators give the group its real form. Research is built through continuity, mentorship, dialogue, and the collective effort of an academic community.</LocalizedText></p>
+            <p><LocalizedText id="p_509916d34ccc">Meet the current team, follow the trajectories of former members, and discover the wider network connected to the group.</LocalizedText></p>
 
             <Link className={styles.btn} href={`/${locale}/people`}><LocalizedText id="p_0695ccef37d0">View Full Team</LocalizedText></Link>
           </div>

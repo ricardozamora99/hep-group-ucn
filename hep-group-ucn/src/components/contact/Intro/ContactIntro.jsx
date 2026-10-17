@@ -12,7 +12,7 @@ export default function ContactIntro({
         <div className={styles.wrap}>
           <div className={styles.top}>
             <div className={styles.heading}>
-              <span className={styles.kicker}><LocalizedText id="p_2b5c3d26721a">Contact</LocalizedText></span>
+              <span className={styles.kicker}><LocalizedText id="p_contact_correspondence">Academic Correspondence</LocalizedText></span>
 
               <h1 className={styles.title}><LocalizedText id="p_daec6c20587c">Get in</LocalizedText><span><LocalizedText id="p_69f689509987">Touch</LocalizedText></span>
               </h1>
@@ -30,7 +30,7 @@ export default function ContactIntro({
 
                 <h2 className={styles.mainTitle}><LocalizedText id="p_1a9fe893c428">Group Contact Details</LocalizedText></h2>
 
-                <p className={styles.mainText}><LocalizedText id="p_6047e44151a5">For general academic inquiries and collaboration requests, please contact the group head.</LocalizedText></p>
+                <p className={styles.mainText}><LocalizedText id="p_6047e44151a5">The group head coordinates scientific correspondence, institutional requests, and prospective collaborations.</LocalizedText></p>
               </div>
 
               <div className={styles.mainRight}>

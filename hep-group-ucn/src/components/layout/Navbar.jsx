@@ -84,33 +84,28 @@ export default function Navbar() {
 
       <nav className={styles.linkRow} aria-label={t("navigation")}>
         <div className={styles.innerLinks}>
+          <Link href={`${home}/#about-preview`} className={styles.link}>
+            {t("about")}
+          </Link>
+
           <div className={styles.dropdown}>
             <button type="button" className={styles.dropdownTrigger}>
-              {t("about")}
+              {t("research")}
               <span className={styles.chevron} aria-hidden="true" />
             </button>
 
             <div className={styles.dropdownMenu}>
-              <Link href={`${home}/about-group`} className={styles.dropdownLink}>
-                {t("aboutGroup")}
+              <Link href={`${home}/research`} className={styles.dropdownLink}>
+                {t("researchAreas")}
+              </Link>
+              <Link href={`${home}/publications`} className={styles.dropdownLink}>
+                {t("publications")}
               </Link>
               <Link href={`${home}/collaborations`} className={styles.dropdownLink}>
                 {t("collaborations")}
               </Link>
             </div>
           </div>
-
-          <Link href={`${home}/research`} className={styles.link}>
-            {t("research")}
-          </Link>
-
-          <Link href={`${home}/people`} className={styles.link}>
-            {t("people")}
-          </Link>
-
-          <Link href={`${home}/publications`} className={styles.link}>
-            {t("publications")}
-          </Link>
 
           <div className={styles.dropdown}>
             <button type="button" className={styles.dropdownTrigger}>
@@ -128,6 +123,10 @@ export default function Navbar() {
             </div>
           </div>
 
+          <Link href={`${home}/people`} className={styles.link}>
+            {t("people")}
+          </Link>
+
           <Link href={`${home}/contact`} className={styles.contactLink}>
             {t("contact")}
           </Link>
@@ -140,17 +139,21 @@ export default function Navbar() {
         aria-label={t("navigation")}
         aria-hidden={!open}
       >
+        <Link href={`${home}/#about-preview`} className={styles.mobileLink} onClick={closeMenu}>
+          {t("about")}
+        </Link>
+
         <div className={styles.mobileSection}>
           <button
             type="button"
             className={styles.mobileSectionButton}
-            aria-expanded={mobileSection === "about"}
-            onClick={() => toggleMobileSection("about")}
+            aria-expanded={mobileSection === "research"}
+            onClick={() => toggleMobileSection("research")}
           >
-            {t("about")}
+            {t("research")}
             <span
               className={`${styles.mobileChevron} ${
-                mobileSection === "about" ? styles.mobileChevronOpen : ""
+                mobileSection === "research" ? styles.mobileChevronOpen : ""
               }`}
               aria-hidden="true"
             />
@@ -158,43 +161,35 @@ export default function Navbar() {
 
           <div
             className={`${styles.mobileSubmenu} ${
-              mobileSection === "about" ? styles.mobileSubmenuOpen : ""
+              mobileSection === "research" ? styles.mobileSubmenuOpen : ""
             }`}
           >
             <Link
-              href={`${home}/about-group`}
+              href={`${home}/research`}
               className={styles.mobileSubLink}
               onClick={closeMenu}
-              tabIndex={mobileSection === "about" ? 0 : -1}
+              tabIndex={mobileSection === "research" ? 0 : -1}
             >
-              {t("aboutGroup")}
+              {t("researchAreas")}
+            </Link>
+            <Link
+              href={`${home}/publications`}
+              className={styles.mobileSubLink}
+              onClick={closeMenu}
+              tabIndex={mobileSection === "research" ? 0 : -1}
+            >
+              {t("publications")}
             </Link>
             <Link
               href={`${home}/collaborations`}
               className={styles.mobileSubLink}
               onClick={closeMenu}
-              tabIndex={mobileSection === "about" ? 0 : -1}
+              tabIndex={mobileSection === "research" ? 0 : -1}
             >
               {t("collaborations")}
             </Link>
           </div>
         </div>
-
-        <Link href={`${home}/research`} className={styles.mobileLink} onClick={closeMenu}>
-          {t("research")}
-        </Link>
-
-        <Link href={`${home}/people`} className={styles.mobileLink} onClick={closeMenu}>
-          {t("people")}
-        </Link>
-
-        <Link
-          href={`${home}/publications`}
-          className={styles.mobileLink}
-          onClick={closeMenu}
-        >
-          {t("publications")}
-        </Link>
 
         <div className={styles.mobileSection}>
           <button
@@ -235,6 +230,10 @@ export default function Navbar() {
             </Link>
           </div>
         </div>
+
+        <Link href={`${home}/people`} className={styles.mobileLink} onClick={closeMenu}>
+          {t("people")}
+        </Link>
 
         <Link
           href={`${home}/contact`}

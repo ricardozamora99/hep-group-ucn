@@ -20,14 +20,14 @@ export default function Footer() {
           </div>
 
           <nav className={styles.nav} aria-label="Footer">
-            <Link className={styles.navLink} href={`${home}/#about`}>
+            <Link className={styles.navLink} href={`${home}/#about-preview`}>
               {t("nav.about")}
             </Link>
-            <Link className={styles.navLink} href={`${home}/#calendar`}>
-              {t("nav.calendar")}
+            <Link className={styles.navLink} href={`${home}/research`}>
+              {t("nav.research")}
             </Link>
-            <Link className={styles.navLink} href={`${home}/#join`}>
-              {t("nav.join")}
+            <Link className={styles.navLink} href={`${home}/contact`}>
+              {t("nav.contact")}
             </Link>
           </nav>
         </div>
@@ -103,6 +103,8 @@ export default function Footer() {
         </div>
 
         <div className={styles.bottom}>
+          <div className={styles.support}>{t("support")}</div>
+
           <div className={styles.copy}>
             © {year} {t("copyright")}
           </div>

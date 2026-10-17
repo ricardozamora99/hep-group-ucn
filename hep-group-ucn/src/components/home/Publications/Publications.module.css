@@ -37,9 +37,19 @@
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: 18px;
+  align-items: start;
+}
+
+.featuredColumn{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
 }
 
 .featuredCard{
+  width: 100%;
+  box-sizing: border-box;
   padding: 28px 24px 30px;
   border: 1px solid rgba(11,42,74,0.1);
   background:
@@ -62,6 +72,17 @@
   font-size: 30px;
   line-height: 1.16;
   color: #0b2a4a;
+}
+
+.featuredCard h3 a,
+.sideCard h3 a{
+  color: inherit;
+  text-decoration: none;
+}
+
+.featuredCard h3 a:hover,
+.sideCard h3 a:hover{
+  color: #8a6d28;
 }
 
 .meta{
@@ -99,7 +120,6 @@
 }
 
 .actions{
-  margin-top: 24px;
   display: flex;
   justify-content: flex-start;
 }

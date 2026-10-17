@@ -81,8 +81,6 @@ function MemberGroup({
   return (
     <div className={styles.group}>
       <div className={styles.groupHeader}>
-        <span className={styles.groupKicker}><LocalizedText id="p_cfc156aea9e5">Current Members</LocalizedText></span>
-
         <h3 className={styles.groupTitle}>
           <LocalizedText text={title} />
         </h3>
@@ -155,7 +153,7 @@ export default function CurrentMembers({
             </h2>
           </div>
 
-          <p className={styles.intro}><LocalizedText id="p_7e2a563a4507">A snapshot of the current structure of the group, from its head to researchers and students across different stages of academic formation.</LocalizedText></p>
+          <p className={styles.intro}><LocalizedText id="p_7e2a563a4507">Browse the team by academic role and stage of training.</LocalizedText></p>
         </div>
 
         {sanityError ? (

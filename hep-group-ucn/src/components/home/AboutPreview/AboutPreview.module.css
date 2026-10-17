@@ -186,6 +186,13 @@
 .infoCardAccent{
   grid-column: span 2;
   background: linear-gradient(135deg, rgba(200,161,74,0.16), rgba(255,255,255,1));
+  text-decoration: none;
+  transition: transform 160ms ease, border-color 160ms ease;
+}
+
+.infoCardAccent:hover{
+  transform: translateY(-2px);
+  border-color: rgba(200,161,74,0.55);
 }
 
 @media (max-width: 980px){
