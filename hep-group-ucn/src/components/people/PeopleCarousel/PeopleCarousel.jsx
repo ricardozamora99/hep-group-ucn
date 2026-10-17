@@ -3,10 +3,12 @@ import LocalizedText from "@/components/i18n/LocalizedText";
 
 import { useRef } from "react";
 import Image from "next/image";
+import { useLocale } from "next-intl";
 import styles from "./PeopleCarousel.module.css";
 
 export default function PeopleCarousel({ items, type = "alumni" }) {
   const scrollerRef = useRef(null);
+  const locale = useLocale();
 
   const scrollByOne = (dir) => {
     const el = scrollerRef.current;
@@ -75,8 +77,13 @@ export default function PeopleCarousel({ items, type = "alumni" }) {
                 </>
               ) : (
                 <>
-                  <p className={styles.meta}><LocalizedText id="p_6dcb495535a0">Frequent collaborator</LocalizedText></p>
+                  <p className={styles.meta}>{item.position || <LocalizedText id="p_6dcb495535a0">Frequent collaborator</LocalizedText>}</p>
                   <p className={styles.text}><LocalizedText text={item.focus} /></p>
+                  {item.profileUrl && (
+                    <a className={styles.profileLink} href={item.profileUrl} target="_blank" rel="noreferrer">
+                      {locale === "es" ? "Ver perfil" : "View profile"} ↗
+                    </a>
+                  )}
                 </>
               )}
             </div>

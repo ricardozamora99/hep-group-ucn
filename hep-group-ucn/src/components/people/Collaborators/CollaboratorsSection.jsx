@@ -1,12 +1,13 @@
 "use client";
 import LocalizedText from "@/components/i18n/LocalizedText";
+import { useLocale } from "next-intl";
 
 import styles from "./CollaboratorsSection.module.css";
 import Container from "@/components/layout/Container";
 import PeopleCarousel from "@/components/people/PeopleCarousel/PeopleCarousel";
-import { collaborators } from "./collaboratorsData";
 
-export default function CollaboratorsSection() {
+export default function CollaboratorsSection({ items = [] }) {
+  const locale = useLocale();
   return (
     <section className={styles.section}>
       <Container>
@@ -20,7 +21,13 @@ export default function CollaboratorsSection() {
           <p className={styles.intro}><LocalizedText id="p_c3ffb0624cbc">A broader research network also shapes the group’s scientific life through recurring collaborations, exchange, and shared academic activity.</LocalizedText></p>
         </div>
 
-        <PeopleCarousel items={collaborators} type="collaborators" />
+        {items.length > 0 ? (
+          <PeopleCarousel items={items} type="collaborators" />
+        ) : (
+          <div className={styles.empty}>
+            <p>{locale === "es" ? "Los colaboradores frecuentes aparecerán aquí a medida que sus perfiles se agreguen a Sanity." : "Frequent collaborators will appear here as their profiles are added to Sanity."}</p>
+          </div>
+        )}
       </Container>
     </section>
   );

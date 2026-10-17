@@ -8,12 +8,24 @@ import News from "@/components/home/News/News";
 import JoinUsCTA from "@/components/about/JoinUsCTA/JoinUsCTA";
 import { getInspirePublications } from "@/lib/inspirePublications";
 import { client } from "@/sanity/lib/client";
-import { PUBLICATION_AUTHORS_QUERY } from "@/sanity/lib/queries";
+import { ACADEMIC_NEWS_QUERY, PUBLICATION_AUTHORS_QUERY } from "@/sanity/lib/queries";
 
 export const revalidate = 21600;
 
-export default async function HomePage() {
+export default async function HomePage({ params }) {
+  const { locale } = await params;
   let recentPapers = [];
+  let newsItems = [];
+
+  try {
+    newsItems = await client.fetch(
+      ACADEMIC_NEWS_QUERY,
+      { locale },
+      { next: { revalidate: 3600 } }
+    );
+  } catch (error) {
+    console.error("Unable to load featured academic activities", error);
+  }
 
   try {
     const people = await client.fetch(
@@ -39,7 +51,7 @@ export default async function HomePage() {
       <Activities />
       <PeoplePreview />
       <Publications papers={recentPapers} />
-      <News />
+      <News items={newsItems} locale={locale} />
       <JoinUsCTA />
     </>
   );

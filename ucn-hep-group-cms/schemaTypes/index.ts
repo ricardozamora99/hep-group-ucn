@@ -4,8 +4,14 @@
 
 import {personType} from './personTypes'
 import {journalClubTalkType} from './journalClubTalkTypes'
+import {academicActivityType} from './academicActivityTypes'
+import {institutionalCollaborationType} from './institutionalCollaborationTypes'
+import {frequentCollaboratorType} from './frequentCollaboratorTypes'
 
 export const schemaTypes = [
   personType,
   journalClubTalkType,
+  academicActivityType,
+  institutionalCollaborationType,
+  frequentCollaboratorType,
 ]
