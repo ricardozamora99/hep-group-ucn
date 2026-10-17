@@ -105,6 +105,13 @@
   color: rgba(11,42,74,0.78);
 }
 
+.journalLine{
+  margin: -2px 0 12px;
+  font-size: 12px;
+  line-height: 1.55;
+  color: rgba(11,42,74,0.68);
+}
+
 .cardTitle{
   margin: 0 0 10px;
   font-size: 17px;

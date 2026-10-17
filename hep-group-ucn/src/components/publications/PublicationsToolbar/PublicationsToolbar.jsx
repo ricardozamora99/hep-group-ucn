@@ -1,5 +1,6 @@
 "use client";
 import LocalizedText from "@/components/i18n/LocalizedText";
+import { useLocale } from "next-intl";
 
 import styles from "./PublicationsToolbar.module.css";
 
@@ -10,6 +11,8 @@ export default function PublicationsToolbar({
   setTopic,
   topics,
 }) {
+  const locale = useLocale();
+
   return (
     <section className={styles.section}>
       <div className={styles.inner}>
@@ -19,7 +22,11 @@ export default function PublicationsToolbar({
             id="pub-search"
             className={styles.input}
             type="text"
-            placeholder="Search by title, author, topic..."
+            placeholder={
+              locale === "es"
+                ? "Buscar por título, autor, tema..."
+                : "Search by title, author, topic..."
+            }
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />

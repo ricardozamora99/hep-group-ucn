@@ -1,8 +1,10 @@
 "use client";
 import LocalizedText from "@/components/i18n/LocalizedText";
+import { useLocale } from "next-intl";
 
 import Image from "next/image";
 import styles from "./PublicationCollections.module.css";
+import LatexText from "@/components/math/LatexText";
 
 export default function PublicationCollections({
   papers,
@@ -10,6 +12,7 @@ export default function PublicationCollections({
   setCurrentPage,
   itemsPerPage = 9,
 }) {
+  const locale = useLocale();
   const totalPages = Math.ceil(papers.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const visiblePapers = papers.slice(startIndex, startIndex + itemsPerPage);
@@ -25,7 +28,9 @@ export default function PublicationCollections({
         <header className={styles.header}>
           <h3 className={styles.title}><LocalizedText id="p_c0248c052590">Publication Grid</LocalizedText></h3>
           <p className={styles.subtitle}>
-            Showing {visiblePapers.length} of {papers.length} filtered publications.
+            {locale === "es" ? "Mostrando" : "Showing"} {visiblePapers.length}{" "}
+            {locale === "es" ? "de" : "of"} {papers.length}{" "}
+            {locale === "es" ? "publicaciones filtradas." : "filtered publications."}
           </p>
         </header>
 
@@ -33,12 +38,12 @@ export default function PublicationCollections({
           <>
             <div className={styles.grid}>
               {visiblePapers.map((paper, idx) => (
-                <article className={styles.card} key={`${paper.code}-${idx}`}>
+                <article className={styles.card} key={paper.id || `${paper.code}-${idx}`}>
                   <div className={styles.cardTop}>
                     <div className={styles.logoWrap}>
                       <Image
                         src={paper.image}
-                        alt={`${paper.journal} logo`}
+                        alt="arXiv logo"
                         width={42}
                         height={42}
                         className={styles.logo}
@@ -46,16 +51,23 @@ export default function PublicationCollections({
                     </div>
 
                     <div className={styles.topMeta}>
-                      <div className={styles.journal}>{paper.journal}</div>
+                      <div className={styles.journal}>{paper.source}</div>
                       <div className={styles.year}>{paper.year}</div>
                     </div>
                   </div>
 
                   <div className={styles.topic}>{paper.topic}</div>
 
-                  <h4 className={styles.cardTitle}>{paper.title}</h4>
+                  {paper.journal && (
+                    <p className={styles.journalLine}>
+                      <strong>{locale === "es" ? "Revista:" : "Journal:"}</strong>{" "}
+                      {paper.journal}
+                    </p>
+                  )}
+
+                  <h4 className={styles.cardTitle}><LatexText>{paper.title}</LatexText></h4>
                   <p className={styles.authors}>{paper.authors}</p>
-                  <p className={styles.info}>{paper.info}</p>
+                  {paper.info && <p className={styles.info}><LatexText>{paper.info}</LatexText></p>}
 
                   <a
                     className={styles.code}

@@ -76,6 +76,16 @@ export const personType = defineType({
     }),
 
     defineField({
+      name: 'inspireAuthorId',
+      title: 'INSPIRE author ID',
+      type: 'string',
+      description:
+        'Optional numeric ID from the INSPIRE author profile URL. Example: 1078455 from inspirehep.net/authors/1078455.',
+      validation: (Rule) =>
+        Rule.regex(/^\d+$/).error('Enter only the numeric INSPIRE author ID.'),
+    }),
+
+    defineField({
       name: 'membershipStatus',
       title: 'Membership status',
       type: 'string',

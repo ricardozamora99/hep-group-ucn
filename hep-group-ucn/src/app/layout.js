@@ -1,4 +1,5 @@
 import { IBM_Plex_Sans } from "next/font/google";
+import "katex/dist/katex.min.css";
 import "./globals.css";
 
 const bodyFont = IBM_Plex_Sans({

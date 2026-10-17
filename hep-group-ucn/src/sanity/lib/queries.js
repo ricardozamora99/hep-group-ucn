@@ -59,3 +59,12 @@ export const JOURNAL_CLUB_QUERY = defineQuery(`
     isUpcoming
   }
 `);
+
+export const PUBLICATION_AUTHORS_QUERY = defineQuery([
+  '*[_type == "person" && defined(inspireAuthorId) && inspireAuthorId != ""]',
+  '| order(name asc) {',
+  "  _id,",
+  "  name,",
+  "  inspireAuthorId",
+  "}",
+].join("\n"));
