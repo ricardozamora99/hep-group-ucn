@@ -5,7 +5,7 @@ import BeyondAcademia from "@/components/activities/BeyondAcademia/BeyondAcademi
 import ActivitiesCTA from "@/components/activities/ActivitiesCTA/ActivitiesCTA";
 import AcademicParticipation from "@/components/activities/AcademicParticipation/AcademicParticipation";
 import { client } from "@/sanity/lib/client";
-import { ACADEMIC_ACTIVITIES_QUERY } from "@/sanity/lib/queries";
+import { ACADEMIC_ACTIVITIES_QUERY, ACADEMIC_ACTIVITY_BY_ID_QUERY } from "@/sanity/lib/queries";
 
 export const revalidate = 3600;
 
@@ -17,6 +17,7 @@ export default async function ActivitiesPage({ params, searchParams }) {
   const requestedPage = Number.parseInt(query?.participationPage, 10);
   let page = Number.isFinite(requestedPage) && requestedPage > 0 ? requestedPage : 1;
   let result = { items: [], total: 0 };
+  let initialActivity = null;
 
   try {
     result = await client.fetch(
@@ -42,6 +43,21 @@ export default async function ActivitiesPage({ params, searchParams }) {
     }
   }
 
+  if (query?.activity) {
+    initialActivity = result.items.find((item) => item._id === query.activity) ?? null;
+    if (!initialActivity) {
+      try {
+        initialActivity = await client.fetch(
+          ACADEMIC_ACTIVITY_BY_ID_QUERY,
+          { locale, id: query.activity },
+          { next: { revalidate: 3600 } }
+        );
+      } catch (error) {
+        console.error("Unable to load selected academic activity", error);
+      }
+    }
+  }
+
   return (
     <>
       <ActivitiesHero />
@@ -52,6 +68,7 @@ export default async function ActivitiesPage({ params, searchParams }) {
         page={page}
         totalPages={totalPages}
         locale={locale}
+        initialActivity={initialActivity}
       />
       <JournalClubTeaser />
       <BeyondAcademia />

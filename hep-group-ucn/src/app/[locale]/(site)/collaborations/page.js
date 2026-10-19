@@ -23,7 +23,7 @@ export default async function CollaborationsPage({ params }) {
     collaborations = institutionalData.map((item) => ({
       ...item,
       imageUrl: item.image
-        ? urlFor(item.image).width(1200).height(760).fit("crop").url()
+        ? urlFor(item.image.asset).width(1200).height(900).fit("max").url()
         : null,
       activeMembers: (item.activeMembers ?? [])
         .filter((member) => member?.membershipStatus === "current")

@@ -71,7 +71,6 @@ export const PUBLICATION_AUTHORS_QUERY = defineQuery([
 
 const activityProjection = `
   _id,
-  "slug": slug.current,
   "title": select($locale == "es" => coalesce(titleEs, title), title),
   activityType,
   organizerType,
@@ -86,6 +85,10 @@ const activityProjection = `
   "summary": select($locale == "es" => coalesce(summaryEs, summary), summary),
   "description": select($locale == "es" => coalesce(descriptionEs, description), description),
   coverImage,
+  gallery[]{
+    ...,
+    "caption": select($locale == "es" => coalesce(captionEs, caption), caption)
+  },
   participants[]{
     _key,
     role,
@@ -95,28 +98,23 @@ const activityProjection = `
 `;
 
 export const ACADEMIC_ACTIVITIES_QUERY = defineQuery(`{
-  "items": *[_type == "academicActivity" && defined(slug.current)]
+  "items": *[_type == "academicActivity"]
     | order(startDate desc, _createdAt desc) [$start...$end] {
       ${activityProjection}
     },
-  "total": count(*[_type == "academicActivity" && defined(slug.current)])
+  "total": count(*[_type == "academicActivity"])
 }`);
 
-export const ACADEMIC_ACTIVITY_QUERY = defineQuery(`
-  *[_type == "academicActivity" && slug.current == $slug][0] {
-    ${activityProjection},
-    gallery[]{
-      ...,
-      "caption": select($locale == "es" => coalesce(captionEs, caption), caption)
-    }
+export const ACADEMIC_ACTIVITY_BY_ID_QUERY = defineQuery(`
+  *[_type == "academicActivity" && _id == $id][0] {
+    ${activityProjection}
   }
 `);
 
 export const ACADEMIC_NEWS_QUERY = defineQuery(`
   *[
     _type == "academicActivity" &&
-    featuredInNews == true &&
-    defined(slug.current)
+    featuredInNews == true
   ] | order(startDate desc, _createdAt desc) [0...3] {
     ${activityProjection}
   }

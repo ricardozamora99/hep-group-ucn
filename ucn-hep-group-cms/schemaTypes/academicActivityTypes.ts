@@ -30,10 +30,13 @@ export const academicActivityType = defineType({
     }),
     defineField({
       name: 'slug',
-      title: 'URL slug',
+      title: 'URL slug (deprecated)',
       type: 'slug',
-      options: {source: 'title', maxLength: 96},
-      validation: (Rule) => Rule.required(),
+      description: 'No longer used. Activities now open in an on-page detail window.',
+      deprecated: {reason: 'Activities no longer have individual URL pages.'},
+      readOnly: true,
+      hidden: true,
+      initialValue: undefined,
     }),
     defineField({
       name: 'activityType',

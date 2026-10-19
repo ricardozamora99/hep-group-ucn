@@ -23,7 +23,7 @@ export default function News({ items = [], locale = "en" }) {
         </div>
 
         <div className={`${styles.grid} ${secondary.length === 0 ? styles.single : ""}`}>
-          <Link href={`/${locale}/activities/${main.slug}`} className={styles.mainCard}>
+          <Link href={`/${locale}/activities?activity=${encodeURIComponent(main._id)}#academic-participation`} className={styles.mainCard}>
             <span className={styles.mainLabel}>{es ? "Última actividad" : "Latest activity"}</span>
             <time>{dateLabel(main.startDate, locale)}</time>
             <h3>{main.title}</h3>
@@ -34,7 +34,7 @@ export default function News({ items = [], locale = "en" }) {
           {secondary.length > 0 && (
             <div className={styles.sideCol}>
               {secondary.map((item) => (
-                <Link key={item._id} href={`/${locale}/activities/${item.slug}`} className={styles.sideCard}>
+                <Link key={item._id} href={`/${locale}/activities?activity=${encodeURIComponent(item._id)}#academic-participation`} className={styles.sideCard}>
                   <time>{dateLabel(item.startDate, locale)}</time>
                   <h3>{item.title}</h3>
                   <p>{item.summary}</p>
