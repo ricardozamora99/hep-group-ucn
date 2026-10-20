@@ -73,8 +73,6 @@ const activityProjection = `
   _id,
   "title": select($locale == "es" => coalesce(titleEs, title), title),
   activityType,
-  organizerType,
-  responsiblePeople,
   startDate,
   endDate,
   organizingInstitution,
@@ -98,25 +96,75 @@ const activityProjection = `
 `;
 
 export const ACADEMIC_ACTIVITIES_QUERY = defineQuery(`{
-  "items": *[_type == "academicActivity"]
+  "items": *[_type == "academicActivity" && organizerType != "group"]
     | order(startDate desc, _createdAt desc) [$start...$end] {
       ${activityProjection}
     },
-  "total": count(*[_type == "academicActivity"])
+  "total": count(*[_type == "academicActivity" && organizerType != "group"])
 }`);
 
 export const ACADEMIC_ACTIVITY_BY_ID_QUERY = defineQuery(`
-  *[_type == "academicActivity" && _id == $id][0] {
+  *[_type == "academicActivity" && organizerType != "group" && _id == $id][0] {
     ${activityProjection}
   }
 `);
 
+const groupActivityProjection = `
+  _id,
+  _type,
+  "title": select($locale == "es" => coalesce(titleEs, title), title),
+  activityType,
+  startDate,
+  endDate,
+  venue,
+  city,
+  country,
+  eventUrl,
+  "description": select($locale == "es" => coalesce(descriptionEs, description), description),
+  coverImage,
+  gallery[]{
+    ...,
+    "caption": select($locale == "es" => coalesce(captionEs, caption), caption)
+  },
+  guests[]{_key, name, role, affiliation},
+  responsiblePeople[]->{_id, name, photo, membershipStatus}
+`;
+
+export const GROUP_ACADEMIC_ACTIVITIES_QUERY = defineQuery(`
+  *[_type == "groupAcademicActivity"]
+    | order(startDate desc, _createdAt desc) {
+      ${groupActivityProjection}
+    }
+`);
+
+export const BEYOND_ACADEMIA_MOMENTS_QUERY = defineQuery(`
+  *[_type == "beyondAcademiaMoment" && defined(image.asset)]
+    | order(year desc, _createdAt desc) {
+      _id,
+      image,
+      "description": select($locale == "es" => coalesce(descriptionEs, description), description),
+      year
+    }
+`);
+
 export const ACADEMIC_NEWS_QUERY = defineQuery(`
   *[
-    _type == "academicActivity" &&
+    _type in ["academicActivity", "groupAcademicActivity"] &&
+    !(_type == "academicActivity" && organizerType == "group") &&
     featuredInNews == true
   ] | order(startDate desc, _createdAt desc) [0...3] {
-    ${activityProjection}
+    _id,
+    _type,
+    "title": select($locale == "es" => coalesce(titleEs, title), title),
+    startDate,
+    activityType,
+    "summary": select(
+      _type == "groupAcademicActivity" && $locale == "es" => coalesce(descriptionEs, description),
+      _type == "groupAcademicActivity" => description,
+      $locale == "es" => coalesce(summaryEs, summary),
+      summary
+    ),
+    coverImage
   }
 `);
 

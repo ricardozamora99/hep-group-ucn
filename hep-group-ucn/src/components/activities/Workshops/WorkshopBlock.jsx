@@ -24,17 +24,23 @@ export default function WorkshopBlock({ workshop, reverse = false }) {
           <h3 className={styles.title}>{localized("title")}</h3>
 
           <div className={styles.meta}>
-            <p><strong><LocalizedText id="p_a9e0c7058512">Speaker</LocalizedText></strong> {workshop.speaker}</p>
+            {workshop.speaker && <p><strong><LocalizedText id="p_a9e0c7058512">Speaker</LocalizedText></strong> {workshop.speaker}</p>}
+            {workshop.organizers && <p><strong>{locale === "es" ? "Responsables" : "Organizers"}</strong> {workshop.organizers}</p>}
             <p><strong><LocalizedText id="p_15b61974b270">Location</LocalizedText></strong> {workshop.place}</p>
             <p><strong><LocalizedText id="p_99c40ab40592">Date</LocalizedText></strong> {localized("date")}</p>
           </div>
 
           <p className={styles.description}>{localized("description")}</p>
+          {workshop.eventUrl && (
+            <a className={styles.link} href={workshop.eventUrl} target="_blank" rel="noreferrer">
+              {locale === "es" ? "Visitar sitio relacionado ↗" : "Visit related website ↗"}
+            </a>
+          )}
         </div>
       </div>
 
       <div className={styles.mediaCol}>
-        <PhotoCarousel images={workshop.images} title={localized("title")} />
+        {workshop.images?.length > 0 && <PhotoCarousel images={workshop.images} title={localized("title")} />}
       </div>
     </article>
   );

@@ -1,44 +1,21 @@
-"use client";
 import LocalizedText from "@/components/i18n/LocalizedText";
+import { urlFor } from "@/sanity/lib/image";
 
 import styles from "./BeyondAcademia.module.css";
 import Container from "@/components/layout/Container";
 import LargeMomentsCarousel from "./LargeMomentsCarousel";
 
-const moments = [
-  {
-    src: "/brand/logoucn.png",
-    alt: "Beyond academia moment 1",
-    caption: "Shared moments with visitors and collaborators in Antofagasta.",
-  },
-  {
-    src: "/brand/logoucn.png",
-    alt: "Beyond academia moment 2",
-    caption: "Informal conversations, coffee, and group life beyond the seminar room.",
-  },
-  {
-    src: "/brand/logoucn.png",
-    alt: "Beyond academia moment 3",
-    caption: "Casual meetings and shared experiences with guests.",
-  },
-  {
-    src: "/brand/logoucn.png",
-    alt: "Beyond academia moment 4",
-    caption: "Outdoor activities and memorable moments with the group.",
-  },
-  {
-    src: "/brand/logoucn.png",
-    alt: "Beyond academia moment 5",
-    caption: "The social side of academic exchange and collaboration.",
-  },
-  {
-    src: "/brand/logoucn.png",
-    alt: "Beyond academia moment 6",
-    caption: "Group life in Antofagasta beyond formal academic settings.",
-  },
-];
+export default function BeyondAcademia({ moments = [] }) {
+  if (!moments.length) return null;
 
-export default function BeyondAcademia() {
+  const images = moments.map((moment) => ({
+    id: moment._id,
+    src: urlFor(moment.image).ignoreImageParams().width(1800).height(1000).fit("max").url(),
+    alt: moment.image?.alt || moment.description,
+    caption: moment.description,
+    year: moment.year,
+  }));
+
   return (
     <section className={styles.section}>
       <Container>
@@ -49,7 +26,7 @@ export default function BeyondAcademia() {
           <p className={styles.lead}><LocalizedText id="p_e53dc86b752e">Group life also includes informal gatherings, visiting researchers, and shared experiences in Antofagasta beyond the seminar room.</LocalizedText></p>
         </div>
 
-        <LargeMomentsCarousel images={moments} />
+        <LargeMomentsCarousel images={images} />
       </Container>
     </section>
   );

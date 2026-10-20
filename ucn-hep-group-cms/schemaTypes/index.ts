@@ -7,6 +7,8 @@ import {journalClubTalkType} from './journalClubTalkTypes'
 import {academicActivityType} from './academicActivityTypes'
 import {institutionalCollaborationType} from './institutionalCollaborationTypes'
 import {frequentCollaboratorType} from './frequentCollaboratorTypes'
+import {groupAcademicActivityType} from './groupAcademicActivityTypes'
+import {beyondAcademiaMomentType} from './beyondAcademiaMomentTypes'
 
 export const schemaTypes = [
   personType,
@@ -14,4 +16,6 @@ export const schemaTypes = [
   academicActivityType,
   institutionalCollaborationType,
   frequentCollaboratorType,
+  groupAcademicActivityType,
+  beyondAcademiaMomentType,
 ]

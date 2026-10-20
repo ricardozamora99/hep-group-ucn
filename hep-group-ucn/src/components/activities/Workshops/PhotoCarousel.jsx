@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import Image from "next/image";
 import styles from "./PhotoCarousel.module.css";
+import { urlFor } from "@/sanity/lib/image";
 
 export default function PhotoCarousel({ images, title }) {
   const scrollerRef = useRef(null);
@@ -46,11 +47,13 @@ export default function PhotoCarousel({ images, title }) {
       </button>
 
       <div className={styles.scroller} ref={scrollerRef}>
-        {images.map((img, index) => (
-          <div className={styles.slide} key={`${img.src}-${index}`}>
+        {images.map((img, index) => {
+          const src = img.src || urlFor(img).ignoreImageParams().width(1400).height(900).fit("max").url();
+          return (
+          <div className={styles.slide} key={img._key || `${src}-${index}`}>
             <div className={styles.frame}>
               <Image
-                src={img.src}
+                src={src}
                 alt={img.alt || `${title} photo ${index + 1}`}
                 fill
                 className={styles.image}
@@ -58,7 +61,8 @@ export default function PhotoCarousel({ images, title }) {
               />
             </div>
           </div>
-        ))}
+          );
+        })}
       </div>
 
       <button

@@ -5,9 +5,14 @@ import BeyondAcademia from "@/components/activities/BeyondAcademia/BeyondAcademi
 import ActivitiesCTA from "@/components/activities/ActivitiesCTA/ActivitiesCTA";
 import AcademicParticipation from "@/components/activities/AcademicParticipation/AcademicParticipation";
 import { client } from "@/sanity/lib/client";
-import { ACADEMIC_ACTIVITIES_QUERY, ACADEMIC_ACTIVITY_BY_ID_QUERY } from "@/sanity/lib/queries";
+import {
+  ACADEMIC_ACTIVITIES_QUERY,
+  ACADEMIC_ACTIVITY_BY_ID_QUERY,
+  BEYOND_ACADEMIA_MOMENTS_QUERY,
+  GROUP_ACADEMIC_ACTIVITIES_QUERY,
+} from "@/sanity/lib/queries";
 
-export const revalidate = 3600;
+export const revalidate = 60;
 
 const PAGE_SIZE = 6;
 
@@ -17,14 +22,28 @@ export default async function ActivitiesPage({ params, searchParams }) {
   const requestedPage = Number.parseInt(query?.participationPage, 10);
   let page = Number.isFinite(requestedPage) && requestedPage > 0 ? requestedPage : 1;
   let result = { items: [], total: 0 };
+  let groupActivities = [];
+  let beyondAcademiaMoments = [];
   let initialActivity = null;
 
   try {
-    result = await client.fetch(
-      ACADEMIC_ACTIVITIES_QUERY,
-      { locale, start: (page - 1) * PAGE_SIZE, end: page * PAGE_SIZE },
-      { next: { revalidate: 3600 } }
-    );
+    [result, groupActivities, beyondAcademiaMoments] = await Promise.all([
+      client.fetch(
+        ACADEMIC_ACTIVITIES_QUERY,
+        { locale, start: (page - 1) * PAGE_SIZE, end: page * PAGE_SIZE },
+        { next: { revalidate: 60 } }
+      ),
+      client.fetch(
+        GROUP_ACADEMIC_ACTIVITIES_QUERY,
+        { locale },
+        { next: { revalidate: 60 } }
+      ),
+      client.fetch(
+        BEYOND_ACADEMIA_MOMENTS_QUERY,
+        { locale },
+        { next: { revalidate: 60 } }
+      ),
+    ]);
   } catch (error) {
     console.error("Unable to load academic participation", error);
   }
@@ -36,7 +55,7 @@ export default async function ActivitiesPage({ params, searchParams }) {
       result = await client.fetch(
         ACADEMIC_ACTIVITIES_QUERY,
         { locale, start: (page - 1) * PAGE_SIZE, end: page * PAGE_SIZE },
-        { next: { revalidate: 3600 } }
+        { next: { revalidate: 60 } }
       );
     } catch (error) {
       console.error("Unable to load the final academic participation page", error);
@@ -50,7 +69,7 @@ export default async function ActivitiesPage({ params, searchParams }) {
         initialActivity = await client.fetch(
           ACADEMIC_ACTIVITY_BY_ID_QUERY,
           { locale, id: query.activity },
-          { next: { revalidate: 3600 } }
+          { next: { revalidate: 60 } }
         );
       } catch (error) {
         console.error("Unable to load selected academic activity", error);
@@ -61,7 +80,7 @@ export default async function ActivitiesPage({ params, searchParams }) {
   return (
     <>
       <ActivitiesHero />
-      <WorkshopsSection />
+      <WorkshopsSection activities={groupActivities} locale={locale} />
       <AcademicParticipation
         items={result.items}
         total={result.total}
@@ -71,7 +90,7 @@ export default async function ActivitiesPage({ params, searchParams }) {
         initialActivity={initialActivity}
       />
       <JournalClubTeaser />
-      <BeyondAcademia />
+      <BeyondAcademia moments={beyondAcademiaMoments} />
       <ActivitiesCTA />
     </>
   );

@@ -47,9 +47,13 @@ export const academicActivityType = defineType({
     }),
     defineField({
       name: 'organizerType',
-      title: 'Organized by',
+      title: 'Organized by (deprecated)',
       type: 'string',
-      description: 'Use External for schools, congresses, visits, and events attended by group members.',
+      description: 'No longer used. Academic Participation now contains external activities only.',
+      deprecated: {reason: 'Group-organized events now belong in Group Academic Activities.'},
+      readOnly: true,
+      hidden: true,
+      initialValue: undefined,
       options: {
         list: [
           {title: 'UCN HEP Group', value: 'group'},
@@ -57,24 +61,17 @@ export const academicActivityType = defineType({
         ],
         layout: 'radio',
       },
-      initialValue: 'external',
-      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'responsiblePeople',
-      title: 'Responsible person(s)',
+      title: 'Responsible person(s) (deprecated)',
       type: 'array',
-      description:
-        'Enter the names manually. This is intended for workshops and other activities organized by the UCN HEP Group.',
-      hidden: ({document}) => document?.organizerType !== 'group',
+      description: 'No longer used. Add group-organized events to Group Academic Activities.',
+      deprecated: {reason: 'Use Responsible group member(s) in Group Academic Activities.'},
+      readOnly: true,
+      hidden: true,
+      initialValue: undefined,
       of: [defineArrayMember({type: 'string'})],
-      validation: (Rule) =>
-        Rule.custom((names, context) => {
-          if (context.document?.organizerType !== 'group') return true
-          return Array.isArray(names) && names.some((name) => name?.trim())
-            ? true
-            : 'Add at least one responsible person for a group-organized activity.'
-        }),
     }),
     defineField({
       name: 'startDate',
@@ -94,7 +91,7 @@ export const academicActivityType = defineType({
             : 'The end date cannot be earlier than the start date.'
         }),
     }),
-    defineField({name: 'organizingInstitution', title: 'Organizing institution', type: 'string'}),
+    defineField({name: 'organizingInstitution', title: 'Event organizer / institution', type: 'string'}),
     defineField({name: 'venue', title: 'Venue', type: 'string'}),
     defineField({name: 'city', title: 'City', type: 'string'}),
     defineField({name: 'country', title: 'Country', type: 'string'}),
@@ -102,13 +99,8 @@ export const academicActivityType = defineType({
       name: 'eventUrl',
       title: 'Official event website',
       type: 'url',
-      description:
-        'Required for externally organized activities. Optional for activities organized by the UCN HEP Group.',
-      validation: (Rule) =>
-        Rule.uri({scheme: ['http', 'https']}).custom((url, context) => {
-          if (context.document?.organizerType !== 'external') return true
-          return url ? true : 'An official event website is required for external activities.'
-        }),
+      description: 'Official website for the external event.',
+      validation: (Rule) => Rule.uri({scheme: ['http', 'https']}).required(),
     }),
     defineField({
       name: 'summary',

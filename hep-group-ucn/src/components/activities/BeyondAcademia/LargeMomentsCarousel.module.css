@@ -20,7 +20,15 @@
 }
 
 .image {
+  object-fit: contain;
+  z-index: 1;
+}
+
+.imageBackground {
   object-fit: cover;
+  transform: scale(1.08);
+  filter: blur(24px);
+  opacity: 0.28;
 }
 
 .arrowLeft,
@@ -78,6 +86,19 @@
   font-weight: 900;
   letter-spacing: 0.16em;
   text-transform: uppercase;
+  color: #8a6d28;
+}
+
+.captionMeta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.year {
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
   color: #8a6d28;
 }
 

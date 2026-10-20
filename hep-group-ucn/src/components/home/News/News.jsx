@@ -12,6 +12,9 @@ export default function News({ items = [], locale = "en" }) {
   if (items.length === 0) return null;
   const es = locale === "es";
   const [main, ...secondary] = items;
+  const activityHref = (item) => item._type === "groupAcademicActivity"
+    ? `/${locale}/activities#group-activities`
+    : `/${locale}/activities?activity=${encodeURIComponent(item._id)}#academic-participation`;
 
   return (
     <section id="news-preview" className={styles.section}>
@@ -23,7 +26,7 @@ export default function News({ items = [], locale = "en" }) {
         </div>
 
         <div className={`${styles.grid} ${secondary.length === 0 ? styles.single : ""}`}>
-          <Link href={`/${locale}/activities?activity=${encodeURIComponent(main._id)}#academic-participation`} className={styles.mainCard}>
+          <Link href={activityHref(main)} className={styles.mainCard}>
             <span className={styles.mainLabel}>{es ? "Última actividad" : "Latest activity"}</span>
             <time>{dateLabel(main.startDate, locale)}</time>
             <h3>{main.title}</h3>
@@ -34,7 +37,7 @@ export default function News({ items = [], locale = "en" }) {
           {secondary.length > 0 && (
             <div className={styles.sideCol}>
               {secondary.map((item) => (
-                <Link key={item._id} href={`/${locale}/activities?activity=${encodeURIComponent(item._id)}#academic-participation`} className={styles.sideCard}>
+                <Link key={item._id} href={activityHref(item)} className={styles.sideCard}>
                   <time>{dateLabel(item.startDate, locale)}</time>
                   <h3>{item.title}</h3>
                   <p>{item.summary}</p>

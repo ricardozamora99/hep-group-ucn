@@ -59,6 +59,14 @@ export default function LargeMomentsCarousel({ images }) {
         <div className={styles.frame}>
           <Image
             src={images[current].src}
+            alt=""
+            fill
+            className={styles.imageBackground}
+            sizes="100vw"
+            aria-hidden="true"
+          />
+          <Image
+            src={images[current].src}
             alt={images[current].alt || `Moment ${current + 1}`}
             fill
             className={styles.image}
@@ -80,9 +88,12 @@ export default function LargeMomentsCarousel({ images }) {
       <div className={styles.captionBox}>
         <div className={styles.captionTop}>
           <span className={styles.captionLabel}><LocalizedText id="p_070cb8329b4b">Beyond Academia</LocalizedText></span>
-          <span className={styles.counter}>
-            {current + 1} / {images.length}
-          </span>
+          <div className={styles.captionMeta}>
+            <span className={styles.year}>{images[current].year}</span>
+            <span className={styles.counter}>
+              {current + 1} / {images.length}
+            </span>
+          </div>
         </div>
 
         <p className={styles.caption}>
@@ -93,7 +104,7 @@ export default function LargeMomentsCarousel({ images }) {
       <div className={styles.dots}>
         {images.map((_, index) => (
           <button
-            key={index}
+            key={images[index].id}
             type="button"
             className={`${styles.dot} ${index === current ? styles.active : ""}`}
             onClick={() => setCurrent(index)}

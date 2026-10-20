@@ -2,10 +2,12 @@
 
 import styles from "./Join.module.css";
 import Container from "@/components/layout/Container";
-import { useTranslations } from "next-intl";
+import Link from "next/link";
+import { useLocale, useTranslations } from "next-intl";
 
 export default function Join() {
   const t = useTranslations("Join");
+  const locale = useLocale();
 
   return (
     <section id="join" className={styles.section}>
@@ -29,7 +31,7 @@ export default function Join() {
           </div>
 
           {/* Right: contact card */}
-          <aside className={styles.card} aria-label={t("cardLabel")}>
+          <Link href={`/${locale}/contact`} className={styles.card} aria-label={t("cardLabel")}>
             <h3 className={styles.cardTitle}>{t("cardTitle")}</h3>
 
             <div className={styles.kv}>
@@ -43,7 +45,7 @@ export default function Join() {
             <div className={styles.note}>
               {t("note")}
             </div>
-          </aside>
+          </Link>
         </div>
       </Container>
     </section>

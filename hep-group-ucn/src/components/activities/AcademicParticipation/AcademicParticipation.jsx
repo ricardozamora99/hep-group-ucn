@@ -105,7 +105,6 @@ function ActivityModal({ activity, locale, onClose }) {
               <div><dt>{es ? "Fecha" : "Date"}</dt><dd>{formatDate(activity.startDate, activity.endDate, locale, true)}</dd></div>
               {location && <div><dt>{es ? "Lugar" : "Location"}</dt><dd>{location}</dd></div>}
               {activity.organizingInstitution && <div><dt>{es ? "Institución" : "Institution"}</dt><dd>{activity.organizingInstitution}</dd></div>}
-              {activity.responsiblePeople?.length > 0 && <div><dt>{es ? "Responsables" : "Responsible people"}</dt><dd>{activity.responsiblePeople.join(", ")}</dd></div>}
             </dl>
 
             {activity.description && <p className={styles.modalDescription}>{activity.description}</p>}
