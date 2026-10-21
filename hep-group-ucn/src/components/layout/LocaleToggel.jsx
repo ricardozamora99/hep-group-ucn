@@ -1,5 +1,6 @@
 "use client";
 import LocalizedText from "@/components/i18n/LocalizedText";
+import CountryFlag from "@/components/ui/CountryFlag";
 
 import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
@@ -28,7 +29,8 @@ export default function LocaleToggel({ className = "" }) {
           onClick={() => go("en")}
           aria-current={locale === "en" ? "true" : "false"}
         >
-          🇺🇸 <span className="txt"><LocalizedText id="p_69374b09b168">EN</LocalizedText></span>
+          <CountryFlag countryCode="US" label="United States" />
+          <span className="txt"><LocalizedText id="p_69374b09b168">EN</LocalizedText></span>
         </button>
 
         <span className="colon" aria-hidden="true">:</span>
@@ -39,7 +41,8 @@ export default function LocaleToggel({ className = "" }) {
           onClick={() => go("es")}
           aria-current={locale === "es" ? "true" : "false"}
         >
-          🇪🇸 <span className="txt"><LocalizedText id="p_ce344a418127">ES</LocalizedText></span>
+          <CountryFlag countryCode="ES" label="España" />
+          <span className="txt"><LocalizedText id="p_ce344a418127">ES</LocalizedText></span>
         </button>
       </span>
     </div>

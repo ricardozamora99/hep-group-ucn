@@ -100,10 +100,20 @@
 }
 
 .cardAffiliation{
+  display: flex;
+  align-items: center;
+  gap: 8px;
   margin-top: 8px;
   font-size: 13px;
   line-height: 1.7;
   color: rgba(11,42,74,0.70);
+}
+
+.countryFlag{
+  width: 1.3em;
+  flex: 0 0 auto;
+  border: 1px solid rgba(11,42,74,0.12);
+  box-shadow: 0 1px 2px rgba(11,42,74,0.08);
 }
 
 .actions{

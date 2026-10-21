@@ -90,13 +90,10 @@
     "b1": "Present a talk: propose a paper or a short research update (title + 3–5 lines of context).",
     "b2": "Join the group: receive announcements, meeting links/rooms, and participate in discussions.",
     "b3": "Students and researchers are welcome — no prior expertise required.",
-    "cardLabel": "Join contact information",
+    "cardLabel": "Open the group contact page",
     "cardTitle": "Contact",
-    "emailLabel": "Email",
-    "emailValue": "hep.journalclub@ucn.cl",
-    "whatsLabel": "Form / WhatsApp",
-    "whatsValue": "—",
-    "note": "When writing, tell us which option you prefer: Present a talk or Join the group. This helps us respond faster."
+    "cardText": "To participate, contact the group advisor or one of the postgraduate students through the group contact page.",
+    "cardAction": "Go to Contact"
   },
   "Team": {
     "kicker": "TEAM",
@@ -128,8 +125,8 @@
     "support": "Supported by ANID–Chile · FONDECYT Regular 1241855",
     "contact": {
       "title": "Contact",
-      "emailValue": "hep.journalclub@ucn.cl",
-      "note": "For questions, talk proposals, and collaboration."
+      "emailValue": "cesar.bonilla@ucn.cl",
+      "note": "Group head · For questions, proposals, and collaboration."
     },
     "location": {
       "title": "Location",

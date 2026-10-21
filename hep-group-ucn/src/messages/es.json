@@ -90,13 +90,10 @@
     "b1": "Presentar una charla: propone un paper o una actualización breve (título + 3–5 líneas de contexto).",
     "b2": "Unirte al grupo: recibir anuncios, sala/enlaces de reunión y participar en las discusiones.",
     "b3": "Estudiantes e investigadores son bienvenidos — no se requiere experiencia previa.",
-    "cardLabel": "Información de contacto para unirse",
+    "cardLabel": "Abrir la página de contacto del grupo",
     "cardTitle": "Contacto",
-    "emailLabel": "Correo",
-    "emailValue": "hep.journalclub@ucn.cl",
-    "whatsLabel": "Formulario / WhatsApp",
-    "whatsValue": "—",
-    "note": "Cuando escribas, dinos cuál opción prefieres: Presentar una charla o Unirte al grupo. Eso agiliza la respuesta."
+    "cardText": "Para participar, contacta al profesor responsable o a uno de los estudiantes de posgrado mediante la página de contacto del grupo.",
+    "cardAction": "Ir a Contacto"
   },
   "Team": {
     "kicker": "EQUIPO",
@@ -128,8 +125,8 @@
     "support": "Con el apoyo de ANID–Chile · FONDECYT Regular 1241855",
     "contact": {
       "title": "Contacto",
-      "emailValue": "hep.journalclub@ucn.cl",
-      "note": "Preguntas, propuestas de charla y colaboración."
+      "emailValue": "cesar.bonilla@ucn.cl",
+      "note": "Jefe del grupo · Para preguntas, propuestas y colaboración."
     },
     "location": {
       "title": "Ubicación",

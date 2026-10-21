@@ -33,18 +33,8 @@ export default function Join() {
           {/* Right: contact card */}
           <Link href={`/${locale}/contact`} className={styles.card} aria-label={t("cardLabel")}>
             <h3 className={styles.cardTitle}>{t("cardTitle")}</h3>
-
-            <div className={styles.kv}>
-              <div className={styles.k}>{t("emailLabel")}:</div>
-              <div className={styles.v}>{t("emailValue")}</div>
-
-              <div className={styles.k}>{t("whatsLabel")}:</div>
-              <div className={styles.v}>{t("whatsValue")}</div>
-            </div>
-
-            <div className={styles.note}>
-              {t("note")}
-            </div>
+            <p className={styles.contactText}>{t("cardText")}</p>
+            <span className={styles.contactAction}>{t("cardAction")} →</span>
           </Link>
         </div>
       </Container>

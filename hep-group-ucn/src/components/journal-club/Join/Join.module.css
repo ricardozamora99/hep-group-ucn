@@ -98,35 +98,21 @@
   border-bottom: 1px solid rgba(255,255,255,0.10);
 }
 
-.kv{
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  row-gap: 12px;
-  column-gap: 14px;
-  margin-top: 12px;
+.contactText{
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.78);
 }
 
-.k{
-  font-size: 11px;
+.contactAction{
+  display: inline-block;
+  margin-top: 18px;
+  font-size: 12px;
   font-weight: 900;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.58);
-}
-
-.v{
-  font-size: 14px;
-  font-weight: 800;
-  color: rgba(255,255,255,0.94);
-}
-
-.note{
-  margin-top: 14px;
-  border-top: 1px solid rgba(255,255,255,0.10);
-  font-size: 13px;
-  line-height: 1.75;
-  color: rgba(255,255,255,0.72);
-  padding-top: 12px;
+  color: rgba(240,210,143,0.94);
 }
 
 @media (max-width: 900px){
@@ -144,7 +130,4 @@
     font-size: 28px;
   }
 
-  .kv{
-    grid-template-columns: 1fr;
-  }
 }

@@ -10,6 +10,7 @@ import {
 import styles from "./Team.module.css";
 import Container from "@/components/layout/Container";
 import Image from "next/image";
+import CountryFlag from "@/components/ui/CountryFlag";
 
 const ROLE_LABELS = {
   professor: "Professor",
@@ -128,6 +129,11 @@ export default function Team({
                           styles.cardAffiliation
                         }
                       >
+                        <CountryFlag
+                          countryCode={member.countryCode}
+                          label={country}
+                          className={styles.countryFlag}
+                        />
                         {country}
                       </div>
                     )}

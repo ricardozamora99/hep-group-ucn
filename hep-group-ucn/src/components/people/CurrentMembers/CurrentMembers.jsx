@@ -4,6 +4,7 @@ import LocalizedText from "@/components/i18n/LocalizedText";
 import Image from "next/image";
 import styles from "./CurrentMembers.module.css";
 import Container from "@/components/layout/Container";
+import CountryFlag from "@/components/ui/CountryFlag";
 
 const ROLE_LABELS = {
   professor: "Professor",
@@ -13,32 +14,10 @@ const ROLE_LABELS = {
   undergraduate: "Bachelor’s Student",
 };
 
-function countryCodeToFlag(countryCode) {
-  if (!countryCode) return "";
-
-  const code = countryCode.trim().toUpperCase();
-
-  if (!/^[A-Z]{2}$/.test(code)) {
-    return "";
-  }
-
-  return String.fromCodePoint(
-    ...[...code].map((char) => 127397 + char.charCodeAt(0))
-  );
-}
-
 function alphabeticalSort(a, b) {
   return a.name.localeCompare(b.name, undefined, {
     sensitivity: "base",
   });
-}
-
-function getDisplayName(member) {
-  const flag = countryCodeToFlag(member.countryCode);
-
-  return flag
-    ? `${member.name} - ${flag}`
-    : member.name;
 }
 
 function MemberCard({ member }) {
@@ -62,7 +41,17 @@ function MemberCard({ member }) {
         </span>
 
         <h3 className={styles.memberName}>
-          {getDisplayName(member)}
+          {member.name}
+          {member.countryCode && (
+            <>
+              <span className={styles.flagSeparator} aria-hidden="true">–</span>
+              <CountryFlag
+                countryCode={member.countryCode}
+                label={member.countryCode.toUpperCase()}
+                className={styles.countryFlag}
+              />
+            </>
+          )}
         </h3>
 
         <p className={styles.memberFocus}>
@@ -179,7 +168,17 @@ export default function CurrentMembers({
                   <span className={styles.headKicker}><LocalizedText id="p_9bb0aacc6d51">Head</LocalizedText></span>
 
                   <h3 className={styles.headName}>
-                    {getDisplayName(head)}
+                    {head.name}
+                    {head.countryCode && (
+                      <>
+                        <span className={styles.flagSeparator} aria-hidden="true">–</span>
+                        <CountryFlag
+                          countryCode={head.countryCode}
+                          label={head.countryCode.toUpperCase()}
+                          className={styles.countryFlag}
+                        />
+                      </>
+                    )}
                   </h3>
 
                   <p className={styles.headText}>
